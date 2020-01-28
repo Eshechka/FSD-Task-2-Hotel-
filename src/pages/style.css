@@ -1,0 +1,82 @@
+@import "~normalize.css";
+@import "Montserrat.css";
+
+a {
+	text-decoration: none;
+	color: rgba(31, 32, 65, 0.5);
+}
+
+.site-button {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	border-radius: 22px;
+	color: #fff;
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	padding: 10px 20px;
+}
+
+body {
+	font-family: Montserrat;
+	font-size: 14px;
+	line-height: 17px;
+	color: rgba(31, 32, 65, 0.5);
+}
+
+.container
+{  
+	margin: 0 auto;
+	display: grid;
+	max-width: 1920px;
+	min-width: 320px;
+  	grid-template-columns: auto auto auto auto auto;
+  	grid-template-rows: 70px 900px 372px 70px;
+}
+
+header.header {
+	grid-column: 1/6;
+	grid-row: 1/2;
+	overflow: hidden;
+	display: flex;
+}
+
+.menu__list {
+	display: flex;
+}
+.menu__item {	
+	list-style: none;
+}
+
+
+section.main {
+	background-image: url('../img/BG_main.png');
+	background-size: cover;
+	height: 830px;
+	overflow: hidden;
+	grid-column: 1/6;
+	grid-row: 2/3;
+	position: relative;
+}
+
+div.main__note {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 300px;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: right;
+	color: rgba(31, 32, 65, 0.75);
+}
+
+section.nav-section {
+	grid-column: 1/6;
+	grid-row: 3/4;
+}
+
+footer.footer {
+	grid-column: 1/6;
+	grid-row: 4/5;
+}
