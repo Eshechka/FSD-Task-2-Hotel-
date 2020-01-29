@@ -1,7 +1,7 @@
-export default function (itemText, className) {
+export default function (className, itemText, elemModifier) {
 
 	var button = document.createElement("a");
-	button.className = className + ' site-button';
+	button.className = className + ' site-button'+ (elemModifier ? ' site-button_'+elemModifier:'');
 	button.href = '#';
 
 	var span = document.createElement("span");

@@ -1,4 +1,4 @@
-export default function (arrayItemsText, className) {
+export default function (className, arrayItemsText, arrayItemsWithPseudo) {
 
 	var menu = document.createElement("nav");
 	menu.className = className;
@@ -8,7 +8,12 @@ export default function (arrayItemsText, className) {
 	
 	var listItems = '';
 	arrayItemsText.forEach(function(item) {
-		listItems += '<li class="'+className+'__item"><a class="'+className+'__link" href="#">' + item + '</a></li>';
+		let needPseudoClass = '';
+		if (arrayItemsWithPseudo.includes(item)) {
+			needPseudoClass = ' ' + className + '__item_pseudo';
+		};
+		listItems += '<li class="' 	+ className+'__item' 
+									+ needPseudoClass + '"><a class="'+className+'__link" href="#">' + item + '</a></li>';
 	});
 	 
 	list.innerHTML = listItems;

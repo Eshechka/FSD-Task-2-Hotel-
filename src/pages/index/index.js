@@ -9,10 +9,10 @@ import '../style.css';
 
 var headerLogo = createLogo(pictureLogo, 'header-logo');
 
-var menu = createMenu(['О нас','Услуги', 'Вакансии', 'Новости', 'Соглашения'], 'menu');
+var menu = createMenu('menu', ['О нас','Услуги', 'Вакансии', 'Новости', 'Соглашения'], ['Услуги', 'Соглашения']);
 
-var enterButton = createButton('Войти', 'enter-button');
-var registrationButton = createButton('Зарегистрироваться', 'registration-button');
+var enterButton = createButton('enter-button', 'Войти', 'light');
+var registrationButton = createButton('registration-button', 'Зарегистрироваться');
 
 document.querySelector('.logo').appendChild(headerLogo);
 document.querySelector('.main-nav').appendChild(menu);

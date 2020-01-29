@@ -17,9 +17,16 @@ a {
 	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	padding: 10px 20px;
 
-
 	margin: auto 0;
 	margin-right: 20px;
+}
+
+.site-button_light {
+	color: #BC9CFF;
+	background: #fff;
+	border: 3px solid #BC9CFF;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	padding: 7px 17px;
 }
 
 body {
@@ -61,11 +68,24 @@ header.header .container {
 	list-style: none;
 	margin-right: 20px;
 }
-
+.menu__item_pseudo {
+	position: relative;
+	padding-right: 24px;
+	margin-right: 10px;
+}
+.menu__item_pseudo::after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	width: 24px;
+	height: 21px;
+	background-color: red;
+}
 
 section.main {
 	background-image: url('../img/BG_main.png');
 	background-size: cover;
+	background-position: center center;
 	height: 830px;
 	overflow: hidden;
 	grid-column: 1/6;
