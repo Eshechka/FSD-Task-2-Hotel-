@@ -10,10 +10,17 @@ export default function (className, arrayItemsText, arrayItemsWithPseudo) {
 	arrayItemsText.forEach(function(item) {
 		let needPseudoClass = '';
 		if (arrayItemsWithPseudo.includes(item)) {
-			needPseudoClass = ' ' + className + '__item_pseudo';
+	// 		needPseudoClass = ' ' + className + '__item_pseudo';
+	// 	};
+	// 	listItems += '<li class="' 	+ className+'__item' 
+	// 								+ needPseudoClass + '"><a class="'+className+'__link" href="#">' + item + '</a></li>';
+	// });	
+			needPseudoClass = ' ' + className + '__link_pseudo';
 		};
-		listItems += '<li class="' 	+ className+'__item' 
-									+ needPseudoClass + '"><a class="'+className+'__link" href="#">' + item + '</a></li>';
+		listItems += '<li class="' 	+ className+'__item' + '"><a class="'
+									
+									+ className + '__link ' + needPseudoClass + '" href="#">' 
+									+ item + '</a></li>';
 	});
 	 
 	list.innerHTML = listItems;
