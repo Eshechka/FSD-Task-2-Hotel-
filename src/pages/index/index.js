@@ -9,6 +9,7 @@ import pictureBG from '../../img/BG_main.png';
 import '../style.css';
 
 var headerLogo = createLogo(pictureLogo, 'header-logo');
+var navSectionLogo = createLogo(pictureLogo, 'nav-section-logo');
 
 var menu = createMenu('menu', ['О нас','Услуги', 'Вакансии', 'Новости', 'Соглашения'], ['Услуги', 'Соглашения']);
 
@@ -26,6 +27,7 @@ document.querySelector('.auth').appendChild(registrationButton);
 document.querySelector('.all-navigation').appendChild(column1);
 document.querySelector('.all-navigation').appendChild(column2);
 document.querySelector('.all-navigation').appendChild(column3);
+document.querySelector('.nav-logo').appendChild(navSectionLogo);
 
 
 console.log('in index.js');

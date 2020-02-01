@@ -76,14 +76,23 @@ body {
 	max-width: 1920px;
 	min-width: 320px;
 	width: 1160px;
+	overflow: hidden;
 }
 
 header.header .container {
 	grid-template-columns: 110px 60% auto;
 	align-content: center;
-	min-height: 70px;
-	overflow: hidden;
+	min-height: 70px;	
 }
+
+.logo {
+	line-height: 0px;
+}
+.header-logo__link {
+	display: block;
+}
+
+
 
 .main-nav {
 	text-align: right;
@@ -96,6 +105,7 @@ header.header .container {
 
 .menu__list {
 	display: inline-flex;
+	line-height: 17px;
 }
 .menu__item {	
 	list-style: none;
@@ -116,20 +126,20 @@ header.header .container {
 	width: 24px;
 	height: 21px;
 	background: url('../img/expand_more.svg') no-repeat;
-	background-position: 6px 5px;
+	background-position: 6px 6px;
 }
 
 
 
-section.main {
+main.main {
 	background-image: url('../img/BG_main.png');
 	background-size: cover;
-	background-position: center center;
-	height: 830px;
-	overflow: hidden;
-	grid-column: 1/6;
-	grid-row: 2/3;
+	background-position: center center;	
+}
+
+.main .container {
 	position: relative;
+	min-height: 830px;
 }
 
 div.main__note {
@@ -138,15 +148,13 @@ div.main__note {
 	bottom: 0;
 	width: 300px;
 	font-size: 14px;
-	line-height: 24px;
 	text-align: right;
 	color: rgba(31, 32, 65, 0.75);
 }
 
 
-
 .nav-section .container {
-	display: grid;
+	padding: 100px 0px;
 	grid-template-columns: 260px auto 260px;
 }
 
