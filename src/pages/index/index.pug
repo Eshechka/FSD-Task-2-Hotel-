@@ -21,9 +21,13 @@ block nav-section-content
 	div.subscribe
 		h3.subscribe__title Подписка
 		p.subscribe__text Получайте специальные предложения и новости сервиса
-		input.subscribe__input
+		form.confirm-subscribe(action="./change-me" method="get")
+			input.confirm-subscribe__input(type="email" placeholder="Email")
+			input.confirm-subscribe__submit(type="submit" value="")
 		
 
-block footer
-	footer.footer footer
+block footer-content
+	div.copyright-info Copyright © 2018 Toxin отель. Все права зачищены.
+	div.socials
+
 		
