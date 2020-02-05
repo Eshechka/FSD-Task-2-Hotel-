@@ -1,0 +1,39 @@
+
+//- Create menu items li>a
+mixin createListItems(classname, url, text, needPseudo)
+	li(class= classname+"__item")
+		-
+			var classnameLink = classname + " " + classname+"__link"
+			classnameLink += needPseudo ? " " + classname+"__link_pseudo" : ""
+
+		a(class= classnameLink href= url)= text
+
+
+//- Create list div>ul> n*(li>a)
+mixin createList(classname, arrayItems)
+	ul(class= classname+"__list")
+		each i in arrayItems
+			li(class= classname+"__item")
+				-
+					var classnameLink = classname + " " + classname+"__link";
+					classnameLink += i.needPseudo ? " " + classname+"__link_pseudo" : "";
+
+				a(class= classnameLink href= i.url)= i.text
+
+
+
+//- Create button a>span
+mixin createButton(classname, text, modifier)
+	- 
+		var classnameLink = classname
+		classnameLink += modifier ? " site-button site-button_"+modifier : " site-button"
+
+	a(class=classnameLink  href="./change-me")
+		span(class=classname+ "__text")= text
+
+
+//- Create logo div>a>img
+mixin createLogo(classname)
+	div(class=classname)
+		a(class=classname+"__link" href = "./change-me")
+			img(class=classname+"__img" src=require("../../img/TOXIN_Logo.svg").default alt="Logotype")

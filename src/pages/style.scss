@@ -1,10 +1,27 @@
-@import "~normalize.css";
-@import "Montserrat.css";
-@import "Quicksand.css";
+//colors
+$DarkShade100: #1F2041;
+$DarkShade75: #1F2041;
+$DarkShade50: #1F2041;
+$DarkShade25: #1F2041;
+$DarkShade5: #1F2041;
+$Purple: #BC9CFF;
+$Green: #6FCF97;
+
+@import "./~normalize.css";
+
+@import "./Montserrat.css";
+@import "./Quicksand.css";
+
+@import "../components/button/button.scss";
+@import "../components/menu/menu.scss";
+@import "../components/logo/logo.scss";
+@import "../components/social/social.scss";
+
+
 
 a {
 	text-decoration: none;
-	color: rgba(31, 32, 65, 0.5);
+	color: $DarkShade50;
 }
 
 ul {
@@ -18,7 +35,7 @@ h1 {
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 30px;
-	color: #1F2041;
+	color: $DarkShade100;
 }
 
 h2 {
@@ -27,7 +44,7 @@ h2 {
 	font-weight: bold;
 	font-size: 19px;
 	line-height: 24px;
-	color: #1F2041;
+	color: $DarkShade100;
 }
 
 h3 {
@@ -35,30 +52,9 @@ h3 {
 	font-weight: bold;
 	font-size: 12px;
 	line-height: 15px;
-	color: #1F2041;
+	color: $DarkShade100;
 }
 
-
-.site-button {
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	border-radius: 22px;
-	color: #fff;
-	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-	padding: 10px 20px;
-	margin: auto 0;
-	margin-right: 20px;
-}
-
-.site-button_light {
-	color: #BC9CFF;
-	background: #fff;
-	border: 3px solid #BC9CFF;
-	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-	padding: 7px 17px;
-}
 
 body {
 	font-family: Montserrat;
@@ -66,7 +62,7 @@ body {
 	line-height: 24px;
 	font-style: normal;
 	font-weight: normal;
-	color: rgba(31, 32, 65, 0.5);
+	color: $DarkShade75;
 }
 
 .container
@@ -88,9 +84,6 @@ header.header .container {
 .logo {
 	line-height: 0px;
 }
-.header-logo__link {
-	display: block;
-}
 
 
 
@@ -103,31 +96,6 @@ header.header .container {
 	display: inline-flex;
 }
 
-.menu__list {
-	display: inline-flex;
-	line-height: 17px;
-}
-.menu__item {	
-	list-style: none;
-	margin-right: 20px;
-}
-.menu__link:hover,
-.menu__link:active {
-	color: rgba(31, 32, 65, 0.75);
-}
-.menu__link_pseudo {
-	position: relative;
-	padding-right: 20px;
-}
-.menu__link_pseudo::after {
-	content: '';
-	display: inline-block;
-	position: absolute;
-	width: 24px;
-	height: 21px;
-	background: url('../img/expand_more.svg') no-repeat;
-	background-position: 6px 6px;
-}
 
 
 
@@ -152,6 +120,7 @@ div.main__note {
 	color: rgba(31, 32, 65, 0.75);
 }
 
+
 section.nav-section {
 	box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 }
@@ -174,11 +143,13 @@ section.nav-section {
 	font-size: 14px;
 	line-height: 17px;
 	color: rgba(31, 32, 65, 0.5);
+
+	&:hover,
+	&:active {
+		color: rgba(31, 32, 65, 0.75);
+	}
 }
-.nav-column__link:hover,
-.nav-column__link:active {
-	color: rgba(31, 32, 65, 0.75);
-}
+
 
 form.confirm-subscribe {
 	display: flex;
@@ -195,9 +166,8 @@ form.confirm-subscribe {
 	border-radius: 4px 0 0 4px;
 	color: rgba(31, 32, 65, 0.25);	
 }
-.confirm-subscribe__input:focus { 
-	outline: none;	
-}
+
+
 .confirm-subscribe__submit {
 	box-sizing: border-box;
 	cursor: pointer;

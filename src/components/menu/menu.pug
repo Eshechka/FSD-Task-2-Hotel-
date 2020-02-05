@@ -1,0 +1,16 @@
+include ../pug_mixins
+
+- 
+	var arrMenuItems = [
+	{url: './about_us.html', text: 'О нас', needPseudo: false}, 
+	{url: './services.html', text: 'Услуги', needPseudo: true}, 
+	{url: './vacancies.html', text: 'Вакансии', needPseudo: false}, 
+	{url: './news.html', text: 'Новости', needPseudo: false}, 
+	{url: './agreement.html', text: 'Соглашения', needPseudo: true}
+	];
+
+nav.menu
+	ul.menu__list
+		each i in arrMenuItems
+			+createListItems('menu', i.url, i.text, i.needPseudo == true)
+		

@@ -1,0 +1,27 @@
+.menu__list {
+	display: inline-flex;
+	line-height: 17px;
+}
+.menu__item {	
+	list-style: none;
+	margin-right: 20px;
+}
+
+.menu__link:hover,
+.menu__link:active {
+	color: $DarkShade75;
+}
+.menu__link_pseudo {
+	position: relative;
+	padding-right: 20px;
+
+	&:after {
+		content: '';
+		display: inline-block;
+		position: absolute;
+		width: 24px;
+		height: 21px;
+		background: url('../img/expand_more.svg') no-repeat;
+		background-position: 6px 6px;
+	}
+}

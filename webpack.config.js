@@ -47,6 +47,7 @@ module.exports = {
 
   devServer: {
     port: 4200,
+    stats: 'errors-only',
   },
 
   //   optimization: {
@@ -76,7 +77,7 @@ module.exports = {
   module: {
   rules: [
     {
-      test: /\.css$/,
+      test: /\.s[ac]ss$/,
               use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -85,7 +86,9 @@ module.exports = {
             },
           },
           'css-loader',
+          'sass-loader',
         ],
+
     },
 
     {
@@ -102,8 +105,12 @@ module.exports = {
     },
 
     {
-    test: /\.(svg|png)$/,
-    use: ['file-loader']
+      test: /\.(svg|png)$/,
+      loader: 'file-loader',
+      options: {
+        name: '/[name].[ext]',
+        outputPath : 'img/',
+      },
     },
 
 

@@ -5,7 +5,7 @@ export default function (srcImage, className) {
 
 	var link = document.createElement("a");
 	link.classList.add(className+"__link");
-	link.href = '#';
+	link.href = './change-me';
 
 	var logoImg = document.createElement("img");
 	logoImg.classList.add(className+"__img");

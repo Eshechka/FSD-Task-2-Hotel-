@@ -6,8 +6,12 @@ block title
 
 block header-content
 	div.logo
+		include ../../components/logo/header-logo.pug
 	div.main-nav
+		include ../../components/menu/menu.pug
 	div.auth
+		include ../../components/button/enter-button.pug
+		include ../../components/button/registration-button.pug
 		
 block main-content
 	div.main__note Лучшие номера для вашей работы, отдыха и просто вдохновения
@@ -15,7 +19,7 @@ block main-content
 
 block nav-section-content
 	div.short-info
-		div.nav-logo
+		include ../../components/logo/nav-section-logo.pug
 		p.short-info__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 	div.all-navigation
 	div.subscribe
@@ -28,6 +32,6 @@ block nav-section-content
 
 block footer-content
 	div.copyright-info Copyright © 2018 Toxin отель. Все права зачищены.
-	div.socials
+	include ../../components/social/social.pug
 
 		
