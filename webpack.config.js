@@ -4,10 +4,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const PATHS = {
-src: path.join(__dirname, 'src'),
-dist: path.join(__dirname, 'dist')
+  src: path.join(__dirname, 'src'),
+  dist: path.join(__dirname, 'dist')
 };
-
 
 const fs = require('fs');
 const PAGES_DIR = `${PATHS.src}/pages/`;
@@ -35,9 +34,11 @@ function getFilesPathes(startPath, filter) {
 
 module.exports = {
   entry: {
+
+    'UIKit': PATHS.src + '/pages/UIKit/UIKit.js',   
     'index': PATHS.src + '/pages/index/index.js',
-    'services': PATHS.src + '/pages/services/services.js',
-    'about_us': PATHS.src + '/pages/about_us/about_us.js'
+    // 'services': PATHS.src + '/pages/services/services.js',
+    // 'about_us': PATHS.src + '/pages/about_us/about_us.js'
   },
 
   output: {

@@ -6,6 +6,8 @@ import createColumn from '../../components/JS/column/column';
 // import pictureLogo from '../../img/TOXIN_Logo.svg';
 // import pictureBG from '../../img/BG_main.png';
 
+import '../../img/TOXIN_Logo.svg';
+
 import '../style.scss';
 
 // var headerLogo = createLogo(pictureLogo, 'header-logo');

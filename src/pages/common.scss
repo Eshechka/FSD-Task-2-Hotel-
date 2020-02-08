@@ -1,0 +1,49 @@
+
+a {
+	text-decoration: none;
+	color: $DarkShade50;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;	
+}
+
+h1 {
+	font-family: Quicksand;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 30px;
+	color: $DarkShade100;
+}
+
+h2 {
+	font-family: Quicksand;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 24px;
+	color: $DarkShade100;
+}
+
+h3 {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	color: $DarkShade100;
+}
+
+
+body {
+	font-family: Montserrat;
+	font-size: 14px;
+	line-height: 24px;
+	font-style: normal;
+	font-weight: normal;
+	color: $DarkShade75;
+}
+
+
+

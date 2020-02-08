@@ -1,24 +1,21 @@
 
 //- Create menu items li>a
-mixin createListItems(classname, url, text, needPseudo)
+mixin createListItems(classname, url, text, needPseudoForLink, linkModifier)
 	li(class= classname+"__item")
 		-
-			var classnameLink = classname + " " + classname+"__link"
-			classnameLink += needPseudo ? " " + classname+"__link_pseudo" : ""
-
+			var classnameLink = classname+"__link"
+			classnameLink += needPseudoForLink ? " " + classname+"__link_pseudo" : ""
+			classnameLink += linkModifier ? " " + classnameLink + "_" + linkModifier : ""
+		
 		a(class= classnameLink href= url)= text
+
 
 
 //- Create list div>ul> n*(li>a)
 mixin createList(classname, arrayItems)
 	ul(class= classname+"__list")
 		each i in arrayItems
-			li(class= classname+"__item")
-				-
-					var classnameLink = classname + " " + classname+"__link";
-					classnameLink += i.needPseudo ? " " + classname+"__link_pseudo" : "";
-
-				a(class= classnameLink href= i.url)= i.text
+			+createListItems(classname, i.url, i.text, i.needPseudoForLink, i.linkModifier)
 
 
 
@@ -32,8 +29,33 @@ mixin createButton(classname, text, modifier)
 		span(class=classname+ "__text")= text
 
 
+
+
 //- Create logo div>a>img
-mixin createLogo(classname)
+mixin createLogo(classname, srcImg)
 	div(class=classname)
 		a(class=classname+"__link" href = "./change-me")
-			img(class=classname+"__img" src=require("../../img/TOXIN_Logo.svg").default alt="Logotype")
+			img(class=classname+"__img" src=srcImg alt="Logotype")
+
+
+
+
+//- ****** UIKit ******
+
+//- Create rectangles for UIKit div
+mixin createRect(classname, colorModifier, colorName, colorCSS)
+	div(class=classname+'-wrapper')
+		- 
+			var classnameModificator = classname
+			classnameModificator += colorModifier ? " "+classname+"_"+colorModifier : ""
+		div(class=classnameModificator)
+		b(class=classname+'__name')= colorName
+		p(class=classname+'__desc')= colorCSS	
+
+
+
+//- tag>text
+mixin createTag(tag, text)
+	- var mytag = '<'+tag+'>'
+	div !{mytag} 
+		| !{text}

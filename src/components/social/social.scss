@@ -1,3 +1,31 @@
 .social__list {
 	display: flex;
 }
+
+.social__item {
+	/*display: flex;*/
+}
+
+
+.social__link {
+	
+	background: white no-repeat;
+
+	display: inline-block;
+	vertical-align: middle;
+
+	width: 24px;
+	height: 24px;
+	margin-right: 20px;
+	font-size: 0;
+
+	@each $social in 'fb','tw','ig' {
+
+		&_#{$social} {
+			background-image: url(../img/#{$social}.svg);
+		}
+
+	}
+
+	
+}

@@ -1,0 +1,142 @@
+//colors
+$DarkShade100: rgba(31, 32, 65, 1);
+$DarkShade75: rgba(31, 32, 65, 0.75);
+$DarkShade50: rgba(31, 32, 65, 0.50);
+$DarkShade25: rgba(31, 32, 65, 0.25);
+$DarkShade5: rgba(31, 32, 65, 0.05);
+$Purple: #BC9CFF;
+$Green: #6FCF97;
+
+$colors: (
+	DarkShade100: $DarkShade100,
+	DarkShade75: $DarkShade75,
+	DarkShade50: $DarkShade50,
+	DarkShade25: $DarkShade25,
+	DarkShade5: $DarkShade5,
+	Purple: $Purple,
+	Green: $Green,
+);
+
+@import "./~normalize.css";
+
+@import "./Montserrat.css";
+@import "./Quicksand.css";
+
+@import "./common.scss";
+
+@import "../components/button/button.scss";
+@import "../components/menu/menu.scss";
+@import "../components/logo/logo.scss";
+@import "../components/social/social.scss";
+
+
+.ui-main {
+	margin: 145px 150px;
+}
+
+.container
+{  
+	margin: 0 auto;
+	display: flex;
+	max-width: 1920px;
+	min-width: 600px;
+	overflow: hidden;
+	justify-content: space-between;
+}
+
+div.ui-main__left {
+	min-width: 240px;
+}
+
+div.ui-main__right {
+	width: 430px;
+
+
+
+
+}
+.ui-color-rect-wrapper {
+	/*clear: both;*/
+	padding: 10px 0;
+}
+
+.ui-color-rect-wrapper:after {
+  content: '';
+  display: table;
+  clear: both;
+  }
+
+.ui-color-rect {
+	float: left;
+	width: 70px;
+	height: 70px;
+	border-radius: 6px;
+	background: #000;
+	margin-right: 40px;
+
+ @each $keyname, $color in $colors {
+
+		&.ui-color-rect_#{$keyname} {
+			background: $color;
+		}
+
+	}
+
+	&__name {
+		font-size: 19px;
+		line-height: 29px;
+		padding-top: 6px;
+	    padding-bottom: 0px;
+	    display: inline-block;
+	}
+	
+	&__desc {
+		font-size: 19px;
+		line-height: 29px;
+		margin: 2px 0;
+	}
+
+
+}
+
+
+.fonts-example {
+	display: flex;
+    padding-top: 10px;
+    padding-bottom: 25px;
+
+	&__tagtext
+	{
+		margin-top: 0px;
+		
+	}
+}
+
+.fonts-example__tagname {
+
+	font-family: Montserrat;
+	text-align: right;
+	color: $DarkShade25;
+	flex:0 0 70px;
+	margin-right: 30px;
+
+	&_h1 {
+		font-size: 24px;
+		line-height: 29px;
+	}
+	
+	&_h2 {
+		font-size: 19px;
+		line-height: 23px;
+	}
+	
+	&_h3 {
+		font-size: 12px;
+		line-height: 15px;
+	}
+
+	&_body {
+		font-size: 14px;
+		line-height: 24px;
+	}
+}
