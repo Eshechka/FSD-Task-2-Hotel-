@@ -8,7 +8,7 @@ import createColumn from '../../components/JS/column/column';
 
 import '../../img/TOXIN_Logo.svg';
 
-import '../style.scss';
+import '../../common-files/style.scss';
 
 // var headerLogo = createLogo(pictureLogo, 'header-logo');
 // var navSectionLogo = createLogo(pictureLogo, 'nav-section-logo');

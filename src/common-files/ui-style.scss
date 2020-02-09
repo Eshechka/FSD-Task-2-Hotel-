@@ -19,23 +19,18 @@ $colors: (
 
 @import "./~normalize.css";
 
-@import "./Montserrat.css";
-@import "./Quicksand.css";
+@import "../fonts/Montserrat.css";
+@import "../fonts/Quicksand.css";
 
 @import "./common.scss";
 
-@import "../components/button/button.scss";
-@import "../components/menu/menu.scss";
-@import "../components/logo/logo.scss";
-@import "../components/social/social.scss";
 
 
 .ui-main {
 	margin: 145px 150px;
 }
 
-.container
-{  
+.container {  
 	margin: 0 auto;
 	display: flex;
 	max-width: 1920px;
@@ -44,27 +39,23 @@ $colors: (
 	justify-content: space-between;
 }
 
-div.ui-main__left {
-	min-width: 240px;
+div.container__left {
+	min-width: 280px;
 }
 
-div.ui-main__right {
+div.container__right {
 	width: 430px;
-
-
-
-
 }
+
 .ui-color-rect-wrapper {
-	/*clear: both;*/
 	padding: 10px 0;
-}
 
-.ui-color-rect-wrapper:after {
-  content: '';
-  display: table;
-  clear: both;
-  }
+	&:after {
+	  content: '';
+	  display: table;
+	  clear: both;
+	  }
+}
 
 .ui-color-rect {
 	float: left;
@@ -140,3 +131,15 @@ div.ui-main__right {
 		line-height: 24px;
 	}
 }
+
+
+
+
+
+div.container__column3 {
+	flex: 1 0 380px;
+}
+.container__column3.container__column3_width270 {
+	flex-basis: 270px;
+}
+

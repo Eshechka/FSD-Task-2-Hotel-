@@ -1,0 +1,32 @@
+include ../components/pug_mixins
+
+doctype html
+html
+head
+meta(charset = 'utf-8')
+meta(name='viewport', content="initial-scale=1.0, width=device-width")
+block keywords
+	meta(name='Keywords' content='Toxin UIKit')
+
+title 
+	Toxin UIKit
+
+body
+	
+	header.ui-header
+		+createLogo('ui-logo', 'img/TOXIN_just_picture.svg')
+
+	main.ui-main
+	
+		section.colorAndType
+			div.container
+				block colorAndType
+
+		section.cards
+			div.container
+				block cards
+
+
+
+
+	footer.ui-footer

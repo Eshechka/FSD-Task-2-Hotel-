@@ -1,45 +1,35 @@
-include ../../components/pug_mixins
+extends ../../common-files/UIKit-base-template
 
-doctype html
-html
-head
-meta(charset = 'utf-8')
-meta(name='viewport', content="initial-scale=1.0, width=device-width")
-block keywords
-	meta(name='Keywords' content='Toxin UIKit')
 
-title 
-	Toxin UIKit
 
-body
-	
-	header.ui-header
-		+createLogo('ui-logo', 'img/TOXIN_just_picture.svg')
-	main.ui-main
-		div.container
-			div.ui-main__left
-				+createRect('ui-color-rect', 'DarkShade100', 'Dark Shade 100%', '#1F2041')
-				+createRect('ui-color-rect', 'DarkShade75', 'Dark Shade 75%', '#1F2041')
-				+createRect('ui-color-rect', 'DarkShade50', 'Dark Shade 50%', '#1F2041')
-				+createRect('ui-color-rect', 'DarkShade25', 'Dark Shade 25%', '#1F2041')
-				+createRect('ui-color-rect', 'DarkShade5', 'Dark Shade 5%', '#1F2041')
-				+createRect('ui-color-rect', 'Purple', 'Purple', '#BC9CFF')
-				+createRect('ui-color-rect', 'Green', 'Green', '#6FCF97')
-			div.ui-main__right
-				div.fonts-example
-					div.fonts-example__tagname.fonts-example__tagname_h1 H1
-					h1.fonts-example__tagtext This one is the sub-section or widget title
-				div.fonts-example
-					div.fonts-example__tagname.fonts-example__tagname_h2 H2
-					h2.fonts-example__tagtext Next one is the item title inside widgets
-				div.fonts-example
-					div.fonts-example__tagname.fonts-example__tagname_h3 H3
-					h3.fonts-example__tagtext This is a label or CTA text
-				div.fonts-example
-					div.fonts-example__tagname.fonts-example__tagname_body Body
-					p.fonts-example__tagtext This is the body text which is used for most of the design, like paragraphs, lists, etc.
+block colorAndType
+	div.container__left
+		+createRect('ui-color-rect', 'DarkShade100', 'Dark Shade 100%', '#1F2041')
+		+createRect('ui-color-rect', 'DarkShade75', 'Dark Shade 75%', '#1F2041')
+		+createRect('ui-color-rect', 'DarkShade50', 'Dark Shade 50%', '#1F2041')
+		+createRect('ui-color-rect', 'DarkShade25', 'Dark Shade 25%', '#1F2041')
+		+createRect('ui-color-rect', 'DarkShade5', 'Dark Shade 5%', '#1F2041')
+		+createRect('ui-color-rect', 'Purple', 'Purple', '#BC9CFF')
+		+createRect('ui-color-rect', 'Green', 'Green', '#6FCF97')
+	div.container__right
+		div.fonts-example
+			div.fonts-example__tagname.fonts-example__tagname_h1 H1
+			h1.fonts-example__tagtext This one is the sub-section or widget title
+		div.fonts-example
+			div.fonts-example__tagname.fonts-example__tagname_h2 H2
+			h2.fonts-example__tagtext Next one is the item title inside widgets
+		div.fonts-example
+			div.fonts-example__tagname.fonts-example__tagname_h3 H3
+			h3.fonts-example__tagtext This is a label or CTA text
+		div.fonts-example
+			div.fonts-example__tagname.fonts-example__tagname_body Body
+			p.fonts-example__tagtext This is the body text which is used for most of the design, like paragraphs, lists, etc.
 				
 
-				 
+block cards
+	div.container__column3
+		form(action="/change-me" method="post")
 
-	footer.ui-footer
+	div.container__column3
+
+	div.container__column3.container__column3_width270

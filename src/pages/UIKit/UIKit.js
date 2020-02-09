@@ -1,4 +1,4 @@
-import '../ui-style.scss';
+import '../../common-files/ui-style.scss';
 
 import '../../img/TOXIN_just_picture.svg';
 

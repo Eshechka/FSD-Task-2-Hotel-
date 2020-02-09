@@ -60,7 +60,7 @@ module.exports = {
 
   plugins: [
 
-    ...getFilesPathes(PAGES_DIR, '.pug').map(page => new HtmlWebpackPlugin ({
+    ...getFilesPathes(PATHS.src, '.pug').map(page => new HtmlWebpackPlugin ({
           template: page,
           filename: `./${path.basename(page).replace(/\.pug/,'.html')}`,
           // chunks: [`${path.basename(page, path.extname(page))}`],
