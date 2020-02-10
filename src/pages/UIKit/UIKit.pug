@@ -12,24 +12,32 @@ block colorAndType
 		+createRect('ui-color-rect', 'Purple', 'Purple', '#BC9CFF')
 		+createRect('ui-color-rect', 'Green', 'Green', '#6FCF97')
 	div.container__right
-		div.fonts-example
-			div.fonts-example__tagname.fonts-example__tagname_h1 H1
-			h1.fonts-example__tagtext This one is the sub-section or widget title
-		div.fonts-example
-			div.fonts-example__tagname.fonts-example__tagname_h2 H2
-			h2.fonts-example__tagtext Next one is the item title inside widgets
-		div.fonts-example
-			div.fonts-example__tagname.fonts-example__tagname_h3 H3
-			h3.fonts-example__tagtext This is a label or CTA text
-		div.fonts-example
-			div.fonts-example__tagname.fonts-example__tagname_body Body
-			p.fonts-example__tagtext This is the body text which is used for most of the design, like paragraphs, lists, etc.
-				
+		+createFontsExample('h1', 'This one is the sub-section or widget title', 'fonts-example')
+		+createFontsExample('h2', 'Next one is the item title inside widgets', 'fonts-example')
+		+createFontsExample('h3', 'This is a label or CTA text', 'fonts-example')
+		+createFontsExample('body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', 'fonts-example')
+
+
+
+
 
 block cards
 	div.container__column3
-		form(action="/change-me" method="post")
+		+createForm('form-search-room', 'post', '/change-me', true, 'Подобрать номер')
+			div.site-form__title Найдем номера под ваши желания
+			div.form-group.form-group_column2
+				label.form-group__label(for="arrival") Прибытие
+				input(type="date" name="arrival" id="arrival")
+			div.form-group.form-group_column2
+				label.form-group__label(for="departure") Выезд
+				input(type="date" name="departure" id="departure")
+			div.form-group
+				label.form-group__label(for="number-of-guests") Гости
+				input(type="text" name="number-of-guests" id="number-of-guests" placeholder="Сколько гостей")
+		
+
 
 	div.container__column3
+
 
 	div.container__column3.container__column3_width270

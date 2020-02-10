@@ -126,9 +126,13 @@ div.container__right {
 		line-height: 15px;
 	}
 
-	&_body {
+	&_p {
 		font-size: 14px;
 		line-height: 24px;
+
+		&:first-letter {
+			text-transform: uppercase;;
+		}
 	}
 }
 
@@ -143,3 +147,29 @@ div.container__column3 {
 	flex-basis: 270px;
 }
 
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+.form-group.form-group_column2 {
+	display: inline-flex;
+}
+
+.site-form__title {
+	font-family: Quicksand;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 30px;
+	color: $DarkShade100;
+}
+
+.form-group__label {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: $DarkShade100;
+}

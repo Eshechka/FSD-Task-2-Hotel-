@@ -49,6 +49,7 @@ module.exports = {
   devServer: {
     port: 4200,
     stats: 'errors-only',
+    index: 'UIKit.html'
   },
 
   //   optimization: {
@@ -114,9 +115,7 @@ module.exports = {
       },
     },
 
-
   ]
-  }
-
+}
 
 };
