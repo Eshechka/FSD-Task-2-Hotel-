@@ -23,8 +23,8 @@ block colorAndType
 
 block cards
 	div.container__column3
-		+createForm('form-search-room', 'post', '/change-me', true, 'Подобрать номер')
-			div.site-form__title Найдем номера под ваши желания
+	
+		+createForm('form-search-room', 'post', '/change-me', 'Найдем номера под ваши желания')
 			div.form-group.form-group_column2
 				label.form-group__label(for="arrival") Прибытие
 				input(type="date" name="arrival" id="arrival")
@@ -34,10 +34,59 @@ block cards
 			div.form-group
 				label.form-group__label(for="number-of-guests") Гости
 				input(type="text" name="number-of-guests" id="number-of-guests" placeholder="Сколько гостей")
-		
 
+			+createFormButton('form-search-room', 'Подобрать номер', 'submit')
+
+
+		+createForm('form-registration', 'post', '/change-me', 'Регистрация аккаунта')
+			div.form-group
+				input(type="text" name="name" id="name" placeholder="Имя")
+			div.form-group
+				input(type="text" name="surname" id="surname" placeholder="Фамилия")
+
+			div.form-group.form-group_column2-row
+				input(type="radio" name="gender" value="male" id="gender__male" checked)
+				label.form-group__label(for="number-of-guests") Мужчина					
+			div.form-group.form-group_column2-row
+				input(type="radio" name="gender" value="female" id="gender__female")
+				label.form-group__label Женщина
+
+			div.form-group
+				label.form-group__label(for="birthday") Дата рождения
+				input(type="date" name="birthday" id="birthday")
+			div.form-group
+				label.form-group__label(for="email") Данные для входа в сервис
+				input(type="email" name="email" id="email" placeholder="Email")
+				input(type="password" name="password" id="password" placeholder="Пароль")
+		
+			div.form-group.form-group_column2-row
+				div.button-cover
+					div.toggle-button
+						input.checkbox(type="checkbox")
+						div.knobs
+						div.layer
+				label.form-group__label(for="number-of-guests") Получать спецпредложения
+
+			+createFormButton('form-registration', 'перейти к оплате', 'submit')
+
+			div.form-group.form-group_column2-row
+				p Уже есть аккаунт на Toxin
+				include ../../components/button/enter-button.pug
 
 	div.container__column3
+
+		+createForm('booking-room', 'post', '/change-me', '№ 888')
+			div.form-group.form-group_column2
+				label.form-group__label(for="arrival") Прибытие
+				input(type="date" name="arrival" id="arrival")
+			div.form-group.form-group_column2
+				label.form-group__label(for="departure") Выезд
+				input(type="date" name="departure" id="departure")
+			div.form-group
+				label.form-group__label(for="number-of-guests") Гости
+				input(type="text" name="number-of-guests" id="number-of-guests" placeholder="Сколько гостей")
+
+			+createFormButton('booking-room', 'Забронировать', 'submit')
 
 
 	div.container__column3.container__column3_width270

@@ -19,14 +19,7 @@ mixin createList(classname, arrayItems)
 
 
 
-//- Create button a>span
-mixin createButton(classname, text, modifier)
-	- 
-		var classnameLink = classname
-		classnameLink += modifier ? " site-button site-button_"+modifier : " site-button"
 
-	a(class=classnameLink  href="./change-me")
-		span(class=classname+ "__text")= text
 
 
 
@@ -67,6 +60,7 @@ mixin createAnyTag(tag, text, classname)
 //----------createAnyTag----------
 
 
+
 //----------createFontsExample----------
 //- div>(div+tag)
 
@@ -89,25 +83,55 @@ mixin createFontsExample(tag, text, classname)
 //----------createFontsExample----------
 
 
-//- не используется, тк надо все компоненты внутри миксина заводить. Нельзя создать форму миксином, а потом внутрь положить инпуты в файле паг.
 
-mixin createForm(classname, method, action, needSubmit, submitText)
+//----------createForm----------
+//- create form(attributes)>block
+
+mixin createForm(classname, method, action, formTitleText)
 	- var attributes = {};
 	- attributes.action = action;
 	- attributes.method = method;
 	- attributes.class = classname;
 	form(class="site-form")&attributes(attributes)
+		if formTitleText
+			div.site-form__title= formTitleText
+
 		if block
 			block
 
-		if needSubmit
-		+createButton(classname+'__button', 'submit', submitText)
+//----------createForm----------
 
-mixin createButton(classname, type, text)
+
+
+//----------createFormButton----------
+//- create button(attributes)
+
+mixin createFormButton(classname, text, type)
 	- var attributes = {};
 	- attributes.type = type || 'button';
-	- attributes.class = classname;
-	button(class="site-button")&attributes(attributes)= text
+	- attributes.class = classname+'__button';
+	button(class="form-button")&attributes(attributes)= text || 'OK'
+
+//----------createFormButton----------
+
+
+
+//----------createButton----------
+//- Create a>span
+
+mixin createButton(classname, text, modifier)
+	- 
+		var classnameLink = classname
+		classnameLink += modifier ? " site-button site-button_"+modifier : " site-button"
+
+	a(class=classnameLink  href="./change-me")
+		span(class=classname+ "__text")= text
+
+//----------createButton----------
+
+
+
+
 
 
 
@@ -122,9 +146,3 @@ mixin createTag(tag, text)
 	div !{mytag} 
 		| !{text}
 
-
-
-
-
-mixin createA(text)
-	a.somelink text
