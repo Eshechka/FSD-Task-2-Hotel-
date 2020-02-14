@@ -1,6 +1,8 @@
 extends ../../common-files/UIKit-base-template
 
-
+//- проставить в формах tabindex="1"
+//- ссылки на чужие сайты должны содержать атрибут target="_blank
+//- одинаковые id у одинаковых элементов в разных формах. Фактически, несколько одинаковых id на странице
 
 block colorAndType
 	div.container__left
@@ -24,7 +26,7 @@ block colorAndType
 block cards
 	div.container__column3
 	
-		+createForm('form-search-room', 'post', '/change-me', 'Найдем номера под ваши желания')
+		+createForm('form-search-room', 'get', '/change-me', 'Найдем номера под ваши желания')
 			div.form-group.form-group_column2
 				label.form-group__label(for="arrival") Прибытие
 				input(type="date" name="arrival" id="arrival")
@@ -32,8 +34,12 @@ block cards
 				label.form-group__label(for="departure") Выезд
 				input(type="date" name="departure" id="departure")
 			div.form-group
-				label.form-group__label(for="number-of-guests") Гости
-				input(type="text" name="number-of-guests" id="number-of-guests" placeholder="Сколько гостей")
+				label.form-group__label Гости
+				select(type="text" name="number-of-guests" class="number-of-guests")
+					option(value="" disabled selected) Сколько гостей
+					option(value="1") 1 гость
+					option(value="2") 2 гостя
+					option(value="3") 3 гостя
 
 			+createFormButton('form-search-room', 'Подобрать номер', 'submit')
 
@@ -75,16 +81,32 @@ block cards
 
 	div.container__column3
 
-		+createForm('booking-room', 'post', '/change-me', '№ 888')
+		+createForm('booking-room', 'get', '/change-me', '№ 888')
 			div.form-group.form-group_column2
 				label.form-group__label(for="arrival") Прибытие
-				input(type="date" name="arrival" id="arrival")
+				input(type="date" name="arrival" id="booking-arrival")
 			div.form-group.form-group_column2
 				label.form-group__label(for="departure") Выезд
-				input(type="date" name="departure" id="departure")
+				input(type="date" name="departure" id="booking-departure")
 			div.form-group
-				label.form-group__label(for="number-of-guests") Гости
-				input(type="text" name="number-of-guests" id="number-of-guests" placeholder="Сколько гостей")
+				label.form-group__label Гости
+				select(type="text" name="number-of-guests" class="number-of-guests")
+					option(value="" disabled selected) Сколько гостей
+					option(value="1") 1 гость
+					option(value="2") 2 гостя
+					option(value="3") 3 гостя
+
+			div.form-group
+				- 
+					var arrDescPriceItems = [
+					{classname: 'services-list', textDesc: '9 990&#8381; х 4 суток', textPrice: '39 960&#8381;', modifierClass: ''}, 
+					{classname: 'services-list', textDesc: 'Сбор за услуги: скидка 2 179&#8381;', textPrice: '0&#8381;', modifierClass: ''}, 
+					{classname: 'services-list', textDesc: 'Сбор за дополнительные услуги', textPrice: '300&#8381;', modifierClass: ''}, 
+					{classname: 'services-list', textDesc: 'Итого', textPrice: '38 081&#8381;', modifierClass: 'total'}, 
+
+					];
+
+				+createList('form-group', arrDescPriceItems, false)
 
 			+createFormButton('booking-room', 'Забронировать', 'submit')
 

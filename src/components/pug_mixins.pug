@@ -12,14 +12,23 @@ mixin createListItems(classname, url, text, needPseudoForLink, linkModifier)
 
 
 //- Create list div>ul> n*(li>a)
-mixin createList(classname, arrayItems)
+mixin createList(classname, arrayItems, needLinksInside)
 	ul(class= classname+"__list")
-		each i in arrayItems
-			+createListItems(classname, i.url, i.text, i.needPseudoForLink, i.linkModifier)
+		if needLinksInside
+			each i in arrayItems
+				+createListItems(classname, i.url, i.text, i.needPseudoForLink, i.linkModifier)
 
+		else
+			each i in arrayItems
+				li(class = classname + '__item')
+					-
+						var myClass = i.classname
+						myClass += i.modifierClass ? " " + i.classname + "_" + i.modifierClass : ""
+					div(class = myClass)
+						div(class = i.classname + '__desc') !{i.textDesc}
+						div(class = i.classname + '__price') !{i.textPrice}
 
-
-
+	
 
 
 
@@ -104,13 +113,14 @@ mixin createForm(classname, method, action, formTitleText)
 
 
 //----------createFormButton----------
-//- create button(attributes)
+//- create button(attributes) for forms
 
 mixin createFormButton(classname, text, type)
 	- var attributes = {};
 	- attributes.type = type || 'button';
 	- attributes.class = classname+'__button';
 	button(class="form-button")&attributes(attributes)= text || 'OK'
+		i.material-icons.form-button__icon arrow_forward
 
 //----------createFormButton----------
 

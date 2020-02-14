@@ -21,6 +21,7 @@ $colors: (
 
 @import "../fonts/Montserrat.css";
 @import "../fonts/Quicksand.css";
+@import "../fonts/material-icons.css";
 
 @import "./common.scss";
 
@@ -164,6 +165,7 @@ div.container__column3 {
 .form-group {
 	display: flex;
 	flex-direction: column;
+	padding-top: 20px;
 }
 .form-group.form-group_column2 {
 	display: inline-flex;
@@ -190,11 +192,17 @@ div.container__column3 {
 	line-height: 15px;
 	text-transform: uppercase;
 	color: $DarkShade100;
+
+	margin-bottom: 5px;
+}
+
+.form-group__list {
+	margin: 0;
 }
 
 
-
 .form-button {
+	position: relative;
 	width: 100%;
 	cursor: pointer;
 	font-family: Montserrat;
@@ -207,9 +215,63 @@ div.container__column3 {
 	background: linear-gradient(180deg, $Purple 0%, #8BA4F9 100%);
 	padding: 10px 20px;
 
-	
+	&__icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 10px;
+	}
 }
 
+
+
+
+
+.number-of-guests { 
+display: block; 
+ -moz-appearance: none;
+ -webkit-appearance: none;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 24px;
+color: $DarkShade75; 
+
+padding: 8px 15px; 
+padding-right: 20px;
+width: 100%; 
+max-width: 100%; 
+box-sizing: border-box; 
+margin: 0; 
+border: 1px solid $DarkShade25;
+border-radius: 4px;
+
+background-color: #fff; 
+background-image: url(../img/expand_more.svg);
+background-repeat: no-repeat;
+background-position: right 1.2em top 50%, 0 0;
+background-size: 0.9em;
+} 
+
+ .number-of-guests::-ms-expand {
+ 	display: none;
+} 
+
+ .number-of-guests:focus {
+ 	outline: none; 
+}
+
+ .number-of-guests option {
+ 	font-weight:normal;
+ }
+ *[dir="rtl"] .number-of-guests, 
+ :root:lang(ar) .number-of-guests, 
+ :root:lang(iw) .number-of-guests { 
+	background-position: left .7em top 50%, 0 0; 
+	padding: .6em .8em .5em 1.4em; 
+}
 
 
 
@@ -278,4 +340,54 @@ div.container__column3 {
 .toggle-button .checkbox:checked + .knobs:before {
     content: '';
     left: 24px;
+}
+
+
+
+
+
+
+
+.services-list {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+
+	&__desc {
+		max-width: 214px;
+	}
+}
+
+.services-list_total {
+
+	border-bottom: 1px dotted $DarkShade25; 
+
+	margin: 30px 0 20px;
+
+	& .services-list__desc, 
+	& .services-list__price {
+		background-color: #fff;
+		margin-bottom: -6px;
+		border-bottom: 1px solid #fff; 
+		font-family: Quicksand;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 19px;
+		line-height: 24px;
+		color: $DarkShade100;
+	}
+
+	& .services-list__desc {
+		padding-right: 10px;
+	}
+
+	& .services-list__price {
+		padding-left: 10px;
+	}
+
 }
