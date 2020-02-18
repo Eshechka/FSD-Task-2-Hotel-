@@ -3,6 +3,8 @@ extends ../../common-files/UIKit-base-template
 //- проставить в формах tabindex="1"
 //- ссылки на чужие сайты должны содержать атрибут target="_blank
 //- одинаковые id у одинаковых элементов в разных формах. Фактически, несколько одинаковых id на странице
+//- инфо про то, что в форме кнопка всегда должна быть последним элементом??? 
+//- переделать подключение шрифтов через node_modules и потом import их в js
 
 block colorAndType
 	div.container__left
@@ -26,89 +28,118 @@ block colorAndType
 block cards
 	div.container__column3
 	
-		+createForm('form-search-room', 'get', '/change-me', 'Найдем номера под ваши желания')
-			div.form-group.form-group_column2
-				label.form-group__label(for="arrival") Прибытие
-				input(type="date" name="arrival" id="arrival")
-			div.form-group.form-group_column2
-				label.form-group__label(for="departure") Выезд
-				input(type="date" name="departure" id="departure")
-			div.form-group
-				label.form-group__label Гости
-				select(type="text" name="number-of-guests" class="number-of-guests")
-					option(value="" disabled selected) Сколько гостей
-					option(value="1") 1 гость
-					option(value="2") 2 гостя
-					option(value="3") 3 гостя
+		div.site-card
+			+createForm('form-search-room', 'get', '/change-me', 'Найдем номера под ваши желания')
+				div.form-group.form-group_type_inline.arrival-and-departure
+					label.form-group__label.arrival-and-departure__text(for="arrival") Прибытие
+					input.arrival-and-departure__date-field(type="date" name="arrival" id="arrival")
+				div.form-group.form-group_type_inline.arrival-and-departure
+					label.form-group__label.arrival-and-departure__text(for="departure") Выезд
+					input.arrival-and-departure__date-field(type="date" name="departure" id="departure")
+				div.form-group.guests-quantity
+					label.form-group__label.guests-quantity__text Гости
+					select.guests-quantity__select-field(name="guests-quantity")
+						option.guests-quantity__option-field(value="" disabled selected) Сколько гостей
+						option.guests-quantity__option-field(value="1") 1 гость
+						option.guests-quantity__option-field(value="2") 2 гостя
+						option.guests-quantity__option-field(value="3") 3 гостя
 
-			+createFormButton('form-search-room', 'Подобрать номер', 'submit')
+				+createFormButton('form-search-room', 'Подобрать номер', 'submit')
 
+		div.site-card
+			+createForm('form-registration', 'post', '/change-me', 'Регистрация аккаунта')
 
-		+createForm('form-registration', 'post', '/change-me', 'Регистрация аккаунта')
-			div.form-group
-				input(type="text" name="name" id="name" placeholder="Имя")
-			div.form-group
-				input(type="text" name="surname" id="surname" placeholder="Фамилия")
+				div.form-group.client-personal-info
+					input.client-personal-info__name(type="text" name="name" id="name" placeholder="Имя")
+					input.client-personal-info__surname(type="text" name="surname" id="surname" placeholder="Фамилия")
 
-			div.form-group.form-group_column2-row
-				input(type="radio" name="gender" value="male" id="gender__male" checked)
-				label.form-group__label(for="number-of-guests") Мужчина					
-			div.form-group.form-group_column2-row
-				input(type="radio" name="gender" value="female" id="gender__female")
-				label.form-group__label Женщина
+				div.form-group.form-group_type_inline_row.choose-gender
+					input.form-group__input_radio.choose-gender__radio-circle(type="radio" name="gender" value="male" id="gender__male" checked)
+					label.form-group__label.form-group__label_radio.choose-gender__text(for="gender__male") Мужчина					
+				div.form-group.form-group_type_inline_row.choose-gender
+					input.form-group__input_radio.choose-gender__radio-circle(type="radio" name="gender" value="female" id="gender__female")
+					label.form-group__label.form-group__label_radio.choose-gender__text(for="gender__female") Женщина
 
-			div.form-group
-				label.form-group__label(for="birthday") Дата рождения
-				input(type="date" name="birthday" id="birthday")
-			div.form-group
-				label.form-group__label(for="email") Данные для входа в сервис
-				input(type="email" name="email" id="email" placeholder="Email")
-				input(type="password" name="password" id="password" placeholder="Пароль")
-		
-			div.form-group.form-group_column2-row
-				div.button-cover
-					div.toggle-button
-						input.checkbox(type="checkbox")
-						div.knobs
-						div.layer
-				label.form-group__label(for="number-of-guests") Получать спецпредложения
+				div.form-group.client-birthday
+					label.form-group__label.client-birthday__text(for="birthday") Дата рождения
+					input.client-birthday__date-field(type="date" name="birthday" id="birthday")
 
-			+createFormButton('form-registration', 'перейти к оплате', 'submit')
+				div.form-group.client-login-pass
+					label.form-group__label.client-login-pass__text Данные для входа в сервис
+					input.client-login-pass__email-field(type="email" name="email" placeholder="Email")
+					input.client-login-pass__pass-field(type="password" name="password" placeholder="Пароль")
+			
+				div.form-group.form-group_type_inline_row
+					div.button-cover
+						div.toggle-button
+							input.toggle-button__checkbox(type="checkbox" id="toggle-button")
+							div.toggle-button__knobs
+							div.toggle-button__layer
+					label.form-group__label(for="toggle-button") Получать спецпредложения
 
-			div.form-group.form-group_column2-row
-				p Уже есть аккаунт на Toxin
-				include ../../components/button/enter-button.pug
+				+createFormButton('form-registration', 'перейти к оплате', 'submit')
+
+				div.move-to-another-form
+					p.move-to-another-form__text Уже есть аккаунт на Toxin
+					+createButton('enter-button', 'Войти', 'light')
 
 	div.container__column3
 
-		+createForm('booking-room', 'get', '/change-me', '№ 888')
-			div.form-group.form-group_column2
-				label.form-group__label(for="arrival") Прибытие
-				input(type="date" name="arrival" id="booking-arrival")
-			div.form-group.form-group_column2
-				label.form-group__label(for="departure") Выезд
-				input(type="date" name="departure" id="booking-departure")
-			div.form-group
-				label.form-group__label Гости
-				select(type="text" name="number-of-guests" class="number-of-guests")
-					option(value="" disabled selected) Сколько гостей
-					option(value="1") 1 гость
-					option(value="2") 2 гостя
-					option(value="3") 3 гостя
+		div.site-card
+			+createForm('form-booking-room', 'get', '/change-me', '')
+				div.room-info
+					div.room-info__number № 
+						span 888
+					div.room-info__type люкс
+					div.room-info__price 9 990&#8381; 
+						span в сутки
 
-			div.form-group
-				- 
-					var arrDescPriceItems = [
-					{classname: 'services-list', textDesc: '9 990&#8381; х 4 суток', textPrice: '39 960&#8381;', modifierClass: ''}, 
-					{classname: 'services-list', textDesc: 'Сбор за услуги: скидка 2 179&#8381;', textPrice: '0&#8381;', modifierClass: ''}, 
-					{classname: 'services-list', textDesc: 'Сбор за дополнительные услуги', textPrice: '300&#8381;', modifierClass: ''}, 
-					{classname: 'services-list', textDesc: 'Итого', textPrice: '38 081&#8381;', modifierClass: 'total'}, 
+				div.form-group.form-group_type_inline.arrival-and-departure
+					label.form-group__label.arrival-and-departure__text(for="booking-arrival") Прибытие
+					input.arrival-and-departure__date-field(type="date" name="arrival" id="booking-arrival")
+				div.form-group.form-group_type_inline.arrival-and-departure
+					label.form-group__label.arrival-and-departure__text(for="booking-departure") Выезд
+					input.arrival-and-departure__date-field(type="date" name="departure" id="booking-departure")
 
-					];
 
-				+createList('form-group', arrDescPriceItems, false)
+				div.form-group.guests-quantity
+					label.form-group__label.guests-quantity__text Гости
+					select.guests-quantity__select-field(name="guests-quantity")
+						option.guests-quantity__option-field(value="" disabled selected) Сколько гостей
+						option.guests-quantity__option-field(value="1") 1 гость
+						option.guests-quantity__option-field(value="2") 2 гостя
+						option.guests-quantity__option-field(value="3") 3 гостя
 
-			+createFormButton('booking-room', 'Забронировать', 'submit')
+				div.form-group.services-list
+					- 
+						var arrDescPriceItems = [
+						{textDesc: '9 990&#8381; х 4 суток', textPrice: '39 960&#8381;', }, 
+						{textDesc: 'Сбор за услуги: скидка 2 179&#8381;', textPrice: '0&#8381;', needPseudo: true}, 
+						{textDesc: 'Сбор за дополнительные услуги', textPrice: '300&#8381;', needPseudo: true}, 
+						{textDesc: 'Итого', textPrice: '38 081&#8381;', modifierClass: 'total'}, 
+
+						];
+
+					+createServicesList('services-and-prices', arrDescPriceItems)
+
+				+createFormButton('form-booking-room', 'Забронировать', 'submit')
+
+		div.site-card
+			+createForm('form-login', 'get', '/change-me', 'Войти')
+
+				div.form-group.client-login-pass
+						input.client-login-pass__email-field(type="email" name="email"  placeholder="Email")
+						input.client-login-pass__pass-field(type="password" name="password" placeholder="Пароль")
+
+				+createFormButton('form-login', 'Войти', 'submit')
+
+			div.move-to-another-form
+				p.move-to-another-form__text Нет аккаунта на Toxin?
+				+createButton('enter-button', 'Создать', 'light')
 
 
 	div.container__column3.container__column3_width270
+
+		div.site-card.site-card_narrow
+			div.calendar
+

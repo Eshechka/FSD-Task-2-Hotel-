@@ -5,6 +5,7 @@ $DarkShade50: rgba(31, 32, 65, 0.50);
 $DarkShade25: rgba(31, 32, 65, 0.25);
 $DarkShade5: rgba(31, 32, 65, 0.05);
 $Purple: #BC9CFF;
+$Purplegradient: #8BA4F9;
 $Green: #6FCF97;
 
 $colors: (
@@ -17,7 +18,8 @@ $colors: (
 	Green: $Green,
 );
 
-@import "./~normalize.css";
+@import "~normalize.css";
+@import "~air-datepicker/dist/css/datepicker.css";
 
 @import "../fonts/Montserrat.css";
 @import "../fonts/Quicksand.css";
@@ -152,7 +154,7 @@ div.container__column3 {
 
 
 
-.site-form {
+.site-card {
 	background: #FFFFFF;
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
@@ -160,6 +162,14 @@ div.container__column3 {
 	border-radius: 4px;
 	padding: 30px;
 	padding-top: 40px;
+
+	&_narrow {
+		padding: 20px;
+	}
+}
+
+.site-form {
+
 }
 
 .form-group {
@@ -167,12 +177,21 @@ div.container__column3 {
 	flex-direction: column;
 	padding-top: 20px;
 }
-.form-group.form-group_column2 {
+.form-group.form-group_type_inline {
 	display: inline-flex;
 }
-.form-group.form-group_column2-row {
+.form-group.form-group_type_inline_row {
 	display: inline-flex;
 	flex-direction: row;
+	align-items: center;
+}
+
+.form-group.form-group_type_inline_row_width100 {
+	display: inline-flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .site-form__title {
@@ -183,6 +202,10 @@ div.container__column3 {
 	line-height: 30px;
 	color: $DarkShade100;
 }
+
+
+
+
 
 .form-group__label {
 	font-family: Montserrat;
@@ -196,9 +219,82 @@ div.container__column3 {
 	margin-bottom: 5px;
 }
 
-.form-group__list {
-	margin: 0;
+
+
+
+
+.form-group__input_radio {
+	display: none;    
+
+	&:checked + .form-group__label_radio {   
+		color: $DarkShade75;
+	}
 }
+
+.form-group__label_radio {
+    padding: 0px 20px 0px 30px;
+    position: relative;
+    text-transform: none;
+    font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: $DarkShade50;
+}
+
+.form-group__label_radio:before {
+	content: '';
+    position: absolute;
+    left: 0;
+    border: 1px solid $Purple;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+.form-group__input_radio:checked + .form-group__label_radio:after {
+    content: '';
+    position: absolute;
+	top: 4px;
+	left: 4px;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
+}
+
+
+
+
+/*.form-group */
+input
+/*[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group input[type="password"] */
+{ 
+	
+	/*display: block; */
+
+	box-sizing: border-box; 
+	padding: 8px 15px; 
+	max-width: 100%; 	
+	border: 1px solid $DarkShade25;
+	border-radius: 4px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+	color: $DarkShade25; 	
+
+	background-color: #fff; 
+} 
+
+
 
 
 .form-button {
@@ -212,7 +308,7 @@ div.container__column3 {
 	text-transform: uppercase;
 	border-radius: 22px;
 	color: #fff;
-	background: linear-gradient(180deg, $Purple 0%, #8BA4F9 100%);
+	background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
 	padding: 10px 20px;
 
 	&__icon {
@@ -227,7 +323,19 @@ div.container__column3 {
 
 
 
-.number-of-guests { 
+
+
+
+
+.arrival-and-departure__date-field {
+	text-transform: uppercase;
+	width: 150px;
+	color: $DarkShade75;
+}
+
+
+
+.guests-quantity__select-field { 
 display: block; 
  -moz-appearance: none;
  -webkit-appearance: none;
@@ -255,23 +363,48 @@ background-position: right 1.2em top 50%, 0 0;
 background-size: 0.9em;
 } 
 
- .number-of-guests::-ms-expand {
+ .guests-quantity__select-field::-ms-expand {
  	display: none;
 } 
 
- .number-of-guests:focus {
+ .guests-quantity__select-field:focus {
  	outline: none; 
 }
 
- .number-of-guests option {
+ .guests-quantity__option-field {
  	font-weight:normal;
  }
- *[dir="rtl"] .number-of-guests, 
- :root:lang(ar) .number-of-guests, 
- :root:lang(iw) .number-of-guests { 
-	background-position: left .7em top 50%, 0 0; 
-	padding: .6em .8em .5em 1.4em; 
+
+
+
+
+
+.client-personal-info__name,
+.client-personal-info__surname {
+	margin-bottom: 10px;
 }
+
+
+
+
+.client-birthday__date-field {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: $DarkShade25;
+	text-transform: uppercase;
+}
+
+
+
+
+.client-login-pass__email-field,
+.client-login-pass__pass-field {
+	margin-bottom: 10px;
+}
+
 
 
 
@@ -279,10 +412,11 @@ background-size: 0.9em;
 .button-cover {
     height: 20px;
     padding: 0;
-    /*background-color: red;*/
+    margin-bottom: 5px;
+	margin-right: 10px;
 }
 
-.knobs, .layer {
+.toggle-button__knobs, .toggle-button__layer {
     position: absolute;
     top: 0;
     right: 0;
@@ -297,11 +431,11 @@ background-size: 0.9em;
     height: 20px;
 }
 
-.toggle-button, .toggle-button .layer {
+.toggle-button, .toggle-button__layer {
     border-radius: 10px;
 }
 
-.checkbox {
+.toggle-button__checkbox {
     position: relative;
     width: 100%;
     height: 100%;
@@ -312,11 +446,11 @@ background-size: 0.9em;
     z-index: 3;
 }
 
-.knobs {
+.toggle-button__knobs {
     z-index: 2;
 }
 
-.layer {
+.toggle-button__layer {
     width: 100%;
     transition: 0.3s ease all;
     z-index: 1;
@@ -325,7 +459,7 @@ background-size: 0.9em;
 	border: 1px solid $DarkShade25;
 }
 
-.toggle-button .knobs:before {
+.toggle-button__knobs:before {
     content: '';
     position: absolute;
     top: 4px;
@@ -334,43 +468,141 @@ background-size: 0.9em;
     height: 12px;
     background-color: $DarkShade25;
     border-radius: 10px;
-    transition: 0.3s ease all;
+    transition: 0.1s ease all;
 }
 
-.toggle-button .checkbox:checked + .knobs:before {
+.toggle-button .toggle-button__checkbox:checked + .toggle-button__knobs:before {
     content: '';
     left: 24px;
+    background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
+}
+.toggle-button .toggle-button__checkbox:checked ~ .toggle-button__layer {
+    border-color: $Purplegradient;
+}
+
+
+
+
+.room-info {
+	display: flex;
+	align-items: baseline;
+
+	&__number {
+		font-family: Quicksand;
+		font-style: normal;
+		font-weight: bolder;
+		font-size: 14px;
+		line-height: 17px;
+		color:  $DarkShade100;
+		margin-right: 5px;
+
+		& span {
+			font-size: 24px;
+			font-weight: bold;
+		}
+	}
+	&__type {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: $Purple;
+	}
+	&__price {
+		flex-grow: 1;
+
+		text-align: right;
+
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 18px;
+
+		color:  $DarkShade50;
+
+		& span {
+			font-size: 12px;
+			font-weight: normal;
+		}
+
+	}
 }
 
 
 
 
 
+.services-and-prices {
+
+	&__list {
+		margin: 0;
+	}
 
 
-.services-list {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 10px;
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+
+		position: relative;
+
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 24px;
+
+		&_pseudo:after {
+			content: '';
+			position: absolute;
+			width: 20px;	
+			height: 20px;
+			margin: 0 5px;	
+			top: 0;	
+			left: 214px;
+			border-radius: 50%;
+			border: 1px solid $DarkShade25;
+			box-sizing: border-box;
+		}
+
+		&_pseudo:before {
+			content: 'i';
+			position: absolute;
+			width: 4px;	
+			height: 14px;
+			margin: 0 5px;
+			top: 2px;
+			left: 222px;
+			color: $DarkShade25;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 14px;
+		}
+	}
 
 	&__desc {
 		max-width: 214px;
 	}
+	&__price {
+		max-width: 76px;
+	}
+
 }
 
-.services-list_total {
+
+.services-and-prices__item_total {
 
 	border-bottom: 1px dotted $DarkShade25; 
 
 	margin: 30px 0 20px;
 
-	& .services-list__desc, 
-	& .services-list__price {
+	& .services-and-prices__desc, 
+	& .services-and-prices__price {
 		background-color: #fff;
 		margin-bottom: -6px;
 		border-bottom: 1px solid #fff; 
@@ -382,12 +614,22 @@ background-size: 0.9em;
 		color: $DarkShade100;
 	}
 
-	& .services-list__desc {
+	& .services-and-prices__desc {
 		padding-right: 10px;
 	}
 
-	& .services-list__price {
+	& .services-and-prices__price {
 		padding-left: 10px;
 	}
 
+}
+
+
+.move-to-another-form {
+	display: flex;
+	justify-content: space-between;
+
+	&__text {
+
+	}
 }

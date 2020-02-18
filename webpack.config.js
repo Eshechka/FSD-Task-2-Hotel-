@@ -1,14 +1,18 @@
 const path = require('path');
+const fs = require('fs');
+const webpack = require('webpack');
+
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
   dist: path.join(__dirname, 'dist')
 };
 
-const fs = require('fs');
+
 const PAGES_DIR = `${PATHS.src}/pages/`;
 
 // const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
@@ -61,6 +65,13 @@ module.exports = {
 
   plugins: [
 
+    new webpack.ProvidePlugin({
+     $: 'jquery/dist/jquery.js',
+     // jQuery: "jquery/dist/jquery.min.js",
+     // "window.jQuery": "jquery/dist/jquery.min.js",
+    }),
+
+
     ...getFilesPathes(PATHS.src, '.pug').map(page => new HtmlWebpackPlugin ({
           template: page,
           filename: `./${path.basename(page).replace(/\.pug/,'.html')}`,
@@ -73,6 +84,8 @@ module.exports = {
     new MiniCssExtractPlugin({
           filename: 'style.[contenthash].css',
       }),
+
+
 
   ],
 
@@ -113,6 +126,18 @@ module.exports = {
         name: '/[name].[ext]',
         outputPath : 'img/',
       },
+    },
+
+    {
+        // Exposes jQuery for use outside Webpack build
+        test: require.resolve('jquery'),
+        use: [{
+          loader: 'expose-loader',
+          options: 'jQuery'
+        },{
+          loader: 'expose-loader',
+          options: '$'
+        }]
     },
 
   ]

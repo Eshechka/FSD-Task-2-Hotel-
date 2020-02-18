@@ -6,6 +6,8 @@ import createColumn from '../../components/JS/column/column';
 // import pictureLogo from '../../img/TOXIN_Logo.svg';
 // import pictureBG from '../../img/BG_main.png';
 
+import * as $ from 'jquery';
+
 import '../../img/TOXIN_Logo.svg';
 
 import '../../common-files/style.scss';

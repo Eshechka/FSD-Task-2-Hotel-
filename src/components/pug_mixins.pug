@@ -4,7 +4,7 @@ mixin createListItems(classname, url, text, needPseudoForLink, linkModifier)
 	li(class= classname+"__item")
 		-
 			var classnameLink = classname+"__link"
-			classnameLink += needPseudoForLink ? " " + classname+"__link_pseudo" : ""
+			classnameLink += needPseudoForLink ? " " + classnameLink + "_pseudo" : ""
 			classnameLink += linkModifier ? " " + classnameLink + "_" + linkModifier : ""
 		
 		a(class= classnameLink href= url)= text
@@ -12,21 +12,26 @@ mixin createListItems(classname, url, text, needPseudoForLink, linkModifier)
 
 
 //- Create list div>ul> n*(li>a)
-mixin createList(classname, arrayItems, needLinksInside)
+mixin createList(classname, arrayItems)
 	ul(class= classname+"__list")
-		if needLinksInside
+		//-if needLinksInside
 			each i in arrayItems
 				+createListItems(classname, i.url, i.text, i.needPseudoForLink, i.linkModifier)
 
-		else
+
+//- Create list ul> n*(li > div > (div + div) )
+mixin createServicesList(classname, arrayItems)
+	ul(class= classname+"__list")
 			each i in arrayItems
-				li(class = classname + '__item')
-					-
-						var myClass = i.classname
-						myClass += i.modifierClass ? " " + i.classname + "_" + i.modifierClass : ""
-					div(class = myClass)
-						div(class = i.classname + '__desc') !{i.textDesc}
-						div(class = i.classname + '__price') !{i.textPrice}
+				-
+					var myClass = classname+ '__item'
+					myClass += i.modifierClass ? " " + myClass + "_" + i.modifierClass : "" + (i.needPseudo ? " " + myClass + "_pseudo" : "")
+					
+
+				li(class = myClass)
+
+					div(class = classname + '__desc') !{i.textDesc}
+					div(class = classname + '__price') !{i.textPrice}
 
 	
 
