@@ -1,0 +1,4 @@
+mixin createArrivalAndDeparture(classname, id, text)
+
+	label.form-group__label(class=classname+'__text' for=id)= text
+	input(class=classname+'__date-field' type='date' name=id id=id)

@@ -19,23 +19,6 @@ mixin createList(classname, arrayItems)
 				+createListItems(classname, i.url, i.text, i.needPseudoForLink, i.linkModifier)
 
 
-//- Create list ul> n*(li > div > (div + div) )
-mixin createServicesList(classname, arrayItems)
-	ul(class= classname+"__list")
-			each i in arrayItems
-				-
-					var myClass = classname+ '__item'
-					myClass += i.modifierClass ? " " + myClass + "_" + i.modifierClass : "" + (i.needPseudo ? " " + myClass + "_pseudo" : "")
-					
-
-				li(class = myClass)
-
-					div(class = classname + '__desc') !{i.textDesc}
-					div(class = classname + '__price') !{i.textPrice}
-
-	
-
-
 
 
 //- Create logo div>a>img
@@ -117,17 +100,7 @@ mixin createForm(classname, method, action, formTitleText)
 
 
 
-//----------createFormButton----------
-//- create button(attributes) for forms
 
-mixin createFormButton(classname, text, type)
-	- var attributes = {};
-	- attributes.type = type || 'button';
-	- attributes.class = classname+'__button';
-	button(class="form-button")&attributes(attributes)= text || 'OK'
-		i.material-icons.form-button__icon arrow_forward
-
-//----------createFormButton----------
 
 
 

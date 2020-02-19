@@ -1,0 +1,21 @@
+.form-button {
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+	font-family: Montserrat;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	border-radius: 22px;
+	color: #fff;
+	background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
+	padding: 10px 20px;
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 10px;
+	}
+}

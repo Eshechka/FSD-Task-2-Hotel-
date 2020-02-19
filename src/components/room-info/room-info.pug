@@ -1,0 +1,9 @@
+
+mixin createRoomInfo(classname, roomNumber, type, price)
+
+	div(class=classname)
+		div.room-info__number № 
+			span= roomNumber
+		div.room-info__type= type
+		div.room-info__price #{price}&#8381; 
+			span в сутки

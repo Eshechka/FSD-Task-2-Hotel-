@@ -1,0 +1,8 @@
+mixin createToggleButton(classname, id, text)
+
+	div(class=classname+'-cover')
+		div(class=classname)
+			input(class=classname+'__checkbox' type="checkbox" id=id)
+			div(class=classname+'__knobs')
+			div(class=classname+'__layer')
+	label.form-group__label(class=classname+'__text' for=id)= text

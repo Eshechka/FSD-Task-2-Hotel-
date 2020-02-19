@@ -1,5 +1,13 @@
 extends ../../common-files/UIKit-base-template
 
+include ../../components/form-button/form-button.pug
+include ../../components/guests-quantity/guests-quantity.pug
+include ../../components/arrival-and-departure/arrival-and-departure.pug
+include ../../components/toggle-button/toggle-button.pug
+include ../../components/move-to-another-form/move-to-another-form.pug
+include ../../components/services-and-prices/services-and-prices.pug
+include ../../components/room-info/room-info.pug
+
 //- проставить в формах tabindex="1"
 //- ссылки на чужие сайты должны содержать атрибут target="_blank
 //- одинаковые id у одинаковых элементов в разных формах. Фактически, несколько одинаковых id на странице
@@ -23,26 +31,19 @@ block colorAndType
 
 
 
-
-
 block cards
 	div.container__column3
 	
 		div.site-card
 			+createForm('form-search-room', 'get', '/change-me', 'Найдем номера под ваши желания')
 				div.form-group.form-group_type_inline.arrival-and-departure
-					label.form-group__label.arrival-and-departure__text(for="arrival") Прибытие
-					input.arrival-and-departure__date-field(type="date" name="arrival" id="arrival")
+					+createArrivalAndDeparture('arrival-and-departure', 'arrival', 'Прибытие')
+
 				div.form-group.form-group_type_inline.arrival-and-departure
-					label.form-group__label.arrival-and-departure__text(for="departure") Выезд
-					input.arrival-and-departure__date-field(type="date" name="departure" id="departure")
+					+createArrivalAndDeparture('arrival-and-departure', 'departure', 'Выезд')
+
 				div.form-group.guests-quantity
-					label.form-group__label.guests-quantity__text Гости
-					select.guests-quantity__select-field(name="guests-quantity")
-						option.guests-quantity__option-field(value="" disabled selected) Сколько гостей
-						option.guests-quantity__option-field(value="1") 1 гость
-						option.guests-quantity__option-field(value="2") 2 гостя
-						option.guests-quantity__option-field(value="3") 3 гостя
+					+createGuestsQuantity('guests-quantity', 'guests-quantity', 'Гости')
 
 				+createFormButton('form-search-room', 'Подобрать номер', 'submit')
 
@@ -70,29 +71,17 @@ block cards
 					input.client-login-pass__pass-field(type="password" name="password" placeholder="Пароль")
 			
 				div.form-group.form-group_type_inline_row
-					div.button-cover
-						div.toggle-button
-							input.toggle-button__checkbox(type="checkbox" id="toggle-button")
-							div.toggle-button__knobs
-							div.toggle-button__layer
-					label.form-group__label(for="toggle-button") Получать спецпредложения
+					+createToggleButton('toggle-button', 'toggle-button', 'Получать спецпредложения')
 
 				+createFormButton('form-registration', 'перейти к оплате', 'submit')
 
-				div.move-to-another-form
-					p.move-to-another-form__text Уже есть аккаунт на Toxin
-					+createButton('enter-button', 'Войти', 'light')
+				+createMoveToAnotherForm
 
 	div.container__column3
 
 		div.site-card
 			+createForm('form-booking-room', 'get', '/change-me', '')
-				div.room-info
-					div.room-info__number № 
-						span 888
-					div.room-info__type люкс
-					div.room-info__price 9 990&#8381; 
-						span в сутки
+				+createRoomInfo('room-info', 888, 'люкс', '9 990')
 
 				div.form-group.form-group_type_inline.arrival-and-departure
 					label.form-group__label.arrival-and-departure__text(for="booking-arrival") Прибытие
@@ -111,16 +100,7 @@ block cards
 						option.guests-quantity__option-field(value="3") 3 гостя
 
 				div.form-group.services-list
-					- 
-						var arrDescPriceItems = [
-						{textDesc: '9 990&#8381; х 4 суток', textPrice: '39 960&#8381;', }, 
-						{textDesc: 'Сбор за услуги: скидка 2 179&#8381;', textPrice: '0&#8381;', needPseudo: true}, 
-						{textDesc: 'Сбор за дополнительные услуги', textPrice: '300&#8381;', needPseudo: true}, 
-						{textDesc: 'Итого', textPrice: '38 081&#8381;', modifierClass: 'total'}, 
-
-						];
-
-					+createServicesList('services-and-prices', arrDescPriceItems)
+					+createServicesList('services-and-prices')
 
 				+createFormButton('form-booking-room', 'Забронировать', 'submit')
 
@@ -138,7 +118,7 @@ block cards
 				+createButton('enter-button', 'Создать', 'light')
 
 
-	div.container__column3.container__column3_width270
+	div.container__column3.container__column3_width320
 
 		div.site-card.site-card_narrow
 			div.calendar

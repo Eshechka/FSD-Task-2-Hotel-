@@ -27,7 +27,7 @@ $colors: (
 
 @import "./common.scss";
 
-@import "../components/button/button.scss";
+
 
 
 .ui-main {
@@ -147,30 +147,13 @@ div.container__right {
 div.container__column3 {
 	flex: 1 0 380px;
 }
-.container__column3.container__column3_width270 {
-	flex-basis: 270px;
+.container__column3.container__column3_width320 {
+	flex-basis: 320px;
 }
 
 
 
 
-.site-card {
-	background: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
-	padding: 30px;
-	padding-top: 40px;
-
-	&_narrow {
-		padding: 20px;
-	}
-}
-
-.site-form {
-
-}
 
 .form-group {
 	display: flex;
@@ -193,6 +176,9 @@ div.container__column3 {
 	justify-content: space-between;
 	align-items: center;
 }
+
+
+
 
 .site-form__title {
 	font-family: Quicksand;
@@ -268,16 +254,7 @@ div.container__column3 {
 
 
 
-/*.form-group */
-input
-/*[type="text"],
-.form-group input[type="date"],
-.form-group input[type="email"],
-.form-group input[type="password"] */
-{ 
-	
-	/*display: block; */
-
+input { 
 	box-sizing: border-box; 
 	padding: 8px 15px; 
 	max-width: 100%; 	
@@ -293,87 +270,6 @@ input
 
 	background-color: #fff; 
 } 
-
-
-
-
-.form-button {
-	position: relative;
-	width: 100%;
-	cursor: pointer;
-	font-family: Montserrat;
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	border-radius: 22px;
-	color: #fff;
-	background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
-	padding: 10px 20px;
-
-	&__icon {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 10px;
-	}
-}
-
-
-
-
-
-
-
-
-
-.arrival-and-departure__date-field {
-	text-transform: uppercase;
-	width: 150px;
-	color: $DarkShade75;
-}
-
-
-
-.guests-quantity__select-field { 
-display: block; 
- -moz-appearance: none;
- -webkit-appearance: none;
-
-font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 24px;
-color: $DarkShade75; 
-
-padding: 8px 15px; 
-padding-right: 20px;
-width: 100%; 
-max-width: 100%; 
-box-sizing: border-box; 
-margin: 0; 
-border: 1px solid $DarkShade25;
-border-radius: 4px;
-
-background-color: #fff; 
-background-image: url(../img/expand_more.svg);
-background-repeat: no-repeat;
-background-position: right 1.2em top 50%, 0 0;
-background-size: 0.9em;
-} 
-
- .guests-quantity__select-field::-ms-expand {
- 	display: none;
-} 
-
- .guests-quantity__select-field:focus {
- 	outline: none; 
-}
-
- .guests-quantity__option-field {
- 	font-weight:normal;
- }
 
 
 
@@ -408,228 +304,13 @@ background-size: 0.9em;
 
 
 
-
-.button-cover {
-    height: 20px;
-    padding: 0;
-    margin-bottom: 5px;
-	margin-right: 10px;
-}
-
-.toggle-button__knobs, .toggle-button__layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.toggle-button {
-    position: relative;
-    overflow: hidden;
-    width: 40px;
-    height: 20px;
-}
-
-.toggle-button, .toggle-button__layer {
-    border-radius: 10px;
-}
-
-.toggle-button__checkbox {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 3;
-}
-
-.toggle-button__knobs {
-    z-index: 2;
-}
-
-.toggle-button__layer {
-    width: 100%;
-    transition: 0.3s ease all;
-    z-index: 1;
-    background: #ffffff;
-	box-sizing: border-box;
-	border: 1px solid $DarkShade25;
-}
-
-.toggle-button__knobs:before {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 12px;
-    height: 12px;
-    background-color: $DarkShade25;
-    border-radius: 10px;
-    transition: 0.1s ease all;
-}
-
-.toggle-button .toggle-button__checkbox:checked + .toggle-button__knobs:before {
-    content: '';
-    left: 24px;
-    background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
-}
-.toggle-button .toggle-button__checkbox:checked ~ .toggle-button__layer {
-    border-color: $Purplegradient;
-}
-
-
-
-
-.room-info {
-	display: flex;
-	align-items: baseline;
-
-	&__number {
-		font-family: Quicksand;
-		font-style: normal;
-		font-weight: bolder;
-		font-size: 14px;
-		line-height: 17px;
-		color:  $DarkShade100;
-		margin-right: 5px;
-
-		& span {
-			font-size: 24px;
-			font-weight: bold;
-		}
-	}
-	&__type {
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 15px;
-		text-transform: uppercase;
-		color: $Purple;
-	}
-	&__price {
-		flex-grow: 1;
-
-		text-align: right;
-
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 14px;
-		line-height: 18px;
-
-		color:  $DarkShade50;
-
-		& span {
-			font-size: 12px;
-			font-weight: normal;
-		}
-
-	}
-}
-
-
-
-
-
-.services-and-prices {
-
-	&__list {
-		margin: 0;
-	}
-
-
-	&__item {
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 10px;
-
-		position: relative;
-
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		line-height: 24px;
-
-		&_pseudo:after {
-			content: '';
-			position: absolute;
-			width: 20px;	
-			height: 20px;
-			margin: 0 5px;	
-			top: 0;	
-			left: 214px;
-			border-radius: 50%;
-			border: 1px solid $DarkShade25;
-			box-sizing: border-box;
-		}
-
-		&_pseudo:before {
-			content: 'i';
-			position: absolute;
-			width: 4px;	
-			height: 14px;
-			margin: 0 5px;
-			top: 2px;
-			left: 222px;
-			color: $DarkShade25;
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: bold;
-			font-size: 12px;
-			line-height: 14px;
-		}
-	}
-
-	&__desc {
-		max-width: 214px;
-	}
-	&__price {
-		max-width: 76px;
-	}
-
-}
-
-
-.services-and-prices__item_total {
-
-	border-bottom: 1px dotted $DarkShade25; 
-
-	margin: 30px 0 20px;
-
-	& .services-and-prices__desc, 
-	& .services-and-prices__price {
-		background-color: #fff;
-		margin-bottom: -6px;
-		border-bottom: 1px solid #fff; 
-		font-family: Quicksand;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 19px;
-		line-height: 24px;
-		color: $DarkShade100;
-	}
-
-	& .services-and-prices__desc {
-		padding-right: 10px;
-	}
-
-	& .services-and-prices__price {
-		padding-left: 10px;
-	}
-
-}
-
-
-.move-to-another-form {
-	display: flex;
-	justify-content: space-between;
-
-	&__text {
-
-	}
-}
+@import "../components/button/button.scss";
+@import "../components/form-button/form-button.scss";
+@import "../components/site-card/site-card.scss";
+@import "../components/site-card/_narrow/site-card_narrow.scss";
+@import "../components/guests-quantity/guests-quantity.scss";
+@import "../components/arrival-and-departure/arrival-and-departure.scss";
+@import "../components/toggle-button/toggle-button.scss";
+@import "../components/room-info/room-info.scss";
+@import "../components/services-and-prices/services-and-prices.scss";
+@import "../components/move-to-another-form/move-to-another-form.scss";
