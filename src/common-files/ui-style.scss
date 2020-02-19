@@ -303,14 +303,22 @@ input {
 
 
 
+.room-rating-and-reviews {
+	display: flex;
+}
+
+
 
 @import "../components/button/button.scss";
 @import "../components/form-button/form-button.scss";
 @import "../components/site-card/site-card.scss";
-@import "../components/site-card/_narrow/site-card_narrow.scss";
+@import "../components/site-card/_fields_20/site-card_fields_20.scss";
+@import "../components/site-card/_fields_30/site-card_fields_30.scss";
 @import "../components/guests-quantity/guests-quantity.scss";
 @import "../components/arrival-and-departure/arrival-and-departure.scss";
 @import "../components/toggle-button/toggle-button.scss";
 @import "../components/room-info/room-info.scss";
 @import "../components/services-and-prices/services-and-prices.scss";
 @import "../components/move-to-another-form/move-to-another-form.scss";
+@import "../components/room-card/room-card.scss";
+@import "../components/rating/rating.scss";

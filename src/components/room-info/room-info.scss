@@ -2,6 +2,10 @@
 	display: flex;
 	align-items: baseline;
 
+	&_border_bottom {
+		border-bottom: 2px solid $DarkShade5;
+	}
+
 	&__number {
 		font-family: Quicksand;
 		font-style: normal;

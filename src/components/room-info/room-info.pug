@@ -1,9 +1,12 @@
 
-mixin createRoomInfo(classname, roomNumber, type, price)
+mixin createRoomInfo(classname, roomNumber, type, price, blockModifier)
+	-
+		var classnameModifier = classname
+		classnameModifier += blockModifier ? " "+classname+"_"+blockModifier : ""
 
-	div(class=classname)
-		div.room-info__number № 
+	div(class=classnameModifier)
+		div(class=classname+'__number') № 
 			span= roomNumber
-		div.room-info__type= type
-		div.room-info__price #{price}&#8381; 
+		div(class=classname+'__type')= type
+		div(class=classname+'__price') #{price}&#8381; 
 			span в сутки

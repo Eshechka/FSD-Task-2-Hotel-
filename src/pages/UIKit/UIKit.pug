@@ -34,7 +34,7 @@ block colorAndType
 block cards
 	div.container__column3
 	
-		div.site-card
+		div.site-card.site-card_fields_30
 			+createForm('form-search-room', 'get', '/change-me', 'Найдем номера под ваши желания')
 				div.form-group.form-group_type_inline.arrival-and-departure
 					+createArrivalAndDeparture('arrival-and-departure', 'arrival', 'Прибытие')
@@ -47,7 +47,7 @@ block cards
 
 				+createFormButton('form-search-room', 'Подобрать номер', 'submit')
 
-		div.site-card
+		div.site-card.site-card_fields_30
 			+createForm('form-registration', 'post', '/change-me', 'Регистрация аккаунта')
 
 				div.form-group.client-personal-info
@@ -79,7 +79,7 @@ block cards
 
 	div.container__column3
 
-		div.site-card
+		div.site-card.site-card_fields_30
 			+createForm('form-booking-room', 'get', '/change-me', '')
 				+createRoomInfo('room-info', 888, 'люкс', '9 990')
 
@@ -104,7 +104,7 @@ block cards
 
 				+createFormButton('form-booking-room', 'Забронировать', 'submit')
 
-		div.site-card
+		div.site-card.site-card_fields_30
 			+createForm('form-login', 'get', '/change-me', 'Войти')
 
 				div.form-group.client-login-pass
@@ -120,6 +120,30 @@ block cards
 
 	div.container__column3.container__column3_width320
 
-		div.site-card.site-card_narrow
+		div.site-card.site-card_fields_20
 			div.calendar
+
+
+		div.site-card
+
+			div.room-card
+				img.room-card__picture(src='/img/room888_picture.png' width='320px')
+				div.room-card__data
+
+					+createRoomInfo('room-info', 888, 'люкс', '9 990', 'border_bottom')
+
+					div.room-rating-and-reviews
+						div.rating
+							input(type='radio' id='star-5' name='rating' value='5')
+							label(for='star-5')
+							input(type='radio' id='star-4' name='rating' value='4')
+							label(for='star-4')
+							input(type='radio' id='star-3' name='rating' value='3')
+							label(for='star-3')
+							input(type='radio' id='star-2' name='rating' value='2')
+							label(for='star-2')
+							input(type='radio' id='star-1' name='rating' value='1')
+							label(for='star-1')
+						div.reviews 145
+							span отзывов
 

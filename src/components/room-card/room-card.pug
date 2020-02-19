@@ -1,0 +1,23 @@
+//- Create list ul> n*(li > div > (div + div) )
+
+mixin createServicesList(classname)
+	- 
+		var arrDescPriceItems = [
+		{textDesc: '9 990&#8381; х 4 суток', textPrice: '39 960&#8381;', }, 
+		{textDesc: 'Сбор за услуги: скидка 2 179&#8381;', textPrice: '0&#8381;', needPseudo: true}, 
+		{textDesc: 'Сбор за дополнительные услуги', textPrice: '300&#8381;', needPseudo: true}, 
+		{textDesc: 'Итого', textPrice: '38 081&#8381;', modifierClass: 'total'}, 
+
+		];
+
+	ul(class= classname+"__list")
+
+			each i in arrDescPriceItems
+				-
+					var myClass = classname+ '__item'
+					myClass += i.modifierClass ? " " + myClass + "_" + i.modifierClass : "" + (i.needPseudo ? " " + myClass + "_pseudo" : "")
+					
+				li(class = myClass)
+
+					div(class = classname + '__desc') !{i.textDesc}
+					div(class = classname + '__price') !{i.textPrice}
