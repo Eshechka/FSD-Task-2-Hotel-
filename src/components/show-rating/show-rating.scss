@@ -1,0 +1,11 @@
+.show-rating {
+    width: 120px;
+    
+    &__icon {
+        width: 24px;
+        font-size: 24px;
+        line-height: 20px;
+        color: $Purple;
+        color: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
+    }
+}

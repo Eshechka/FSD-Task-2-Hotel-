@@ -7,6 +7,8 @@ include ../../components/toggle-button/toggle-button.pug
 include ../../components/move-to-another-form/move-to-another-form.pug
 include ../../components/services-and-prices/services-and-prices.pug
 include ../../components/room-info/room-info.pug
+include ../../components/show-rating/show-rating.pug
+include ../../components/reviews/reviews.pug
 
 //- проставить в формах tabindex="1"
 //- ссылки на чужие сайты должны содержать атрибут target="_blank
@@ -128,22 +130,21 @@ block cards
 
 			div.room-card
 				img.room-card__picture(src='/img/room888_picture.png' width='320px')
-				div.room-card__data
 
+				div.room-card__data
 					+createRoomInfo('room-info', 888, 'люкс', '9 990', 'border_bottom')
 
-					div.room-rating-and-reviews
-						div.rating
-							input(type='radio' id='star-5' name='rating' value='5')
-							label(for='star-5')
-							input(type='radio' id='star-4' name='rating' value='4')
-							label(for='star-4')
-							input(type='radio' id='star-3' name='rating' value='3')
-							label(for='star-3')
-							input(type='radio' id='star-2' name='rating' value='2')
-							label(for='star-2')
-							input(type='radio' id='star-1' name='rating' value='1')
-							label(for='star-1')
-						div.reviews 145
-							span отзывов
+					div.rating-and-reviews
+						+createShowRating(5, 0)
+						+createReviews(145, 'отзывов')
+
+			div.room-card
+				img.room-card__picture(src='/img/room840_picture.png' width='320px')
+				
+				div.room-card__data
+					+createRoomInfo('room-info', 840, '', '9 900', 'border_bottom')
+
+					div.rating-and-reviews
+						+createShowRating(4, 1)
+						+createReviews(65, 'отзывов')
 

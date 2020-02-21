@@ -51,9 +51,10 @@ module.exports = {
   },
 
   devServer: {
-    port: 4200,
+    port: 3000,
     stats: 'errors-only',
-    index: 'UIKit.html'
+    index: 'UIKit.html',
+    openPage: '',
   },
 
   //   optimization: {

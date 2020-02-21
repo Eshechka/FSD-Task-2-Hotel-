@@ -145,10 +145,10 @@ div.container__right {
 
 
 div.container__column3 {
-	flex: 1 0 380px;
+	flex: 0 0 380px;
 }
 .container__column3.container__column3_width320 {
-	flex-basis: 320px;
+	flex: 0 0 320px;
 }
 
 
@@ -303,8 +303,11 @@ input {
 
 
 
-.room-rating-and-reviews {
+.rating-and-reviews {
 	display: flex;
+	justify-content: space-between;
+
+	padding-top: 8px;
 }
 
 
@@ -321,4 +324,5 @@ input {
 @import "../components/services-and-prices/services-and-prices.scss";
 @import "../components/move-to-another-form/move-to-another-form.scss";
 @import "../components/room-card/room-card.scss";
-@import "../components/rating/rating.scss";
+@import "../components/show-rating/show-rating.scss";
+@import "../components/reviews/reviews.scss";

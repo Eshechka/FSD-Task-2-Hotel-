@@ -1,39 +1,50 @@
 .rating {
     overflow: hidden;
     width: 120px;
+
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+      }
 }
-.rating:not(:checked) > input {
+
+.rating > input {
     display: none;
 }
-.rating:not(:checked) > label {
+
+.rating > .rating__star {
     float: right;
     width: 24px;
     padding: 0;
     cursor: pointer;
-    font-size: 30px;
-    line-height: 30px;
-    color: lightgrey;
-    text-shadow: 1px 1px #bbb;
+    font-size: 24px;
+    line-height: 20px;
+    color: $DarkShade25;
 }
-.rating:not(:checked) > label:before {
-    content: '★';
+
+.rating > .rating__star:before {
+    font-family: 'Material Icons';
+    content: 'star';/*content: '★';    */
 }
-.rating > input:checked ~ label {
+
+/*.rating > .rating__star_empty:before {
+    content: 'star_border';
+}*/
+
+.rating > input:checked ~ .rating__star {
     color: $Purple;
-    text-shadow: 1px 1px #c60;
 }
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
+
+.rating > .rating__star:hover,
+.rating > .rating__star:hover ~ .rating__star {
     color: $Purple;
 }
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
+
+.rating > input:checked + .rating__star:hover,
+.rating > input:checked + .rating__star:hover ~ .rating__star,
+.rating > input:checked ~ .rating__star:hover ~ .rating__star,
+.rating > .rating__star:hover ~ input:checked ~ .rating__star {
     color: $Purple;
-    text-shadow: 1px 1px goldenrod;
 }
-.rate-area > label:active {
-    position: relative;
-}
+

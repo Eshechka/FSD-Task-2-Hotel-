@@ -5,6 +5,7 @@ import '../../common-files/ui-style.scss';
 
 import '../../img/TOXIN_just_picture.svg';
 import '../../img/room888_picture.png';
+import '../../img/room840_picture.png';
 
 
 

@@ -1,0 +1,12 @@
+mixin createShowRating(fullStars, emprtyStars)
+	- var n = 0;
+	div.show-rating
+		while n < fullStars
+			i.material-icons.show-rating__icon star
+			-n++
+		- n = 0;
+		while n < emprtyStars
+			i.material-icons.show-rating__icon star_border
+			-n++
+
+		
