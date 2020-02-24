@@ -11,7 +11,8 @@ import '../../img/room840_picture.png';
 
 $('.calendar').datepicker({
 	// Можно выбрать тольо даты, идущие за сегодняшним днем, включая сегодня
-    minDate: new Date()
+    minDate: new Date(),
+    range: true
 });
 
 

@@ -7,6 +7,7 @@ $DarkShade5: rgba(31, 32, 65, 0.05);
 $Purple: #BC9CFF;
 $Purplegradient: #8BA4F9;
 $Green: #6FCF97;
+$Greengradient: #66D2EA;
 
 $colors: (
 	DarkShade100: $DarkShade100,
@@ -19,7 +20,12 @@ $colors: (
 );
 
 @import "~normalize.css";
-@import "~air-datepicker/dist/css/datepicker.css";
+@import "~air-datepicker/src/sass/cell.scss";
+@import "~air-datepicker/src/sass/datepicker.scss";
+@import "~air-datepicker/src/sass/navigation.scss";
+@import "~air-datepicker/src/sass/_datepicker-config.scss";
+@import "~air-datepicker/src/sass/timepicker.scss";
+/*@import "~air-datepicker/dist/css/datepicker.css";*/
 
 @import "../fonts/Montserrat.css";
 @import "../fonts/Quicksand.css";
@@ -181,7 +187,7 @@ div.container__column3 {
 
 
 .site-form__title {
-	font-family: Quicksand;
+	font-family: Quicksand, Opensans;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 24px;
