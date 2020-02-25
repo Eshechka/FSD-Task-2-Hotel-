@@ -139,7 +139,27 @@ block cards
 
 		div.site-card
 			div.room-card
-				img.room-card__picture(src='/img/room840_picture.png' width='320px')
+				div.slider
+					div.slider__item
+						img.room-card__picture.slider__picture(src='/img/room840_picture.png' width='320px' alt="Слайд 1")
+					div.slider__item
+						img.room-card__picture.slider__picture(src='/img/room888_picture.png' width='320px' alt="Слайд 2")
+					div.slider__item
+						img.room-card__picture.slider__picture(src='/img/room840_picture.png' width='320px' alt="Слайд 3")
+					div.slider__item
+						img.room-card__picture.slider__picture(src='/img/room888_picture.png' width='320px' alt="Слайд 4")
+
+					a.slider__prev &#10094;
+					a.slider__next &#10095;
+
+					div.slider-dots
+						span.slider-dots__item 
+						span.slider-dots__item 
+						span.slider-dots__item 
+						span.slider-dots__item 
+
+
+
 
 				div.room-card__data
 					+createRoomInfo('room-info', 840, '', '9 900', 'border_bottom')
