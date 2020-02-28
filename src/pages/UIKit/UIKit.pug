@@ -9,6 +9,7 @@ include ../../components/services-and-prices/services-and-prices.pug
 include ../../components/room-info/room-info.pug
 include ../../components/show-rating/show-rating.pug
 include ../../components/reviews/reviews.pug
+include ../../components/slider/slider.pug
 
 //- проставить в формах tabindex="1"
 //- ссылки на чужие сайты должны содержать атрибут target="_blank
@@ -128,7 +129,16 @@ block cards
 
 		div.site-card
 			div.room-card
-				img.room-card__picture(src='/img/room888_picture.png' width='320px')
+				- 
+					var arraySlides = [
+						{src: './img/room888_picture.png', alt: 'Слайд 1'},
+						{src: './img/room840_picture2.png', alt: 'Слайд 2'},
+						{src: './img/room840_picture3.png', alt: 'Слайд 3'},
+						{src: './img/room840_picture4.png', alt: 'Слайд 4'},
+					]
+
+				+createSlider('slider888', arraySlides, true, true)
+
 
 				div.room-card__data
 					+createRoomInfo('room-info', 888, 'люкс', '9 990', 'border_bottom')
@@ -139,24 +149,15 @@ block cards
 
 		div.site-card
 			div.room-card
-				div.slider
-					div.slider__item
-						img.room-card__picture.slider__picture(src='/img/room840_picture.png' width='320px' alt="Слайд 1")
-					div.slider__item
-						img.room-card__picture.slider__picture(src='/img/room888_picture.png' width='320px' alt="Слайд 2")
-					div.slider__item
-						img.room-card__picture.slider__picture(src='/img/room840_picture.png' width='320px' alt="Слайд 3")
-					div.slider__item
-						img.room-card__picture.slider__picture(src='/img/room888_picture.png' width='320px' alt="Слайд 4")
+				- 
+					var arraySlides = [
+						{src: './img/room840_picture.png', alt: 'Слайд 1'},
+						{src: './img/room840_picture2.png', alt: 'Слайд 2'},
+						{src: './img/room840_picture3.png', alt: 'Слайд 3'},
+						{src: './img/room840_picture4.png', alt: 'Слайд 4'},
+					]
 
-					a.slider__prev &#10094;
-					a.slider__next &#10095;
-
-					div.slider-dots
-						span.slider-dots__item 
-						span.slider-dots__item 
-						span.slider-dots__item 
-						span.slider-dots__item 
+				+createSlider('slider840', arraySlides, true, true)
 
 
 
