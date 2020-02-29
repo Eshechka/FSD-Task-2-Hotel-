@@ -1,0 +1,42 @@
+.color-example {
+	padding: 10px 0;
+
+	&:after {
+	  content: '';
+	  display: table;
+	  clear: both;
+	  }
+
+
+	&__rect {
+		float: left;
+		width: 70px;
+		height: 70px;
+		border-radius: 6px;
+		background: #000;
+		margin-right: 40px;
+
+	 @each $keyname, $color in $colors {
+
+			&.color-example__rect_#{$keyname} {
+				background: $color;
+			}
+
+		}
+
+		&__name {
+			font-size: 19px;
+			line-height: 29px;
+			padding-top: 6px;
+		    padding-bottom: 0px;
+		    display: inline-block;
+		}
+		
+		&__desc {
+			font-size: 19px;
+			line-height: 29px;
+			margin: 2px 0;
+		}
+
+	}
+}

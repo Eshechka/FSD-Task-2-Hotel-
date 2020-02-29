@@ -1,0 +1,10 @@
+//- Create rectangles for UIKit div
+
+mixin createRect(classname, colorModifier, colorName, colorCSS)
+	div(class=classname)
+		- 
+			var classnameModificator = classname+"__rect"
+			classnameModificator += colorModifier ? " "+classnameModificator+"_"+colorModifier : ""
+		div(class=classnameModificator)
+		b(class=classname+'__name')= colorName
+		p(class=classname+'__desc')= colorCSS	

@@ -20,12 +20,12 @@ $colors: (
 );
 
 @import "~normalize.css";
+/*убрать потом это, лучше свой scss для datepicker*/
 @import "~air-datepicker/src/sass/cell.scss";
 @import "~air-datepicker/src/sass/datepicker.scss";
 @import "~air-datepicker/src/sass/navigation.scss";
 @import "~air-datepicker/src/sass/_datepicker-config.scss";
 @import "~air-datepicker/src/sass/timepicker.scss";
-/*@import "~air-datepicker/dist/css/datepicker.css";*/
 
 @import "../fonts/Montserrat.css";
 @import "../fonts/Quicksand.css";
@@ -60,48 +60,6 @@ div.container__right {
 	width: 430px;
 }
 
-.ui-color-rect-wrapper {
-	padding: 10px 0;
-
-	&:after {
-	  content: '';
-	  display: table;
-	  clear: both;
-	  }
-}
-
-.ui-color-rect {
-	float: left;
-	width: 70px;
-	height: 70px;
-	border-radius: 6px;
-	background: #000;
-	margin-right: 40px;
-
- @each $keyname, $color in $colors {
-
-		&.ui-color-rect_#{$keyname} {
-			background: $color;
-		}
-
-	}
-
-	&__name {
-		font-size: 19px;
-		line-height: 29px;
-		padding-top: 6px;
-	    padding-bottom: 0px;
-	    display: inline-block;
-	}
-	
-	&__desc {
-		font-size: 19px;
-		line-height: 29px;
-		margin: 2px 0;
-	}
-
-
-}
 
 
 .fonts-example {
@@ -109,10 +67,8 @@ div.container__right {
     padding-top: 10px;
     padding-bottom: 25px;
 
-	&__tagtext
-	{
+	&__tagtext {
 		margin-top: 0px;
-		
 	}
 }
 
@@ -189,17 +145,6 @@ div.container__column3 {
 
 
 
-.site-form__title {
-	font-family: Quicksand, Opensans;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 30px;
-	color: $DarkShade100;
-}
-
-
-
 
 
 .form-group__label {
@@ -210,10 +155,8 @@ div.container__column3 {
 	line-height: 15px;
 	text-transform: uppercase;
 	color: $DarkShade100;
-
 	margin-bottom: 5px;
 }
-
 
 
 
@@ -291,7 +234,6 @@ input {
 
 
 
-
 .client-birthday__date-field {
 	font-family: Montserrat;
 	font-style: normal;
@@ -304,7 +246,6 @@ input {
 
 
 
-
 .client-login-pass__email-field,
 .client-login-pass__pass-field {
 	margin-bottom: 10px;
@@ -312,16 +253,13 @@ input {
 
 
 
-.rating-and-reviews {
-	display: flex;
-	justify-content: space-between;
-
-	padding-top: 8px;
-}
 
 
 
+
+@import "../components/color-example/color-example.scss";
 @import "../components/button/button.scss";
+@import "../components/form/form.scss";
 @import "../components/form-button/form-button.scss";
 @import "../components/site-card/site-card.scss";
 @import "../components/site-card/_fields_20/site-card_fields_20.scss";
@@ -334,5 +272,4 @@ input {
 @import "../components/move-to-another-form/move-to-another-form.scss";
 @import "../components/room-card/room-card.scss";
 @import "../components/show-rating/show-rating.scss";
-@import "../components/reviews/reviews.scss";
 @import "../components/slider/slider.scss";

@@ -1,5 +1,7 @@
 extends ../../common-files/UIKit-base-template
 
+include ../../components/color-example/color-example.pug
+include ../../components/form/form.pug
 include ../../components/form-button/form-button.pug
 include ../../components/guests-quantity/guests-quantity.pug
 include ../../components/arrival-and-departure/arrival-and-departure.pug
@@ -8,10 +10,11 @@ include ../../components/move-to-another-form/move-to-another-form.pug
 include ../../components/services-and-prices/services-and-prices.pug
 include ../../components/room-info/room-info.pug
 include ../../components/show-rating/show-rating.pug
-include ../../components/reviews/reviews.pug
+
 include ../../components/slider/slider.pug
 
 //- проставить в формах tabindex="1"
+//- заменить картинки на слайдере
 //- ссылки на чужие сайты должны содержать атрибут target="_blank
 //- одинаковые id у одинаковых элементов в разных формах. Фактически, несколько одинаковых id на странице
 //- инфо про то, что в форме кнопка всегда должна быть последним элементом??? 
@@ -19,13 +22,13 @@ include ../../components/slider/slider.pug
 
 block colorAndType
 	div.container__left
-		+createRect('ui-color-rect', 'DarkShade100', 'Dark Shade 100%', '#1F2041')
-		+createRect('ui-color-rect', 'DarkShade75', 'Dark Shade 75%', '#1F2041')
-		+createRect('ui-color-rect', 'DarkShade50', 'Dark Shade 50%', '#1F2041')
-		+createRect('ui-color-rect', 'DarkShade25', 'Dark Shade 25%', '#1F2041')
-		+createRect('ui-color-rect', 'DarkShade5', 'Dark Shade 5%', '#1F2041')
-		+createRect('ui-color-rect', 'Purple', 'Purple', '#BC9CFF')
-		+createRect('ui-color-rect', 'Green', 'Green', '#6FCF97')
+		+createRect('color-example', 'DarkShade100', 'Dark Shade 100%', '#1F2041')
+		+createRect('color-example', 'DarkShade75', 'Dark Shade 75%', '#1F2041')
+		+createRect('color-example', 'DarkShade50', 'Dark Shade 50%', '#1F2041')
+		+createRect('color-example', 'DarkShade25', 'Dark Shade 25%', '#1F2041')
+		+createRect('color-example', 'DarkShade5', 'Dark Shade 5%', '#1F2041')
+		+createRect('color-example', 'Purple', 'Purple', '#BC9CFF')
+		+createRect('color-example', 'Green', 'Green', '#6FCF97')
 	div.container__right
 		+createFontsExample('h1', 'This one is the sub-section or widget title', 'fonts-example')
 		+createFontsExample('h2', 'Next one is the item title inside widgets', 'fonts-example')
@@ -143,9 +146,12 @@ block cards
 				div.room-card__data
 					+createRoomInfo('room-info', 888, 'люкс', '9 990', 'border_bottom')
 
-					div.rating-and-reviews
-						+createShowRating(5, 0)
-						+createReviews(145, 'отзывов')
+				div.room-card__rating
+					+createShowRating(5, 0)
+
+					div.room-card__reviews-number 145
+						span.room-card__reviews отзывов
+
 
 		div.site-card
 			div.room-card
@@ -164,7 +170,8 @@ block cards
 				div.room-card__data
 					+createRoomInfo('room-info', 840, '', '9 900', 'border_bottom')
 
-					div.rating-and-reviews
-						+createShowRating(4, 1)
-						+createReviews(65, 'отзывов')
+				div.room-card__rating
+					+createShowRating(4, 1)
 
+					div.room-card__reviews-number 65
+						span.room-card__reviews отзывов

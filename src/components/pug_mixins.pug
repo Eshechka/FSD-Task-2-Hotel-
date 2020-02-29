@@ -30,20 +30,6 @@ mixin createLogo(classname, srcImg)
 
 
 
-//- ****** UIKit ******
-
-//- Create rectangles for UIKit div
-mixin createRect(classname, colorModifier, colorName, colorCSS)
-	div(class=classname+'-wrapper')
-		- 
-			var classnameModificator = classname
-			classnameModificator += colorModifier ? " "+classname+"_"+colorModifier : ""
-		div(class=classnameModificator)
-		b(class=classname+'__name')= colorName
-		p(class=classname+'__desc')= colorCSS	
-
-
-
 
 
 
@@ -61,7 +47,7 @@ mixin createAnyTag(tag, text, classname)
 //----------createFontsExample----------
 //- div>(div+tag)
 
-- var tagsForChange = ['body', 'html']
+- var tagsForChange = ['body', 'html', 'title']
 mixin createFontsExample(tag, text, classname)
 	div(class=classname) 
 		- var changeTag = tag
@@ -78,26 +64,6 @@ mixin createFontsExample(tag, text, classname)
 		+createAnyTag(tag, text, classname+'__tagtext')
 
 //----------createFontsExample----------
-
-
-
-//----------createForm----------
-//- create form(attributes)>block
-
-mixin createForm(classname, method, action, formTitleText)
-	- var attributes = {};
-	- attributes.action = action;
-	- attributes.method = method;
-	- attributes.class = classname;
-	form(class="site-form")&attributes(attributes)
-		if formTitleText
-			div.site-form__title= formTitleText
-
-		if block
-			block
-
-//----------createForm----------
-
 
 
 
