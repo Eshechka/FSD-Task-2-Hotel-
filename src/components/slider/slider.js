@@ -1,73 +1,53 @@
-/* Индекс слайда по умолчанию */
-let slideIndex = 1;
-// тут считаем все слайдеры sliders и перебираем их в цикле и для каждого вызываем showSlides
+// Все слайдеры c классом sliders перебираем в цикле
 let allSliders = document.querySelectorAll('.sliders');
 
 for (let slider of allSliders) {
-console.log(slider.classList[1]);
-	// получаем каждый слайдер по его уникальному классу
+let slideIndex = 1;
+
+	// Получаем каждый слайдер по его уникальному классу
 	let sliderName = document.querySelector('.'+slider.classList[1]);
-
-	showSlides(slideIndex, sliderName);
-	controlElements(sliderName);
-}
-
-
-
-/* Основная функция слайдера */
-function showSlides(n, sliderName) {
-    let i;
-
-    let slides = sliderName.querySelectorAll('.sliders__item');
+	let slides = sliderName.querySelectorAll('.sliders__item');
     let dots = sliderName.querySelectorAll('.sliders-dots__item');
 
-	if (n > slides.length) {
-		slideIndex = 1;
-	}
-	if (n < 1) {
-		slideIndex = slides.length;
+	setCurrentSlide();
+
+	function setCurrentSlide () {
+		for (let i = 0; i < slides.length; i++) {
+			slides[i].style.display = 'none';
+		}
+		slides[slideIndex - 1].style.display = 'block';
+		// Если слайдер будет работать через dots		
+		if (dots.length) {
+			for (let i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(' sliders-dots__item_active', '');
+			}
+			dots[slideIndex - 1].className += ' sliders-dots__item_active';
+		}
 	}
     
-	for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = 'none';
-	}
-    for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(' '+'sliders-dots__item_active', '');
-    }
+	let sliderPrev = sliderName.querySelector('.sliders__prev')
+		if (sliderPrev) 
+			sliderPrev.addEventListener('click', function () {	
+				slideIndex = slideIndex-1 < 1 ? slides.length : slideIndex-1;
+				setCurrentSlide();
+			});
 
-    slides[slideIndex - 1].style.display = 'block';
-    dots[slideIndex - 1].className += ' sliders'+'-dots__item_active';
-}
+	let sliderNext = sliderName.querySelector('.sliders__next')
+		if (sliderNext) 
+			sliderNext.addEventListener('click', function () {		
+				slideIndex = (slideIndex+1 > slides.length) ? 1 : slideIndex+1;
+				setCurrentSlide();
+			});
 
-function controlElements(sliderName) {
-
-	/* Функция увеличивает индекс на 1, показывает следующий слайд*/
-	function plusSlide() {
-	    showSlides(slideIndex += 1, sliderName);
-	}
-
-	/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
-	function minusSlide() {
-	    showSlides(slideIndex -= 1, sliderName);  
-	}
-
-	/* Устанавливает текущий слайд */
-	function currentSlide(n) {
-	    showSlides(slideIndex = n, sliderName);
-	}
-
-
-	sliderName.querySelector('.sliders__prev').addEventListener('click', minusSlide);
-	sliderName.querySelector('.sliders__next').addEventListener('click', plusSlide);
-
-
-	let dots = sliderName.querySelectorAll('.sliders-dots__item');
-	let k = 0;
-
-	dots.forEach( (elem, k) => {
-		k++;
-		elem.addEventListener('click', function () {		
-		    currentSlide(k);
-		})	
-	})
+// Если слайдер будет работать через dots
+	// if (dots.length) {
+		let k = 0;
+		dots.forEach( (elem, k) => {
+			k++;
+			elem.addEventListener('click', function () {
+				slideIndex = k;
+				setCurrentSlide();
+			})
+		})
+	// }
 }

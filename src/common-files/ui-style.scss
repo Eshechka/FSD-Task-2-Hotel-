@@ -36,6 +36,10 @@ $colors: (
 
 
 
+body {
+	min-width: 1460px;
+}
+
 .ui-main {
 	margin: 145px 150px;
 }
@@ -44,7 +48,6 @@ $colors: (
 	margin: 0 auto;
 	display: flex;
 	max-width: 1920px;
-	min-width: 600px;
 	overflow: hidden;
 	justify-content: space-between;
 }
