@@ -1,16 +1,18 @@
-include ../pug_mixins
 
-- 
-	var arrMenuItems = [
-	{url: './about_us.html', text: 'О нас', needPseudoForLink: false}, 
-	{url: './services.html', text: 'Услуги', needPseudoForLink: true}, 
-	{url: './vacancies.html', text: 'Вакансии', needPseudoForLink: false}, 
-	{url: './news.html', text: 'Новости', needPseudoForLink: false}, 
-	{url: './agreement.html', text: 'Соглашения', needPseudoForLink: true}
-	];
+mixin createMenu(className, arrMenuItems)
 
-nav.menu
-	ul.menu__list
-		each i in arrMenuItems
-			+createListItems('menu', i.url, i.text, i.needPseudoForLink, false)
+	nav(class=className)
+		ul(class=className+'__list')
+			each i in arrMenuItems
+				+createListItems(className, i.url, i.text, i.needPseudoForLink, false)
+
+
+mixin createListItems(classname, url, text, needPseudoForLink, linkModifier)
+	li(class= classname+"__item")
+		-
+			var classnameLink = classname+"__link"
+			classnameLink += needPseudoForLink ? " " + classnameLink + "_pseudo" : ""
+			classnameLink += linkModifier ? " " + classnameLink + "_" + linkModifier : ""
+		
+		a(class= classnameLink href= url)= text
 		

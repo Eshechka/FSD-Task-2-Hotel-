@@ -10,8 +10,9 @@ include ../../components/move-to-another-form/move-to-another-form.pug
 include ../../components/services-and-prices/services-and-prices.pug
 include ../../components/room-info/room-info.pug
 include ../../components/show-rating/show-rating.pug
-
 include ../../components/slider/slider.pug
+include ../../components/logotype/logotype.pug
+include ../../components/menu/menu.pug
 
 //- проставить в формах tabindex="1"
 //- заменить картинки на слайдере
@@ -123,7 +124,6 @@ block cards
 				p.move-to-another-form__text Нет аккаунта на Toxin?
 				+createButton('enter-button', 'Создать', 'light')
 
-
 	div.container__column3.container__column3_width320
 
 		div.site-card.site-card_fields_20
@@ -149,7 +149,7 @@ block cards
 				div.room-card__rating
 					+createShowRating(5, 0)
 
-					div.room-card__reviews-number 145
+					div.room-card__reviews- 145
 						span.room-card__reviews отзывов
 
 
@@ -173,5 +173,28 @@ block cards
 				div.room-card__rating
 					+createShowRating(4, 1)
 
-					div.room-card__reviews-number 65
+					div.room-card__reviews- 65
 						span.room-card__reviews отзывов
+
+
+block headers-footers
+
+	div.header
+		+createLogotype('logotype', './img/TOXIN_Logo.svg')
+
+		div.main-nav
+
+		- 
+			var arrMenuItems = [
+			{url: './change-me', text: 'Home', needPseudoForLink: false}, 
+			{url: './change-me', text: 'About us', needPseudoForLink: false}, 
+			{url: './change-me', text: 'Services', needPseudoForLink: true}, 
+			{url: './change-me', text: 'Careers', needPseudoForLink: false}, 
+			{url: './change-me', text: 'News', needPseudoForLink: false}, 
+			{url: './change-me', text: 'Documantation', needPseudoForLink: false}
+			];
+
+		+createMenu('menu', arrMenuItems)
+
+
+		div.auth
