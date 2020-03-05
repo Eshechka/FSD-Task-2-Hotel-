@@ -1,6 +1,7 @@
 extends ../../common-files/UIKit-base-template
 
 include ../../components/color-example/color-example.pug
+include ../../components/fonts-example/fonts-example.pug
 include ../../components/form/form.pug
 include ../../components/form-button/form-button.pug
 include ../../components/guests-quantity/guests-quantity.pug
@@ -13,6 +14,8 @@ include ../../components/show-rating/show-rating.pug
 include ../../components/slider/slider.pug
 include ../../components/logotype/logotype.pug
 include ../../components/menu/menu.pug
+include ../../components/site-button/site-button.pug
+include ../../components/auth/auth.pug
 
 //- проставить в формах tabindex="1"
 //- заменить картинки на слайдере
@@ -82,7 +85,7 @@ block cards
 
 				+createFormButton('form-registration', 'перейти к оплате', 'submit')
 
-				+createMoveToAnotherForm
+				+createMoveToAnotherForm('enter-button', 'Уже есть аккаунт на Toxin', 'Войти', 'light')
 
 	div.container__column3
 
@@ -120,9 +123,7 @@ block cards
 
 				+createFormButton('form-login', 'Войти', 'submit')
 
-			div.move-to-another-form
-				p.move-to-another-form__text Нет аккаунта на Toxin?
-				+createButton('enter-button', 'Создать', 'light')
+			+createMoveToAnotherForm('create-login-button', 'Нет аккаунта на Toxin?', 'Создать', 'light')
 
 	div.container__column3.container__column3_width320
 
@@ -179,22 +180,29 @@ block cards
 
 block headers-footers
 
-	div.header
+	div.header-ui
 		+createLogotype('logotype', './img/TOXIN_Logo.svg')
-
-		div.main-nav
 
 		- 
 			var arrMenuItems = [
-			{url: './change-me', text: 'Home', needPseudoForLink: false}, 
+			{url: './change-me', text: 'Home', needPseudoForLink: false, linkModifier: 'active'}, 
 			{url: './change-me', text: 'About us', needPseudoForLink: false}, 
 			{url: './change-me', text: 'Services', needPseudoForLink: true}, 
 			{url: './change-me', text: 'Careers', needPseudoForLink: false}, 
 			{url: './change-me', text: 'News', needPseudoForLink: false}, 
-			{url: './change-me', text: 'Documantation', needPseudoForLink: false}
+			{url: './change-me', text: 'Documentation', needPseudoForLink: false}
 			];
 
 		+createMenu('menu', arrMenuItems)
 
+		+createAuthentification(false)
+			+createButton('enter-button', 'Login', 'light')
+			+createButton('registration-button', 'Register', false)
 
-		div.auth
+
+	div.header-ui
+		+createLogotype('logotype', './img/TOXIN_Logo.svg')
+
+		+createMenu('menu', arrMenuItems)
+
+		+createAuthentification(true)

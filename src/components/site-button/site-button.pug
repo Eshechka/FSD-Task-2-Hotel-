@@ -1,0 +1,9 @@
+//- create button  a>span
+
+mixin createButton(classname, text, modifier)
+	- 
+		var classnameLink = classname
+		classnameLink += modifier ? " site-button site-button_"+modifier : " site-button"
+
+	a(class=classnameLink  href="./change-me")
+		span(class=classname+ "__text")= text

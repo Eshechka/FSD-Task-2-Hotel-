@@ -1,7 +1,7 @@
 
 
-mixin createMoveToAnotherForm
+mixin createMoveToAnotherForm(buttonClass, text, buttonText, theme)
 	div.move-to-another-form
-		p.move-to-another-form__text Уже есть аккаунт на Toxin
+		p.move-to-another-form__text= text
 
-		+createButton('enter-button', 'Войти', 'light')
+		+createButton(buttonClass, buttonText, theme)

@@ -1,0 +1,30 @@
+.auth {
+	display: flex;
+}
+
+.auth .registration-button {
+	margin-left: 10px;
+}
+
+.auth__content {
+	display: flex;
+
+	&_logged {
+		padding-left: 30px;
+		align-items: center;
+		position: relative;
+
+		&:before{
+			content: '';
+			position: absolute;
+			transform: translateY(-50%);
+			top: 50%;
+			left: 0;
+			width: 1px;
+			height: 30px;
+			background: rgba(31, 32, 65, 0.1);
+		}
+	
+	}
+
+}

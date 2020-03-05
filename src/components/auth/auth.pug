@@ -1,0 +1,17 @@
+mixin createUserAccount(className, userName)
+
+	div(class=className) 
+		a(class=className+'__account' href = './change-me')
+			span(class=className+'__name')= userName 
+
+mixin createAuthentification(logged)
+		div.auth
+			if logged
+				div.auth__content.auth__content_logged
+					+createUserAccount('user', 'Cosmin Negoita')
+			else 
+				div.auth__content
+			
+					if block
+						block
+

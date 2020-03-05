@@ -47,6 +47,7 @@ body {
 .container {  
 	margin: 0 auto;
 	display: flex;
+	flex-wrap: wrap;
 	max-width: 1920px;
 	overflow: hidden;
 	justify-content: space-between;
@@ -62,48 +63,7 @@ div.container__right {
 
 
 
-.fonts-example {
-	display: flex;
-    padding-top: 10px;
-    padding-bottom: 25px;
 
-	&__tagtext {
-		margin-top: 0px;
-	}
-}
-
-.fonts-example__tagname {
-
-	font-family: Montserrat;
-	text-align: right;
-	color: $DarkShade25;
-	flex:0 0 70px;
-	margin-right: 30px;
-
-	&_h1 {
-		font-size: 24px;
-		line-height: 29px;
-	}
-	
-	&_h2 {
-		font-size: 19px;
-		line-height: 23px;
-	}
-	
-	&_h3 {
-		font-size: 12px;
-		line-height: 15px;
-	}
-
-	&_p {
-		font-size: 14px;
-		line-height: 24px;
-
-		&:first-letter {
-			text-transform: uppercase;;
-		}
-	}
-}
 
 
 
@@ -252,13 +212,23 @@ input {
 }
 
 
+.header-ui {
+	display: flex;
+	justify-content: space-between;
+	flex: 1 0 100%;
+	padding: 10px 0;
+	
+	&__login {
 
+	}
+
+}
 
 
 
 
 @import "../components/color-example/color-example.scss";
-@import "../components/button/button.scss";
+@import "../components/fonts-example/fonts-example.scss";
 @import "../components/form/form.scss";
 @import "../components/form-button/form-button.scss";
 @import "../components/site-card/site-card.scss";
@@ -275,3 +245,5 @@ input {
 @import "../components/slider/slider.scss";
 @import "../components/logotype/logotype.scss";
 @import "../components/menu/menu.scss";
+@import "../components/site-button/site-button.scss";
+@import "../components/auth/auth.scss";

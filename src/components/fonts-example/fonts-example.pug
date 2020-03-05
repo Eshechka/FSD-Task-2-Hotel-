@@ -1,0 +1,19 @@
+//- div>(div+tag)
+
+mixin createFontsExample(tag, text, classname)
+
+	- var tagsForChange = ['body', 'html', 'title']
+
+	div(class=classname) 
+		- var changeTag = tag
+
+		each val in tagsForChange
+			if changeTag === val 
+				-tag = 'p'
+		-	
+			var classnameTagName = classname + '__tagname'
+				classnameTagName += ' '+classnameTagName+'_'+tag
+		
+		div(class=classnameTagName)= tag==='p' ? changeTag : tag.toUpperCase()
+		
+		+createAnyTag(tag, text, classname+'__tagtext')

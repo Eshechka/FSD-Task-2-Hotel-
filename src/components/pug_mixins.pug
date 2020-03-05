@@ -1,16 +1,4 @@
 
-//- Create menu items li>a
-//- mixin createListItems(classname, url, text, needPseudoForLink, linkModifier)
-//- 	li(class= classname+"__item")
-//- 		-
-//- 			var classnameLink = classname+"__link"
-//- 			classnameLink += needPseudoForLink ? " " + classnameLink + "_pseudo" : ""
-//- 			classnameLink += linkModifier ? " " + classnameLink + "_" + linkModifier : ""
-//- 		
-//- 		a(class= classnameLink href= url)= text
-
-
-
 //- Create list div>ul> n*(li>a)
 mixin createList(classname, arrayItems)
 	ul(class= classname+"__list")
@@ -41,50 +29,6 @@ mixin createAnyTag(tag, text, classname)
 	!=newTag
 
 //----------createAnyTag----------
-
-
-
-//----------createFontsExample----------
-//- div>(div+tag)
-
-- var tagsForChange = ['body', 'html', 'title']
-mixin createFontsExample(tag, text, classname)
-	div(class=classname) 
-		- var changeTag = tag
-
-		each val in tagsForChange
-			if changeTag === val 
-				-tag = 'p'
-		-	
-			var classnameTagName = classname + '__tagname'
-				classnameTagName += ' '+classnameTagName+'_'+tag
-		
-		div(class=classnameTagName)= tag==='p' ? changeTag : tag.toUpperCase()
-		
-		+createAnyTag(tag, text, classname+'__tagtext')
-
-//----------createFontsExample----------
-
-
-
-
-
-
-//----------createButton----------
-//- Create a>span
-
-mixin createButton(classname, text, modifier)
-	- 
-		var classnameLink = classname
-		classnameLink += modifier ? " site-button site-button_"+modifier : " site-button"
-
-	a(class=classnameLink  href="./change-me")
-		span(class=classname+ "__text")= text
-
-//----------createButton----------
-
-
-
 
 
 
