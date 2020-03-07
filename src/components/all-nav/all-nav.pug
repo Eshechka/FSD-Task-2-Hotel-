@@ -1,0 +1,14 @@
+
+mixin createMenuColumn(arrAllNavItems)
+	-
+		var className ='all-nav'
+
+	div(class=className)
+		each i in arrAllNavItems
+			div(class=className+'__group')
+				h3(class=className+'__title')= i.titleText
+
+				each j in i.items
+					ul(class=className+'__list')
+						li(class=className+'__item')
+							a(class=className + '__link' href=j.href)= j.text

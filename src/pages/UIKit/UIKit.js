@@ -5,6 +5,7 @@ import '../../components/slider/slider';
 import '../../common-files/ui-style.scss';
 
 import '../../img/TOXIN_just_picture.svg';
+import '../../img/TOXIN_Logo.svg';
 
 import '../../img/room888_picture.png';
 

@@ -225,14 +225,22 @@ input {
 }
 
 
-.information-and-navigation {
+.info-and-nav {
 	box-shadow: inset 0px -1px 0px rgba(31, 32, 65, 0.1);
 	display: flex;
+
+	&__column {
+		flex-grow: 1;
+
+		&.info-and-nav__column_width260 {
+			flex: 0 0 260px;
+		}
+
+		
+	}
 }
 
-.all-navigation {
-	display: flex;
-}
+
 
 
 
@@ -257,5 +265,6 @@ input {
 @import "../components/menu/menu.scss";
 @import "../components/site-button/site-button.scss";
 @import "../components/auth/auth.scss";
-@import "../components/column-menu/column-menu.scss";
+@import "../components/all-nav/all-nav.scss";
 @import "../components/subscribe/subscribe.scss";
+@import "../components/short-info/short-info.scss";

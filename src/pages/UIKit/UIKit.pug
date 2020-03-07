@@ -16,8 +16,9 @@ include ../../components/logotype/logotype.pug
 include ../../components/menu/menu.pug
 include ../../components/site-button/site-button.pug
 include ../../components/auth/auth.pug
-include ../../components/column-menu/column-menu.pug
+include ../../components/all-nav/all-nav.pug
 include ../../components/subscribe/subscribe.pug
+include ../../components/short-info/short-info.pug
 
 //- проставить в формах tabindex="1"
 //- заменить картинки на слайдере
@@ -211,37 +212,37 @@ block headers-footers
 		+createAuthentification(true)
 
 
-	div.information-and-navigation
-		div.short-info
-			p.short-info__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-		
-		div.all-navigation
-			- 
-				var arrAllNavItems =[
-					{titleText: 'Навигация', 
-									items: [{text: 'О нас', href: './change-me'}, 
-											{text: 'Новости', href: './change-me'}, 
-											{text: 'Служба поддержки', href: './change-me'}, 
-											{text: 'Услуги', href: './change-me'}]},
-					{titleText: 'О нас',
-									items: [{text: 'О сервисе', href: './change-me'}, 
-											{text: 'Наша команда', href: './change-me'}, 
-											{text: 'Вакансии', href: './change-me'}, 
-											{text: 'Инвесторы', href: './change-me'}]}, 
-					{titleText: 'Служба поддержки', 
-									items: [{text: 'Соглашения', href: './change-me'}, 
-											{text: 'Сообщества', href: './change-me'}, 
-											{text: 'Связь с нами', href: './change-me'}]}
-				]
+	div.info-and-nav
+		div.info-and-nav__column.info-and-nav__column_width260
 
-			+createMenuColumn(arrAllNavItems)
+			+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
-		div.subscribe
-			h3.subscribe__title Подписка
-			p.subscribe__text Получайте специальные предложения и новости сервиса
-			form.confirm-subscribe(action='./change-me' method='get')
-				input.confirm-subscribe__input(type='email' placeholder='Email')
-				input.confirm-subscribe__submit(type='submit' value='')
+			+createShortInfo('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
+
+
+		div.info-and-nav__column
+				- 
+					var arrAllNavItems =[
+						{titleText: 'Навигация', 
+										items: [{text: 'О нас', href: './change-me'}, 
+												{text: 'Новости', href: './change-me'}, 
+												{text: 'Служба поддержки', href: './change-me'}, 
+												{text: 'Услуги', href: './change-me'}]},
+						{titleText: 'О нас',
+										items: [{text: 'О сервисе', href: './change-me'}, 
+												{text: 'Наша команда', href: './change-me'}, 
+												{text: 'Вакансии', href: './change-me'}, 
+												{text: 'Инвесторы', href: './change-me'}]}, 
+						{titleText: 'Служба поддержки', 
+										items: [{text: 'Соглашения', href: './change-me'}, 
+												{text: 'Сообщества', href: './change-me'}, 
+												{text: 'Связь с нами', href: './change-me'}]}
+					]
+
+				+createMenuColumn(arrAllNavItems)
+
+		div.info-and-nav__column.info-and-nav__column_width260
+			+createSubscribe('Подписка', 'Получайте специальные предложения и новости сервиса')
 
 
 
