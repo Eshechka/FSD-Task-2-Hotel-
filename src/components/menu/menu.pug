@@ -1,18 +1,17 @@
 
-mixin createMenu(className, arrMenuItems)
+mixin createMenu(arrMenuItems)
+	-
+		var className ='menu'
 
 	nav(class=className)
 		ul(class=className+'__list')
 			each i in arrMenuItems
-				+createListItems(className, i.url, i.text, i.needPseudoForLink, i.linkModifier)
+				li(class= className+"__item")
+						-
+							var classnameLink = className+"__link"
+							classnameLink += i.needPseudoForLink ? " " + classnameLink + "_pseudo" : ""
+							classnameLink += i.linkModifier ? " " + classnameLink + "_" + i.linkModifier : ""
+						
+						a(class= classnameLink href= i.url)= i.text
 
-
-mixin createListItems(className, url, text, needPseudoForLink, linkModifier)
-	li(class= className+"__item")
-		-
-			var classnameLink = className+"__link"
-			classnameLink += needPseudoForLink ? " " + classnameLink + "_pseudo" : ""
-			classnameLink += linkModifier ? " " + classnameLink + "_" + linkModifier : ""
-		
-		a(class= classnameLink href= url)= text
 		
