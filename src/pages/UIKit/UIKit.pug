@@ -15,7 +15,7 @@ include ../../components/slider/slider.pug
 include ../../components/logotype/logotype.pug
 include ../../components/menu/menu.pug
 include ../../components/site-button/site-button.pug
-include ../../components/auth/auth.pug
+include ../../components/user/user.pug
 include ../../components/all-nav/all-nav.pug
 include ../../components/subscribe/subscribe.pug
 include ../../components/short-info/short-info.pug
@@ -184,7 +184,7 @@ block cards
 
 block headers-footers
 
-	div.header-ui
+	div.header
 		+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
 		- 
@@ -197,30 +197,37 @@ block headers-footers
 			{url: './change-me', text: 'Documentation', needPseudoForLink: false}
 			];
 
+
 		+createMenu(arrMenuItems)
 
-		+createAuthentification(false)
-			+createButton('enter-button', 'Login', 'light')
+		//+createAuthentification(false)
+		div.header__registration
+
+			div.header__button-wrapper
+				+createButton('enter-button', 'Login', 'light')
+
 			+createButton('registration-button', 'Register', false)
 
 
-	div.header-ui
+	div.header.header_logged
+
 		+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
 		+createMenu(arrMenuItems)
 
-		+createAuthentification(true)
+		div.header__user
+			+createUserAccount('Cosmin Negoita')
 
 
-	div.info-and-nav
-		div.info-and-nav__column.info-and-nav__column_width260
+	footer.widgets-and-copyright
+		div.widgets-and-copyright__column.widgets-and-copyright__column_width260
 
 			+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
 			+createShortInfo('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
 
 
-		div.info-and-nav__column
+		div.widgets-and-copyright__column
 				- 
 					var arrAllNavItems =[
 						{titleText: 'Навигация', 
@@ -241,7 +248,7 @@ block headers-footers
 
 				+createMenuColumn(arrAllNavItems)
 
-		div.info-and-nav__column.info-and-nav__column_width260
+		div.widgets-and-copyright__column.widgets-and-copyright__column_width260
 			+createSubscribe('Подписка', 'Получайте специальные предложения и новости сервиса')
 
 

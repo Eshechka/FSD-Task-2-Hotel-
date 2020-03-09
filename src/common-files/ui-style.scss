@@ -212,27 +212,42 @@ input {
 }
 
 
-.header-ui {
+.header {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
 	flex: 1 0 100%;
 	padding: 10px 0;
 	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 	
-	&__login {
+	&__registration {
+		display: flex;
+		align-items: center;
+	}
+
+	&__button-wrapper {
+		padding-right: 20px;
+	}
+
+	&__user {
+		display: flex;
+		align-items: center;
+	}
+
+	&.header_logged {
 
 	}
 }
 
 
-.info-and-nav {
+.widgets-and-copyright {
 	box-shadow: inset 0px -1px 0px rgba(31, 32, 65, 0.1);
 	display: flex;
 
 	&__column {
 		flex-grow: 1;
 
-		&.info-and-nav__column_width260 {
+		&.widgets-and-copyright__column_width260 {
 			flex: 0 0 260px;
 		}
 
@@ -264,7 +279,7 @@ input {
 @import "../components/logotype/logotype.scss";
 @import "../components/menu/menu.scss";
 @import "../components/site-button/site-button.scss";
-@import "../components/auth/auth.scss";
+@import "../components/user/user.scss";
 @import "../components/all-nav/all-nav.scss";
 @import "../components/subscribe/subscribe.scss";
 @import "../components/short-info/short-info.scss";

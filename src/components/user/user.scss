@@ -1,17 +1,7 @@
-.auth {
-	display: flex;
-}
+.user {
 
-.auth .registration-button {
-	margin-left: 10px;
-}
-
-.auth__content {
-	display: flex;
-
-	&_logged {
+	&__account {
 		padding-left: 30px;
-		align-items: center;
 		position: relative;
 
 		&:before{

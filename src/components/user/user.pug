@@ -1,0 +1,5 @@
+mixin createUserAccount(userName)
+	- var className = 'user'
+	div(class=className) 
+		a(class=className+'__account' href = './change-me')
+			span(class=className+'__name')= userName 

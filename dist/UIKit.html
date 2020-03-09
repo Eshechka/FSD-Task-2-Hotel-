@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html></html>
+<head><link href="style.44472d17e76beb8cabec.css" rel="stylesheet"></head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, width=device-width">
+<meta name="Keywords" content="Toxin UIKit">
+<title> 
+  <Toxin>UIKit</Toxin>
+</title>
+<body>
+  <header class="ui-header">
+    <div class="ui-logo"><a class="ui-logo__link" href="./change-me"><img class="ui-logo__img" src="img/TOXIN_just_picture.svg" alt="Logotype"></a></div>
+  </header>
+  <main class="ui-main">
+    <section class="colorAndType">
+      <div class="container">
+        <div class="container__left">
+          <div class="color-example">
+            <div class="color-example__rect color-example__rect_DarkShade100"></div><b class="color-example__name">Dark Shade 100%</b>
+            <p class="color-example__desc">#1F2041</p>
+          </div>
+          <div class="color-example">
+            <div class="color-example__rect color-example__rect_DarkShade75"></div><b class="color-example__name">Dark Shade 75%</b>
+            <p class="color-example__desc">#1F2041</p>
+          </div>
+          <div class="color-example">
+            <div class="color-example__rect color-example__rect_DarkShade50"></div><b class="color-example__name">Dark Shade 50%</b>
+            <p class="color-example__desc">#1F2041</p>
+          </div>
+          <div class="color-example">
+            <div class="color-example__rect color-example__rect_DarkShade25"></div><b class="color-example__name">Dark Shade 25%</b>
+            <p class="color-example__desc">#1F2041</p>
+          </div>
+          <div class="color-example">
+            <div class="color-example__rect color-example__rect_DarkShade5"></div><b class="color-example__name">Dark Shade 5%</b>
+            <p class="color-example__desc">#1F2041</p>
+          </div>
+          <div class="color-example">
+            <div class="color-example__rect color-example__rect_Purple"></div><b class="color-example__name">Purple</b>
+            <p class="color-example__desc">#BC9CFF</p>
+          </div>
+          <div class="color-example">
+            <div class="color-example__rect color-example__rect_Green"></div><b class="color-example__name">Green</b>
+            <p class="color-example__desc">#6FCF97</p>
+          </div>
+        </div>
+        <div class="container__right">
+          <div class="fonts-example"> 
+            <div class="fonts-example__tagname fonts-example__tagname_h1">H1</div><h1 class="fonts-example__tagtext">This one is the sub-section or widget title</h1>
+          </div>
+          <div class="fonts-example"> 
+            <div class="fonts-example__tagname fonts-example__tagname_h2">H2</div><h2 class="fonts-example__tagtext">Next one is the item title inside widgets</h2>
+          </div>
+          <div class="fonts-example"> 
+            <div class="fonts-example__tagname fonts-example__tagname_h3">H3</div><h3 class="fonts-example__tagtext">This is a label or CTA text</h3>
+          </div>
+          <div class="fonts-example"> 
+            <div class="fonts-example__tagname fonts-example__tagname_p">body</div><p class="fonts-example__tagtext">This is the body text which is used for most of the design, like paragraphs, lists, etc.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cards">
+      <div class="container">
+        <div class="container__column3">
+          <div class="site-card site-card_fields_30">
+            <form class="site-form form-search-room" action="/change-me" method="get">
+              <div class="site-form__title">Найдем номера под ваши желания</div>
+              <div class="form-group form-group_type_inline arrival-and-departure">
+                <label class="form-group__label arrival-and-departure__text" for="arrival">Прибытие</label>
+                <input class="arrival-and-departure__date-field" type="date" name="arrival" id="arrival">
+              </div>
+              <div class="form-group form-group_type_inline arrival-and-departure">
+                <label class="form-group__label arrival-and-departure__text" for="departure">Выезд</label>
+                <input class="arrival-and-departure__date-field" type="date" name="departure" id="departure">
+              </div>
+              <div class="form-group guests-quantity">
+                <label class="form-group__label guests-quantity__text">Гости</label>
+                <select class="guests-quantity__select-field" name="guests-quantity">
+                  <option class="guests-quantity__option-field" value="" disabled selected>Сколько гостей</option>
+                  <option class="guests-quantity__option-field" value="1">1 гость</option>
+                  <option class="guests-quantity__option-field" value="2">2 гостя</option>
+                  <option class="guests-quantity__option-field" value="3">3 гостя</option>
+                </select>
+              </div>
+              <button class="form-button form-search-room__button" type="submit">Подобрать номер<i class="material-icons form-button__icon">arrow_forward</i></button>
+            </form>
+          </div>
+          <div class="site-card site-card_fields_30">
+            <form class="site-form form-registration" action="/change-me" method="post">
+              <div class="site-form__title">Регистрация аккаунта</div>
+              <div class="form-group client-personal-info">
+                <input class="client-personal-info__name" type="text" name="name" id="name" placeholder="Имя">
+                <input class="client-personal-info__surname" type="text" name="surname" id="surname" placeholder="Фамилия">
+              </div>
+              <div class="form-group form-group_type_inline_row choose-gender">
+                <input class="form-group__input_radio choose-gender__radio-circle" type="radio" name="gender" value="male" id="gender__male" checked>
+                <label class="form-group__label form-group__label_radio choose-gender__text" for="gender__male">Мужчина					</label>
+              </div>
+              <div class="form-group form-group_type_inline_row choose-gender">
+                <input class="form-group__input_radio choose-gender__radio-circle" type="radio" name="gender" value="female" id="gender__female">
+                <label class="form-group__label form-group__label_radio choose-gender__text" for="gender__female">Женщина</label>
+              </div>
+              <div class="form-group client-birthday">
+                <label class="form-group__label client-birthday__text" for="birthday">Дата рождения</label>
+                <input class="client-birthday__date-field" type="date" name="birthday" id="birthday">
+              </div>
+              <div class="form-group client-login-pass">
+                <label class="form-group__label client-login-pass__text">Данные для входа в сервис</label>
+                <input class="client-login-pass__email-field" type="email" name="email" placeholder="Email">
+                <input class="client-login-pass__pass-field" type="password" name="password" placeholder="Пароль">
+              </div>
+              <div class="form-group form-group_type_inline_row">
+                <div class="toggle-button-cover">
+                  <div class="toggle-button">
+                    <input class="toggle-button__checkbox" type="checkbox" id="toggle-button">
+                    <div class="toggle-button__knobs"></div>
+                    <div class="toggle-button__layer"></div>
+                  </div>
+                </div>
+                <label class="form-group__label toggle-button__text" for="toggle-button">Получать спецпредложения</label>
+              </div>
+              <button class="form-button form-registration__button" type="submit">перейти к оплате<i class="material-icons form-button__icon">arrow_forward</i></button>
+              <div class="move-to-another-form">
+                <p class="move-to-another-form__text">Уже есть аккаунт на Toxin</p><a class="enter-button site-button site-button_light" href="./change-me"><span class="enter-button__text">Войти</span></a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container__column3">
+          <div class="site-card site-card_fields_30">
+            <form class="site-form form-booking-room" action="/change-me" method="get">
+              <div class="room-info">
+                <div class="room-info__number">№ <span>888</span></div>
+                <div class="room-info__type">люкс</div>
+                <div class="room-info__price">9 990&#8381; <span>в сутки</span></div>
+              </div>
+              <div class="form-group form-group_type_inline arrival-and-departure">
+                <label class="form-group__label arrival-and-departure__text" for="booking-arrival">Прибытие</label>
+                <input class="arrival-and-departure__date-field" type="date" name="arrival" id="booking-arrival">
+              </div>
+              <div class="form-group form-group_type_inline arrival-and-departure">
+                <label class="form-group__label arrival-and-departure__text" for="booking-departure">Выезд</label>
+                <input class="arrival-and-departure__date-field" type="date" name="departure" id="booking-departure">
+              </div>
+              <div class="form-group guests-quantity">
+                <label class="form-group__label guests-quantity__text">Гости</label>
+                <select class="guests-quantity__select-field" name="guests-quantity">
+                  <option class="guests-quantity__option-field" value="" disabled selected>Сколько гостей</option>
+                  <option class="guests-quantity__option-field" value="1">1 гость</option>
+                  <option class="guests-quantity__option-field" value="2">2 гостя</option>
+                  <option class="guests-quantity__option-field" value="3">3 гостя</option>
+                </select>
+              </div>
+              <div class="form-group services-list">
+                <ul class="services-and-prices__list">
+                  <li class="services-and-prices__item">
+                    <div class="services-and-prices__desc">9 990&#8381; х 4 суток</div>
+                    <div class="services-and-prices__price">39 960&#8381;</div>
+                  </li>
+                  <li class="services-and-prices__item services-and-prices__item_pseudo">
+                    <div class="services-and-prices__desc">Сбор за услуги: скидка 2 179&#8381;</div>
+                    <div class="services-and-prices__price">0&#8381;</div>
+                  </li>
+                  <li class="services-and-prices__item services-and-prices__item_pseudo">
+                    <div class="services-and-prices__desc">Сбор за дополнительные услуги</div>
+                    <div class="services-and-prices__price">300&#8381;</div>
+                  </li>
+                  <li class="services-and-prices__item services-and-prices__item_total">
+                    <div class="services-and-prices__desc">Итого</div>
+                    <div class="services-and-prices__price">38 081&#8381;</div>
+                  </li>
+                </ul>
+              </div>
+              <button class="form-button form-booking-room__button" type="submit">Забронировать<i class="material-icons form-button__icon">arrow_forward</i></button>
+            </form>
+          </div>
+          <div class="site-card site-card_fields_30">
+            <form class="site-form form-login" action="/change-me" method="get">
+              <div class="site-form__title">Войти</div>
+              <div class="form-group client-login-pass">
+                <input class="client-login-pass__email-field" type="email" name="email" placeholder="Email">
+                <input class="client-login-pass__pass-field" type="password" name="password" placeholder="Пароль">
+              </div>
+              <button class="form-button form-login__button" type="submit">Войти<i class="material-icons form-button__icon">arrow_forward</i></button>
+            </form>
+            <div class="move-to-another-form">
+              <p class="move-to-another-form__text">Нет аккаунта на Toxin?</p><a class="create-login-button site-button site-button_light" href="./change-me"><span class="create-login-button__text">Создать</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="container__column3 container__column3_width320">
+          <div class="site-card site-card_fields_20">
+            <div class="calendar"></div>
+          </div>
+          <div class="site-card">
+            <div class="room-card">
+              <div class="sliders slider888">
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room888_picture.png" alt="Слайд 1"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture2.png" alt="Слайд 2"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture3.png" alt="Слайд 3"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture4.png" alt="Слайд 4"></div><a class="sliders__prev">&#10094;</a><a class="sliders__next">&#10095;</a>
+                <div class="sliders-dots"><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span>
+                </div>
+              </div>
+              <div class="room-card__data">
+                <div class="room-info room-info_border_bottom">
+                  <div class="room-info__number">№ <span>888</span></div>
+                  <div class="room-info__type">люкс</div>
+                  <div class="room-info__price">9 990&#8381; <span>в сутки</span></div>
+                </div>
+              </div>
+              <div class="room-card__rating">
+                <div class="show-rating"><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i>
+                </div>
+                <div class="room-card__reviews-">145<span class="room-card__reviews">отзывов</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="site-card">
+            <div class="room-card">
+              <div class="sliders slider840">
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture.png" alt="Слайд 1"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture2.png" alt="Слайд 2"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture3.png" alt="Слайд 3"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture4.png" alt="Слайд 4"></div><a class="sliders__prev">&#10094;</a><a class="sliders__next">&#10095;</a>
+              </div>
+              <div class="room-card__data">
+                <div class="room-info room-info_border_bottom">
+                  <div class="room-info__number">№ <span>840</span></div>
+                  <div class="room-info__type"></div>
+                  <div class="room-info__price">9 900&#8381; <span>в сутки</span></div>
+                </div>
+              </div>
+              <div class="room-card__rating">
+                <div class="show-rating"><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star_border</i>
+                </div>
+                <div class="room-card__reviews-">65<span class="room-card__reviews">отзывов</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="headers-footers">
+      <div class="container">
+        <div class="header">
+          <div class="logotype"><a class="logotype__link" href="./change-me"><img class="logotype__img" src="./img/TOXIN_Logo.svg" alt="Logotype"></a></div>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item"><a class="menu__link menu__link_active" href="./change-me">Home</a>
+              </li>
+              <li class="menu__item"><a class="menu__link" href="./change-me">About us</a>
+              </li>
+              <li class="menu__item"><a class="menu__link menu__link_pseudo" href="./change-me">Services</a>
+              </li>
+              <li class="menu__item"><a class="menu__link" href="./change-me">Careers</a>
+              </li>
+              <li class="menu__item"><a class="menu__link" href="./change-me">News</a>
+              </li>
+              <li class="menu__item"><a class="menu__link" href="./change-me">Documentation</a>
+              </li>
+            </ul>
+          </nav>
+          <!--+createAuthentification(false)-->
+          <div class="header__registration">
+            <div class="header__button-wrapper"><a class="enter-button site-button site-button_light" href="./change-me"><span class="enter-button__text">Login</span></a>
+            </div><a class="registration-button site-button" href="./change-me"><span class="registration-button__text">Register</span></a>
+          </div>
+        </div>
+        <div class="header header_logged">
+          <div class="logotype"><a class="logotype__link" href="./change-me"><img class="logotype__img" src="./img/TOXIN_Logo.svg" alt="Logotype"></a></div>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item"><a class="menu__link menu__link_active" href="./change-me">Home</a>
+              </li>
+              <li class="menu__item"><a class="menu__link" href="./change-me">About us</a>
+              </li>
+              <li class="menu__item"><a class="menu__link menu__link_pseudo" href="./change-me">Services</a>
+              </li>
+              <li class="menu__item"><a class="menu__link" href="./change-me">Careers</a>
+              </li>
+              <li class="menu__item"><a class="menu__link" href="./change-me">News</a>
+              </li>
+              <li class="menu__item"><a class="menu__link" href="./change-me">Documentation</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__user">
+            <div class="user"> <a class="user__account" href="./change-me"><span class="user__name">Cosmin Negoita</span></a></div>
+          </div>
+        </div>
+        <footer class="widgets-and-copyright">
+          <div class="widgets-and-copyright__column widgets-and-copyright__column_width260">
+            <div class="logotype"><a class="logotype__link" href="./change-me"><img class="logotype__img" src="./img/TOXIN_Logo.svg" alt="Logotype"></a></div>
+            <div class="short-info">
+              <p class="short-info__text">Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.</p>
+            </div>
+          </div>
+          <div class="widgets-and-copyright__column">
+            <div class="all-nav">
+              <div class="all-nav__group">
+                <h3 class="all-nav__title">Навигация</h3>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">О нас</a></li>
+                </ul>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Новости</a></li>
+                </ul>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Служба поддержки</a></li>
+                </ul>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Услуги</a></li>
+                </ul>
+              </div>
+              <div class="all-nav__group">
+                <h3 class="all-nav__title">О нас</h3>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">О сервисе</a></li>
+                </ul>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Наша команда</a></li>
+                </ul>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Вакансии</a></li>
+                </ul>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Инвесторы</a></li>
+                </ul>
+              </div>
+              <div class="all-nav__group">
+                <h3 class="all-nav__title">Служба поддержки</h3>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Соглашения</a></li>
+                </ul>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Сообщества</a></li>
+                </ul>
+                <ul class="all-nav__list">
+                  <li class="all-nav__item"><a class="all-nav__link" href="./change-me">Связь с нами</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="widgets-and-copyright__column widgets-and-copyright__column_width260">
+            <div class="subscribe">
+              <h3 class="subscribe__title">Подписка</h3>
+              <p class="subscribe__text">Получайте специальные предложения и новости сервиса</p>
+              <form class="confirm-subscribe" action="./change-me" method="get">
+                <input class="confirm-subscribe__input" type="email" placeholder="Email">
+                <input class="confirm-subscribe__submit" type="submit" value="">
+              </form>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+  <footer class="ui-footer"></footer>
+<script type="text/javascript" src="./js/UIKit.11e066d82c1f1f7231d8.js"></script></body>
