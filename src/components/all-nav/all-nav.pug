@@ -1,5 +1,5 @@
 
-mixin createMenuColumn(arrAllNavItems)
+mixin createAllNav(arrAllNavItems)
 	-
 		var className ='all-nav'
 
@@ -7,8 +7,7 @@ mixin createMenuColumn(arrAllNavItems)
 		each i in arrAllNavItems
 			div(class=className+'__group')
 				h3(class=className+'__title')= i.titleText
-
-				each j in i.items
-					ul(class=className+'__list')
+				ul(class=className+'__list')
+					each j in i.items					
 						li(class=className+'__item')
 							a(class=className + '__link' href=j.href)= j.text

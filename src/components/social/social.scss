@@ -2,6 +2,12 @@
 	display: flex;
 }
 
+.social__item {
+
+		&:not(:first-child) {
+			margin-left: 20px;
+		}
+}
 
 .social__link {
 	
@@ -12,7 +18,7 @@
 
 	width: 24px;
 	height: 24px;
-	margin-right: 20px;
+		
 	font-size: 0;
 
 	@each $social in 'fb','tw','ig' {
@@ -22,6 +28,5 @@
 		}
 
 	}
-
 	
 }

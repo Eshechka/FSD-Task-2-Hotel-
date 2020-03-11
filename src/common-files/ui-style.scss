@@ -240,18 +240,35 @@ input {
 }
 
 
-.widgets-and-copyright {
-	box-shadow: inset 0px -1px 0px rgba(31, 32, 65, 0.1);
-	display: flex;
+.footer {
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-	&__column {
+	&__widgets {
+		box-shadow: inset 0px -1px 0px rgba(31, 32, 65, 0.1);
+		display: flex;
+	}
+
+	&__left-side {		
+		flex: 0 0 260px;		
+	}
+
+	&__right-side {
 		flex-grow: 1;
+		display: flex;
+	}
 
-		&.widgets-and-copyright__column_width260 {
-			flex: 0 0 260px;
-		}
+	&__subscribe {
+		flex: 0 0 260px;
+	}	
 
-		
+	&__navigation {
+		flex-grow: 1;
+		padding: 0 40px;
+	}	
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
 	}
 }
 
@@ -283,3 +300,4 @@ input {
 @import "../components/all-nav/all-nav.scss";
 @import "../components/subscribe/subscribe.scss";
 @import "../components/short-info/short-info.scss";
+@import "../components/social/social.scss";

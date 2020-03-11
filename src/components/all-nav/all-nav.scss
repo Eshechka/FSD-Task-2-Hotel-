@@ -1,13 +1,11 @@
 .all-nav{
 
 	display: flex;
-	/*justify-content: space-around;*/
-	padding: 0 40px;
+	flex-wrap: wrap;
 
 	&__group{
 		flex-grow: 1;
 		padding-left: 20px;
-		padding-right: 20px;
 	}
 
 	&__link {

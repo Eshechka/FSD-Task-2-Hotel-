@@ -1,14 +1,12 @@
-include ../pug_mixins
+mixin createSocials(arrSocialItems)
+	- var className = 'social';
 
-- 
-	var arrSocialItems = [
-	{url: 'https://www.twitter.com', text: 'tw', linkModifier: 'tw'}, 
-	{url: 'https://www.facebook.com', text: 'fb', linkModifier: 'fb'}, 
-	{url: 'https://www.instagram.com', text: 'ig', linkModifier: 'ig'}
-	];
-
-	var classname = 'social';
-
-div(class= classname)
-	+createList(classname, arrSocialItems)
-		
+	div(class= className)
+		ul(class= className+'__list')
+			each i in arrSocialItems			
+				li(class= className+'__item')
+					-
+						var classnameLink = className+'__link'
+						classnameLink += i.linkModifier ? ' ' + classnameLink + '_' + i.linkModifier : ''
+					
+					a(class= classnameLink href= i.url)= i.text

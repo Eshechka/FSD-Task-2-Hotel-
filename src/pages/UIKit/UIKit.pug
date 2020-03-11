@@ -19,6 +19,7 @@ include ../../components/user/user.pug
 include ../../components/all-nav/all-nav.pug
 include ../../components/subscribe/subscribe.pug
 include ../../components/short-info/short-info.pug
+include ../../components/social/social.pug
 
 //- проставить в формах tabindex="1"
 //- заменить картинки на слайдере
@@ -219,37 +220,51 @@ block headers-footers
 			+createUserAccount('Cosmin Negoita')
 
 
-	footer.widgets-and-copyright
-		div.widgets-and-copyright__column.widgets-and-copyright__column_width260
+	footer.footer
+		div.footer__widgets
+			div.footer__left-side
 
-			+createLogotype('logotype', './img/TOXIN_Logo.svg')
+				+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
-			+createShortInfo('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
+				+createShortInfo('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
 
 
-		div.widgets-and-copyright__column
+			div.footer__right-side
+				div.footer__navigation
+
+					- 
+						var arrAllNavItems =[
+							{titleText: 'Navigation', 
+											items: [{text: 'About Us', href: './change-me'}, 
+													{text: 'News', href: './change-me'}, 
+													{text: 'Support', href: './change-me'}, 
+													{text: 'Products', href: './change-me'}]},
+							{titleText: 'ABOUT US',
+											items: [{text: 'Who we are', href: './change-me'}, 
+													{text: 'Our team', href: './change-me'}, 
+													{text: 'Careers', href: './change-me'}, 
+													{text: 'Investors', href: './change-me'}]}, 
+
+							{titleText: 'Support', 
+											items: [{text: 'Documentation', href: './change-me'}, 
+													{text: 'Community', href: './change-me'}, 
+													{text: 'Get in Touch', href: './change-me'}]}
+						]
+
+					+createAllNav(arrAllNavItems)
+
+				div.footer__subscribe
+					+createSubscribe('Subscribe to our newsletter', 'Receive our latest news and promotions in your inbox!')
+
+		div.footer__bottom
+			p.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+
+			div.footer__socials
 				- 
-					var arrAllNavItems =[
-						{titleText: 'Навигация', 
-										items: [{text: 'О нас', href: './change-me'}, 
-												{text: 'Новости', href: './change-me'}, 
-												{text: 'Служба поддержки', href: './change-me'}, 
-												{text: 'Услуги', href: './change-me'}]},
-						{titleText: 'О нас',
-										items: [{text: 'О сервисе', href: './change-me'}, 
-												{text: 'Наша команда', href: './change-me'}, 
-												{text: 'Вакансии', href: './change-me'}, 
-												{text: 'Инвесторы', href: './change-me'}]}, 
-						{titleText: 'Служба поддержки', 
-										items: [{text: 'Соглашения', href: './change-me'}, 
-												{text: 'Сообщества', href: './change-me'}, 
-												{text: 'Связь с нами', href: './change-me'}]}
-					]
+					var arrSocialItems = [
+					{url: 'https://www.twitter.com', text: 'tw', linkModifier: 'tw'}, 
+					{url: 'https://www.facebook.com', text: 'fb', linkModifier: 'fb'}, 
+					{url: 'https://www.instagram.com', text: 'ig', linkModifier: 'ig'}
+					];
 
-				+createMenuColumn(arrAllNavItems)
-
-		div.widgets-and-copyright__column.widgets-and-copyright__column_width260
-			+createSubscribe('Подписка', 'Получайте специальные предложения и новости сервиса')
-
-
-
+				+createSocials(arrSocialItems)
