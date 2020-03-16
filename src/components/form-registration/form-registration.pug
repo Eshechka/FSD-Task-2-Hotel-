@@ -1,0 +1,50 @@
+include ../../components/form-button/form-button.pug
+include ../../components/block-BEM/block-BEM.pug
+include ../../components/radio-group/radio-group.pug
+include ../../components/text-field/text-field.pug
+include ../../components/toggle-button/toggle-button.pug
+//- переделать все кавычки на один тип одинарные или двойные
+
+mixin createFormRegistration()
+	- var formClassname = "form-registration";
+	- var formTitle = "Регистрация";
+
+	- var attributes = {};
+	- attributes.action = "/change-me";
+	- attributes.method = "get";
+	- attributes.class = formClassname;
+
+	form&attributes(attributes)
+
+		h1(class = formClassname + "__title")= formTitle
+
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: ["_padding_20",]	})
+			+createTextField({	id:"name", name:"name", placeholder:"Имя", type:"text", isRequired:true})
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: []	})
+			+createTextField({	id:"surname", name:"surname", placeholder:"Фамилия", type:"text", isRequired:true	})
+
+
+		+createRadioGroup(	[	
+								{name: "gender", value: "male", id: "gender__male", text: "Мужчина", isChecked: true},
+								{name: "gender", value: "female", id: "gender__female", text: "Женщина", isChecked: false},
+							])
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
+			h3(class = formClassname + "__block-title") Дата рождения
+			+createTextField({	id:"birthday", name:"birthday", placeholder:"", type:"date", isRequired:false})
+
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
+			h3(class = formClassname + "__block-title") Данные для входа в сервис
+			+createTextField({	id:"email", name:"email", placeholder:"Email", type:"email", isRequired:true	})
+			+createTextField({	id:"password", name:"password", placeholder:"Пароль", type:"password", isRequired:true	})
+
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: ["_type_inline_row",]	})
+			+createToggleButton("toggle-button", "toggle-button", "Получать спецпредложения")
+
+
+		- var buttonFormClassname = formClassname + "__button";
+		+createFormButton(buttonFormClassname, "Перейти к оплате", "submit")

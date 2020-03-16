@@ -1,11 +1,12 @@
 //- тут можно доавить цикл для количества гостей, чтобы не писать вручную, а передавать в миксине
 //- решить что-то с form-group__label, нехорошо, что оно в миксине. Либо передавать параметром в миксин, либо убирать вообще этот класс и прописывать непосредственно на блоке все стили
 
-mixin createGuestsQuantity(classname, id, text)
-
-	label.form-group__label(class=classname+'__text')= text
-	select(class=classname+'__select-field' name=classname)
-		option(class=classname+'__option-field' value="" disabled selected) Сколько гостей
-		option(class=classname+'__option-field' value="1") 1 гость
-		option(class=classname+'__option-field' value="2") 2 гостя
-		option(class=classname+'__option-field' value="3") 3 гостя
+mixin createGuestsQuantity(id, text)
+	- var classname = 'guests-quantity'
+	div(class=classname)
+		label.form-group__label(class=classname+'__text')= text
+		select(class=classname+'__select-field' name=classname)
+			option(class=classname+'__option-field' value='' disabled selected) Сколько гостей
+			option(class=classname+'__option-field' value='1') 1 гость
+			option(class=classname+'__option-field' value='2') 2 гостя
+			option(class=classname+'__option-field' value='3') 3 гостя

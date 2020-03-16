@@ -2,12 +2,16 @@ extends ../../common-files/UIKit-base-template
 
 include ../../components/color-example/color-example.pug
 include ../../components/fonts-example/fonts-example.pug
-include ../../components/form/form.pug
+
+include ../../components/form-search-room/form-search-room.pug
+include ../../components/form-registration/form-registration.pug
+include ../../components/block-BEM/block-BEM.pug
 include ../../components/form-button/form-button.pug
+include ../../components/text-field/text-field.pug
 include ../../components/guests-quantity/guests-quantity.pug
 include ../../components/arrival-and-departure/arrival-and-departure.pug
 include ../../components/toggle-button/toggle-button.pug
-include ../../components/move-to-another-form/move-to-another-form.pug
+include ../../components/enter-form/enter-form.pug
 include ../../components/services-and-prices/services-and-prices.pug
 include ../../components/room-info/room-info.pug
 include ../../components/show-rating/show-rating.pug
@@ -30,241 +34,233 @@ include ../../components/social/social.pug
 //- во всех стилях найти rgba и заменить их на переменные DarkShade
 
 block colorAndType
-	div.container__left
-		+createRect('color-example', 'DarkShade100', 'Dark Shade 100%', '#1F2041')
-		+createRect('color-example', 'DarkShade75', 'Dark Shade 75%', '#1F2041')
-		+createRect('color-example', 'DarkShade50', 'Dark Shade 50%', '#1F2041')
-		+createRect('color-example', 'DarkShade25', 'Dark Shade 25%', '#1F2041')
-		+createRect('color-example', 'DarkShade5', 'Dark Shade 5%', '#1F2041')
-		+createRect('color-example', 'Purple', 'Purple', '#BC9CFF')
-		+createRect('color-example', 'Green', 'Green', '#6FCF97')
-	div.container__right
-		+createFontsExample('h1', 'This one is the sub-section or widget title', 'fonts-example')
-		+createFontsExample('h2', 'Next one is the item title inside widgets', 'fonts-example')
-		+createFontsExample('h3', 'This is a label or CTA text', 'fonts-example')
-		+createFontsExample('body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', 'fonts-example')
+	div.container
+		div.container__left
+			+createRect('color-example', 'DarkShade100', 'Dark Shade 100%', '#1F2041')
+			+createRect('color-example', 'DarkShade75', 'Dark Shade 75%', '#1F2041')
+			+createRect('color-example', 'DarkShade50', 'Dark Shade 50%', '#1F2041')
+			+createRect('color-example', 'DarkShade25', 'Dark Shade 25%', '#1F2041')
+			+createRect('color-example', 'DarkShade5', 'Dark Shade 5%', '#1F2041')
+			+createRect('color-example', 'Purple', 'Purple', '#BC9CFF')
+			+createRect('color-example', 'Green', 'Green', '#6FCF97')
+		div.container__right
+			+createFontsExample('h1', 'This one is the sub-section or widget title', 'fonts-example')
+			+createFontsExample('h2', 'Next one is the item title inside widgets', 'fonts-example')
+			+createFontsExample('h3', 'This is a label or CTA text', 'fonts-example')
+			+createFontsExample('body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', 'fonts-example')
 
 
 
 block cards
-	div.container__column3
-	
-		div.site-card.site-card_fields_30
-			+createForm('form-search-room', 'get', '/change-me', 'Найдем номера под ваши желания')
-				div.form-group.form-group_type_inline.arrival-and-departure
-					+createArrivalAndDeparture('arrival-and-departure', 'arrival', 'Прибытие')
-
-				div.form-group.form-group_type_inline.arrival-and-departure
-					+createArrivalAndDeparture('arrival-and-departure', 'departure', 'Выезд')
-
-				div.form-group.guests-quantity
-					+createGuestsQuantity('guests-quantity', 'guests-quantity', 'Гости')
-
-				+createFormButton('form-search-room', 'Подобрать номер', 'submit')
-
-		div.site-card.site-card_fields_30
-			+createForm('form-registration', 'post', '/change-me', 'Регистрация аккаунта')
-
-				div.form-group.client-personal-info
-					input.client-personal-info__name(type="text" name="name" id="name" placeholder="Имя")
-					input.client-personal-info__surname(type="text" name="surname" id="surname" placeholder="Фамилия")
-
-				div.form-group.form-group_type_inline_row.choose-gender
-					input.form-group__input_radio.choose-gender__radio-circle(type="radio" name="gender" value="male" id="gender__male" checked)
-					label.form-group__label.form-group__label_radio.choose-gender__text(for="gender__male") Мужчина					
-				div.form-group.form-group_type_inline_row.choose-gender
-					input.form-group__input_radio.choose-gender__radio-circle(type="radio" name="gender" value="female" id="gender__female")
-					label.form-group__label.form-group__label_radio.choose-gender__text(for="gender__female") Женщина
-
-				div.form-group.client-birthday
-					label.form-group__label.client-birthday__text(for="birthday") Дата рождения
-					input.client-birthday__date-field(type="date" name="birthday" id="birthday")
-
-				div.form-group.client-login-pass
-					label.form-group__label.client-login-pass__text Данные для входа в сервис
-					input.client-login-pass__email-field(type="email" name="email" placeholder="Email")
-					input.client-login-pass__pass-field(type="password" name="password" placeholder="Пароль")
-			
-				div.form-group.form-group_type_inline_row
-					+createToggleButton('toggle-button', 'toggle-button', 'Получать спецпредложения')
-
-				+createFormButton('form-registration', 'перейти к оплате', 'submit')
-
-				+createMoveToAnotherForm('enter-button', 'Уже есть аккаунт на Toxin', 'Войти', 'light')
-
-	div.container__column3
-
-		div.site-card.site-card_fields_30
-			+createForm('form-booking-room', 'get', '/change-me', '')
-				+createRoomInfo('room-info', 888, 'люкс', '9 990')
-
-				div.form-group.form-group_type_inline.arrival-and-departure
-					label.form-group__label.arrival-and-departure__text(for="booking-arrival") Прибытие
-					input.arrival-and-departure__date-field(type="date" name="arrival" id="booking-arrival")
-				div.form-group.form-group_type_inline.arrival-and-departure
-					label.form-group__label.arrival-and-departure__text(for="booking-departure") Выезд
-					input.arrival-and-departure__date-field(type="date" name="departure" id="booking-departure")
+	div.container
+		div.container__column3
+		
+			div.site-card.site-card_fields_30
+				+createFormSearchRoom()
 
 
-				div.form-group.guests-quantity
-					label.form-group__label.guests-quantity__text Гости
-					select.guests-quantity__select-field(name="guests-quantity")
-						option.guests-quantity__option-field(value="" disabled selected) Сколько гостей
-						option.guests-quantity__option-field(value="1") 1 гость
-						option.guests-quantity__option-field(value="2") 2 гостя
-						option.guests-quantity__option-field(value="3") 3 гостя
-
-				div.form-group.services-list
-					+createServicesList('services-and-prices')
-
-				+createFormButton('form-booking-room', 'Забронировать', 'submit')
-
-		div.site-card.site-card_fields_30
-			+createForm('form-login', 'get', '/change-me', 'Войти')
-
-				div.form-group.client-login-pass
-						input.client-login-pass__email-field(type="email" name="email"  placeholder="Email")
-						input.client-login-pass__pass-field(type="password" name="password" placeholder="Пароль")
-
-				+createFormButton('form-login', 'Войти', 'submit')
-
-			+createMoveToAnotherForm('create-login-button', 'Нет аккаунта на Toxin?', 'Создать', 'light')
-
-	div.container__column3.container__column3_width320
-
-		div.site-card.site-card_fields_20
-			div.calendar
+			div.site-card.site-card_fields_30
+				+createFormRegistration()
 
 
-		div.site-card
-			div.room-card
-				- 
-					var arraySlides = [
-						{src: './img/room888_picture.png', alt: 'Слайд 1'},
-						{src: './img/room840_picture2.png', alt: 'Слайд 2'},
-						{src: './img/room840_picture3.png', alt: 'Слайд 3'},
-						{src: './img/room840_picture4.png', alt: 'Слайд 4'},
-					]
+				+createEnterForm('enter-button', 'Уже есть аккаунт на Toxin', 'Войти', 'light')
 
-				+createSlider('slider888', arraySlides, true, true)
+		div.container__column3
 
+			div.site-card.site-card_fields_30
+				//+createForm('form-booking-room', 'get', '/change-me', '', 'Забронировать', 'submit')
+					+createRoomInfo('room-info', 888, 'люкс', '9 990')
 
-				div.room-card__data
-					+createRoomInfo('room-info', 888, 'люкс', '9 990', 'border_bottom')
-
-				div.room-card__rating
-					+createShowRating(5, 0)
-
-					div.room-card__reviews- 145
-						span.room-card__reviews отзывов
+					//+createFormGroup('_type_inline')
+						label.form-group__label.arrival-and-departure__text(for="booking-arrival") Прибытие
+						input.arrival-and-departure__date-field(type="date" name="arrival" id="booking-arrival")
+					//+createFormGroup('_type_inline')
+						label.form-group__label.arrival-and-departure__text(for="booking-departure") Выезд
+						input.arrival-and-departure__date-field(type="date" name="departure" id="booking-departure")
 
 
-		div.site-card
-			div.room-card
-				- 
-					var arraySlides = [
-						{src: './img/room840_picture.png', alt: 'Слайд 1'},
-						{src: './img/room840_picture2.png', alt: 'Слайд 2'},
-						{src: './img/room840_picture3.png', alt: 'Слайд 3'},
-						{src: './img/room840_picture4.png', alt: 'Слайд 4'},
-					]
+					div.form-group.guests-quantity
+						label.form-group__label.guests-quantity__text Гости
+						select.guests-quantity__select-field(name="guests-quantity")
+							option.guests-quantity__option-field(value="" disabled selected) Сколько гостей
+							option.guests-quantity__option-field(value="1") 1 гость
+							option.guests-quantity__option-field(value="2") 2 гостя
+							option.guests-quantity__option-field(value="3") 3 гостя
 
-				+createSlider('slider840', arraySlides, false, true)
+					div.form-group.services-list
+						+createServicesList('services-and-prices')
+
+
+			div.site-card.site-card_fields_30
+				//+createForm('form-login', 'get', '/change-me', 'Войти', 'Войти', 'submit')
+
+					div.form-group.client-login-pass
+							input.client-login-pass__email-field(type="email" name="email"  placeholder="Email")
+							input.client-login-pass__pass-field(type="password" name="password" placeholder="Пароль")
+
+				+createEnterForm('create-login-button', 'Нет аккаунта на Toxin?', 'Создать', 'light')
+
+		div.container__column3.container__column3_width320
+
+			div.site-card.site-card_fields_20
+				div.calendar
+
+
+			div.site-card
+				div.room-card
+					- 
+						var arraySlides = [
+							{src: './img/room888_picture.png', alt: 'Слайд 1'},
+							{src: './img/room840_picture2.png', alt: 'Слайд 2'},
+							{src: './img/room840_picture3.png', alt: 'Слайд 3'},
+							{src: './img/room840_picture4.png', alt: 'Слайд 4'},
+						]
+
+					+createSlider('slider888', arraySlides, true, true)
+
+
+					div.room-card__data
+						+createRoomInfo('room-info', 888, 'люкс', '9 990', 'border_bottom')
+
+					div.room-card__rating
+						+createShowRating(5, 0)
+
+						div.room-card__reviews- 145
+							span.room-card__reviews отзывов
+
+
+			div.site-card
+				div.room-card
+					- 
+						var arraySlides = [
+							{src: './img/room840_picture.png', alt: 'Слайд 1'},
+							{src: './img/room840_picture2.png', alt: 'Слайд 2'},
+							{src: './img/room840_picture3.png', alt: 'Слайд 3'},
+							{src: './img/room840_picture4.png', alt: 'Слайд 4'},
+						]
+
+					+createSlider('slider840', arraySlides, false, true)
 
 
 
-				div.room-card__data
-					+createRoomInfo('room-info', 840, '', '9 900', 'border_bottom')
+					div.room-card__data
+						+createRoomInfo('room-info', 840, '', '9 900', 'border_bottom')
 
-				div.room-card__rating
-					+createShowRating(4, 1)
+					div.room-card__rating
+						+createShowRating(4, 1)
 
-					div.room-card__reviews- 65
-						span.room-card__reviews отзывов
+						div.room-card__reviews- 65
+							span.room-card__reviews отзывов
+
+block form-elements
+	div.container
+		div.container__column3
+
+
+		div.container__column3
+
+
+		div.container__column3
+
 
 
 block headers-footers
 
 	div.header
-		+createLogotype('logotype', './img/TOXIN_Logo.svg')
+		div.header__container
+			+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
-		- 
-			var arrMenuItems = [
-			{url: './change-me', text: 'Home', needPseudoForLink: false, linkModifier: 'active'}, 
-			{url: './change-me', text: 'About us', needPseudoForLink: false}, 
-			{url: './change-me', text: 'Services', needPseudoForLink: true}, 
-			{url: './change-me', text: 'Careers', needPseudoForLink: false}, 
-			{url: './change-me', text: 'News', needPseudoForLink: false}, 
-			{url: './change-me', text: 'Documentation', needPseudoForLink: false}
-			];
+			- 
+				var arrMenuItems = [
+				{url: './change-me', text: 'Home', needPseudoForLink: false, linkModifier: 'active'}, 
+				{url: './change-me', text: 'About us', needPseudoForLink: false}, 
+				{url: './change-me', text: 'Services', needPseudoForLink: true}, 
+				{url: './change-me', text: 'Careers', needPseudoForLink: false}, 
+				{url: './change-me', text: 'News', needPseudoForLink: false}, 
+				{url: './change-me', text: 'Documentation', needPseudoForLink: false}
+				];
 
 
-		+createMenu(arrMenuItems)
+			+createMenu(arrMenuItems)
 
-		//+createAuthentification(false)
-		div.header__registration
+			//+createAuthentification(false)
+			div.header__registration
 
-			div.header__button-wrapper
-				+createButton('enter-button', 'Login', 'light')
+				div.header__button-wrapper
+					+createButton('enter-button', 'Login', 'light')
 
-			+createButton('registration-button', 'Register', false)
+				+createButton('registration-button', 'Register', false)
 
 
 	div.header.header_logged
+		div.header__container
 
-		+createLogotype('logotype', './img/TOXIN_Logo.svg')
+			+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
-		+createMenu(arrMenuItems)
+			+createMenu(arrMenuItems)
 
-		div.header__user
-			+createUserAccount('Cosmin Negoita')
+			div.header__user
+				+createUserAccount('Cosmin Negoita')
 
 
 	footer.footer
+
 		div.footer__widgets
-			div.footer__left-side
+			div.footer__container
+				div.footer__left-side
 
-				+createLogotype('logotype', './img/TOXIN_Logo.svg')
+					+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
-				+createShortInfo('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
+					+createShortInfo('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
 
 
-			div.footer__right-side
-				div.footer__navigation
+				div.footer__right-side
+					div.footer__navigation
 
+						- 
+							var arrAllNavItems =[
+								{titleText: 'Navigation', 
+												items: [{text: 'About Us', href: './change-me'}, 
+														{text: 'News', href: './change-me'}, 
+														{text: 'Support', href: './change-me'}, 
+														{text: 'Products', href: './change-me'}]},
+								{titleText: 'ABOUT US',
+												items: [{text: 'Who we are', href: './change-me'}, 
+														{text: 'Our team', href: './change-me'}, 
+														{text: 'Careers', href: './change-me'}, 
+														{text: 'Investors', href: './change-me'}]}, 
+
+								{titleText: 'Support', 
+												items: [{text: 'Documentation', href: './change-me'}, 
+														{text: 'Community', href: './change-me'}, 
+														{text: 'Get in Touch', href: './change-me'}]}
+							]
+
+						+createAllNav(arrAllNavItems)
+
+					div.footer__subscribe
+						+createSubscribe('Subscribe to our newsletter', 'Receive our latest news and promotions in your inbox!')
+
+		div.footer__extra-info
+			div.footer__container
+				p.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+
+				div.footer__socials
 					- 
-						var arrAllNavItems =[
-							{titleText: 'Navigation', 
-											items: [{text: 'About Us', href: './change-me'}, 
-													{text: 'News', href: './change-me'}, 
-													{text: 'Support', href: './change-me'}, 
-													{text: 'Products', href: './change-me'}]},
-							{titleText: 'ABOUT US',
-											items: [{text: 'Who we are', href: './change-me'}, 
-													{text: 'Our team', href: './change-me'}, 
-													{text: 'Careers', href: './change-me'}, 
-													{text: 'Investors', href: './change-me'}]}, 
+						var arrSocialItems = [
+						{url: 'https://www.twitter.com', text: 'tw', linkModifier: 'tw'}, 
+						{url: 'https://www.facebook.com', text: 'fb', linkModifier: 'fb'}, 
+						{url: 'https://www.instagram.com', text: 'ig', linkModifier: 'ig'}
+						];
 
-							{titleText: 'Support', 
-											items: [{text: 'Documentation', href: './change-me'}, 
-													{text: 'Community', href: './change-me'}, 
-													{text: 'Get in Touch', href: './change-me'}]}
-						]
+					+createSocials(arrSocialItems)
 
-					+createAllNav(arrAllNavItems)
+	footer.footer-light
+		div.footer-light__container
 
-				div.footer__subscribe
-					+createSubscribe('Subscribe to our newsletter', 'Receive our latest news and promotions in your inbox!')
+			+createLogotype('logotype', './img/TOXIN_Logo.svg')
 
-		div.footer__bottom
-			p.footer__copyright Copyright © 2018 Toxin UI Kit. All rights reserved.
+			p.footer-light__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
 
-			div.footer__socials
-				- 
-					var arrSocialItems = [
-					{url: 'https://www.twitter.com', text: 'tw', linkModifier: 'tw'}, 
-					{url: 'https://www.facebook.com', text: 'fb', linkModifier: 'fb'}, 
-					{url: 'https://www.instagram.com', text: 'ig', linkModifier: 'ig'}
-					];
-
+			div.footer-light__socials
 				+createSocials(arrSocialItems)

@@ -1,5 +1,11 @@
-.arrival-and-departure__date-field {
-    text-transform: uppercase;
-    width: 150px;
-    color: $DarkShade75;
+.arrival-and-departure {
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+
+	&__date-field {
+	    text-transform: uppercase;
+		width: 150px;
+		color: $DarkShade75;
+    }
 }

@@ -38,18 +38,31 @@ $colors: (
 
 body {
 	min-width: 1460px;
+	background: #F4F4F6;
 }
 
+
 .ui-main {
-	margin: 145px 150px;
+	margin: 72px 0px 0px;
+}
+
+
+section.colorAndType {
+	background-color: #fff;
+}
+section.headers-footers >div,
+section.headers-footers >header,
+section.headers-footers >footer:not(:last-child), {
+	margin-bottom: 40px;
 }
 
 .container {  
 	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 1920px;
-	overflow: hidden;
+	/*max-width: 1920px;*/
+	max-width: 1160px;
+	overflow-x: hidden;
 	justify-content: space-between;
 }
 
@@ -79,12 +92,13 @@ div.container__column3 {
 
 
 
-
+/*эти стили надо вынести в переменную в scss, чтобы не писать 20 раз одно  и то же в каждом файле стилей*/
 .form-group {
 	display: flex;
 	flex-direction: column;
 	padding-top: 20px;
 }
+
 .form-group.form-group_type_inline {
 	display: inline-flex;
 }
@@ -93,75 +107,22 @@ div.container__column3 {
 	flex-direction: row;
 	align-items: center;
 }
-
-.form-group.form-group_type_inline_row_width100 {
+/*эти стили надо вынести в переменную в scss, чтобы не писать 20 раз одно  и то же в каждом файле стилей*/
+/*.form-group.form-group_type_inline_row_width100 {
 	display: inline-flex;
 	flex-direction: row;
+	align-items: center;
+
 	width: 100%;
 	justify-content: space-between;
-	align-items: center;
-}
+}*/
 
 
 
 
 
 
-.form-group__label {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 15px;
-	text-transform: uppercase;
-	color: $DarkShade100;
-	margin-bottom: 5px;
-}
 
-
-
-
-.form-group__input_radio {
-	display: none;    
-
-	&:checked + .form-group__label_radio {   
-		color: $DarkShade75;
-	}
-}
-
-.form-group__label_radio {
-    padding: 0px 20px 0px 30px;
-    position: relative;
-    text-transform: none;
-    font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-	color: $DarkShade50;
-}
-
-.form-group__label_radio:before {
-	content: '';
-    position: absolute;
-    left: 0;
-    border: 1px solid $Purple;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    box-sizing: border-box;
-}
-
-.form-group__input_radio:checked + .form-group__label_radio:after {
-    content: '';
-    position: absolute;
-	top: 4px;
-	left: 4px;
-    border-radius: 50%;
-    height: 12px;
-    width: 12px;
-    background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
-}
 
 
 
@@ -213,10 +174,19 @@ input {
 
 
 .header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex: 1 0 100%;
+	background-color: #fff;
+
+	&__container {
+		margin: 0 auto;
+		overflow-x: hidden;
+		/*max-width: 1920px;*/
+		max-width: 1160px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
 	padding: 10px 0;
 	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 	
@@ -241,10 +211,22 @@ input {
 
 
 .footer {
+	background-color: #fff;
 	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
+	&__container {
+		margin: 0 auto;
+		overflow-x: hidden;
+		/*max-width: 1920px;*/
+		max-width: 1160px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
 	&__widgets {
-		box-shadow: inset 0px -1px 0px rgba(31, 32, 65, 0.1);
+		box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 		display: flex;
 	}
 
@@ -266,30 +248,54 @@ input {
 		padding: 0 40px;
 	}	
 
-	&__bottom {
+	&__extra-info {
+/*		display: flex;
+		justify-content: space-between;*/
+	}
+}
+
+
+
+.footer-light {
+	background-color: #fff;
+	width: 100%;
+	overflow: auto;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+	&__container {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 100px auto 110px;
+
+		overflow-x: hidden;
+		/*max-width: 1920px;*/
+		max-width: 1160px;
 	}
 }
 
 
 
 
-
-
 @import "../components/color-example/color-example.scss";
 @import "../components/fonts-example/fonts-example.scss";
-@import "../components/form/form.scss";
+
+@import "../components/block-BEM/block-BEM.scss";
+@import "../components/form-search-room/form-search-room.scss";
+@import "../components/form-registration/form-registration.scss";
 @import "../components/form-button/form-button.scss";
 @import "../components/site-card/site-card.scss";
 @import "../components/site-card/_fields_20/site-card_fields_20.scss";
 @import "../components/site-card/_fields_30/site-card_fields_30.scss";
 @import "../components/guests-quantity/guests-quantity.scss";
 @import "../components/arrival-and-departure/arrival-and-departure.scss";
+
+@import "../components/radio-group/radio-group.scss";
 @import "../components/toggle-button/toggle-button.scss";
 @import "../components/room-info/room-info.scss";
 @import "../components/services-and-prices/services-and-prices.scss";
-@import "../components/move-to-another-form/move-to-another-form.scss";
+@import "../components/enter-form/enter-form.scss";
 @import "../components/room-card/room-card.scss";
 @import "../components/show-rating/show-rating.scss";
 @import "../components/slider/slider.scss";

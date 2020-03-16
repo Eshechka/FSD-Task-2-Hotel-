@@ -1,0 +1,8 @@
+mixin createRadioGroup(items)
+	- var classname = 'radio-group'
+	div(class = classname)
+
+		each item in items
+			div(class = classname + '__item')
+				input(class = classname + '__input' type="radio" name=item.name value=item.value id=item.id checked=item.isChecked)
+				label(class = classname + '__label' for=item.id)= item.text	

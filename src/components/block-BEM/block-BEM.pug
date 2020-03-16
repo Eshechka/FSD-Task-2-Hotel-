@@ -1,0 +1,13 @@
+//- create div(blockBEM + element with all modifiers) > block
+
+mixin createDivClassesBEM({blockBEM, element, modifiers})
+	- var blockElement = blockBEM + element 
+	- var blockElementModifier = blockElement
+	if modifiers.length
+		each modifier in modifiers
+			-blockElementModifier += ' ' + blockElement + modifier;
+
+	div(class = blockElementModifier)
+
+		if block
+			block			

@@ -10,7 +10,7 @@ ul {
 }
 
 h1 {
-	font-family: Quicksand;
+	font-family: Quicksand, Opensans;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 24px;
@@ -19,7 +19,7 @@ h1 {
 }
 
 h2 {
-	font-family: Quicksand;
+	font-family: Quicksand, Opensans;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 19px;
@@ -28,11 +28,13 @@ h2 {
 }
 
 h3 {
-	text-transform: uppercase;
+	font-family: Montserrat;
+	font-style: normal;
 	font-weight: bold;
 	font-size: 12px;
 	line-height: 15px;
 	color: $DarkShade100;
+	text-transform: uppercase;
 }
 
 

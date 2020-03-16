@@ -1,0 +1,43 @@
+.form-registration {
+
+	&__title {
+		font-family: Quicksand, Opensans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 30px;
+		color: $DarkShade100;
+		margin: 0;
+	}
+
+	&__text-field {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 10px;
+
+		&_padding_20 {
+			padding-top: 20px;
+		}
+	}
+
+	&__block-title {
+		margin: 0;
+		margin-bottom: 5px;
+	}
+
+	&__block {
+		display: flex;
+		flex-direction: column;
+		padding-top: 20px;
+
+		&_type_inline {
+			display: inline-flex;
+		}
+
+		&_type_inline_row {
+			display: inline-flex;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+}

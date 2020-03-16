@@ -1,0 +1,33 @@
+include ../../components/guests-quantity/guests-quantity.pug
+include ../../components/arrival-and-departure/arrival-and-departure.pug
+include ../../components/form-button/form-button.pug
+include ../../components/block-BEM/block-BEM.pug
+
+//-переделать кнопку формы на элемент!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+mixin createFormSearchRoom()
+	- var formClassname = 'form-search-room';
+	- var formTitle = 'Найдем номера под ваши желания';
+
+	- var attributes = {};
+	- attributes.action = '/change-me';
+	- attributes.method = 'get';
+	- attributes.class = formClassname;
+
+	form&attributes(attributes)
+
+		h1(class = formClassname + '__title')= formTitle
+	
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: '__block', modifiers: ['_type_inline',]	})
+			+createArrivalAndDeparture('arrival', 'Прибытие')
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: '__block', modifiers: ['_type_inline',]	})
+			+createArrivalAndDeparture('departure', 'Выезд')
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: '__block', modifiers: []	})
+			+createGuestsQuantity('guests-quantity', 'Гости')
+
+
+		- var classnameButton = formClassname + '__button';
+		+createFormButton(classnameButton, 'Подобрать номер', 'submit')
