@@ -1,4 +1,4 @@
-.form-search-room {
+.form-enter {
 
 	&__title {
 		font-family: Quicksand, Opensans;
@@ -10,12 +10,19 @@
 		margin: 0;
 	}
 
-	&__block {
+	&__text-field {
 		display: flex;
 		flex-direction: column;
+		margin-bottom: 10px;
 
-		&_type_inline {
-			display: inline-flex;
+		&_padding_20 {
+			padding-top: 20px;
 		}
 	}
+
+	&__button {
+		/*padding-top: 20px;*/
+	}
+
+
 }

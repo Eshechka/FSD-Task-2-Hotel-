@@ -1,0 +1,41 @@
+include ../../components/guests-quantity/guests-quantity.pug
+include ../../components/arrival-and-departure/arrival-and-departure.pug
+include ../../components/form-button/form-button.pug
+include ../../components/room-info/room-info.pug
+include ../../components/price-detalization/price-detalization.pug
+include ../../components/block-BEM/block-BEM.pug
+
+
+//-переделать кнопку формы на элемент!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+mixin createFormBooking()
+	- var formClassname = "form-booking";
+
+	- var attributes = {};
+	- attributes.action = "/change-me";
+	- attributes.method = "get";
+	- attributes.class = formClassname;
+
+	form&attributes(attributes)
+
+		+createRoomInfo(888, "люкс", "9 990")
+
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: ["_type_inline",]	})
+			label.form-group__label.arrival-and-departure__text(for="booking-arrival") Прибытие
+			input.arrival-and-departure__date-field(type="date" name="arrival" id="booking-arrival")
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: ["_type_inline",]	})
+			label.form-group__label.arrival-and-departure__text(for="booking-departure") Выезд
+			input.arrival-and-departure__date-field(type="date" name="departure" id="booking-departure")
+
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
+			+createGuestsQuantity("guests-quantity", "Гости")
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
+			div.price-detalization 
+				+createPriceDetalization("price-detalization")
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__button", modifiers: []	})
+			+createFormButton("Забронировать", "submit")

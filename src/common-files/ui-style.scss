@@ -148,29 +148,6 @@ input {
 
 
 
-.client-personal-info__name,
-.client-personal-info__surname {
-	margin-bottom: 10px;
-}
-
-
-
-.client-birthday__date-field {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 24px;
-	color: $DarkShade25;
-	text-transform: uppercase;
-}
-
-
-
-.client-login-pass__email-field,
-.client-login-pass__pass-field {
-	margin-bottom: 10px;
-}
 
 
 .header {
@@ -284,6 +261,8 @@ input {
 @import "../components/block-BEM/block-BEM.scss";
 @import "../components/form-search-room/form-search-room.scss";
 @import "../components/form-registration/form-registration.scss";
+@import "../components/form-booking/form-booking.scss";
+@import "../components/form-enter/form-enter.scss";
 @import "../components/form-button/form-button.scss";
 @import "../components/site-card/site-card.scss";
 @import "../components/site-card/_fields_20/site-card_fields_20.scss";
@@ -294,8 +273,8 @@ input {
 @import "../components/radio-group/radio-group.scss";
 @import "../components/toggle-button/toggle-button.scss";
 @import "../components/room-info/room-info.scss";
-@import "../components/services-and-prices/services-and-prices.scss";
-@import "../components/enter-form/enter-form.scss";
+@import "../components/price-detalization/price-detalization.scss";
+@import "../components/move-to-another-form/move-to-another-form.scss";
 @import "../components/room-card/room-card.scss";
 @import "../components/show-rating/show-rating.scss";
 @import "../components/slider/slider.scss";

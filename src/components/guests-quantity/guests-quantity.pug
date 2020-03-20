@@ -1,10 +1,10 @@
 //- тут можно доавить цикл для количества гостей, чтобы не писать вручную, а передавать в миксине
-//- решить что-то с form-group__label, нехорошо, что оно в миксине. Либо передавать параметром в миксин, либо убирать вообще этот класс и прописывать непосредственно на блоке все стили
+//- а вот тут name всегда один и тот же передается, а если там 2 формы с guests-quantity, как их отличать??
 
 mixin createGuestsQuantity(id, text)
 	- var classname = 'guests-quantity'
 	div(class=classname)
-		label.form-group__label(class=classname+'__text')= text
+		label(class=classname+'__text')= text
 		select(class=classname+'__select-field' name=classname)
 			option(class=classname+'__option-field' value='' disabled selected) Сколько гостей
 			option(class=classname+'__option-field' value='1') 1 гость

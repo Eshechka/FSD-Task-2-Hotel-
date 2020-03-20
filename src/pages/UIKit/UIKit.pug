@@ -2,19 +2,20 @@ extends ../../common-files/UIKit-base-template
 
 include ../../components/color-example/color-example.pug
 include ../../components/fonts-example/fonts-example.pug
-
 include ../../components/form-search-room/form-search-room.pug
 include ../../components/form-registration/form-registration.pug
+include ../../components/form-booking/form-booking.pug
+include ../../components/form-enter/form-enter.pug
 include ../../components/block-BEM/block-BEM.pug
 include ../../components/form-button/form-button.pug
 include ../../components/text-field/text-field.pug
 include ../../components/guests-quantity/guests-quantity.pug
 include ../../components/arrival-and-departure/arrival-and-departure.pug
 include ../../components/toggle-button/toggle-button.pug
-include ../../components/enter-form/enter-form.pug
-include ../../components/services-and-prices/services-and-prices.pug
+include ../../components/move-to-another-form/move-to-another-form.pug
+include ../../components/room-card/room-card.pug
 include ../../components/room-info/room-info.pug
-include ../../components/show-rating/show-rating.pug
+
 include ../../components/slider/slider.pug
 include ../../components/logotype/logotype.pug
 include ../../components/menu/menu.pug
@@ -36,23 +37,24 @@ include ../../components/social/social.pug
 block colorAndType
 	div.container
 		div.container__left
-			+createRect('color-example', 'DarkShade100', 'Dark Shade 100%', '#1F2041')
-			+createRect('color-example', 'DarkShade75', 'Dark Shade 75%', '#1F2041')
-			+createRect('color-example', 'DarkShade50', 'Dark Shade 50%', '#1F2041')
-			+createRect('color-example', 'DarkShade25', 'Dark Shade 25%', '#1F2041')
-			+createRect('color-example', 'DarkShade5', 'Dark Shade 5%', '#1F2041')
-			+createRect('color-example', 'Purple', 'Purple', '#BC9CFF')
-			+createRect('color-example', 'Green', 'Green', '#6FCF97')
+			+createRect("color-example", "DarkShade100", "Dark Shade 100%", "#1F2041")
+			+createRect("color-example", "DarkShade75", "Dark Shade 75%", "#1F2041")
+			+createRect("color-example", "DarkShade50", "Dark Shade 50%", "#1F2041")
+			+createRect("color-example", "DarkShade25", "Dark Shade 25%", "#1F2041")
+			+createRect("color-example", "DarkShade5", "Dark Shade 5%", "#1F2041")
+			+createRect("color-example", "Purple", "Purple", "#BC9CFF")
+			+createRect("color-example", "Green", "Green", "#6FCF97")
 		div.container__right
-			+createFontsExample('h1', 'This one is the sub-section or widget title', 'fonts-example')
-			+createFontsExample('h2', 'Next one is the item title inside widgets', 'fonts-example')
-			+createFontsExample('h3', 'This is a label or CTA text', 'fonts-example')
-			+createFontsExample('body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', 'fonts-example')
+			+createFontsExample("h1", "This one is the sub-section or widget title", "fonts-example")
+			+createFontsExample("h2", "Next one is the item title inside widgets", "fonts-example")
+			+createFontsExample("h3", "This is a label or CTA text", "fonts-example")
+			+createFontsExample("body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "fonts-example")
 
 
 
 block cards
 	div.container
+		
 		div.container__column3
 		
 			div.site-card.site-card_fields_30
@@ -63,94 +65,88 @@ block cards
 				+createFormRegistration()
 
 
-				+createEnterForm('enter-button', 'Уже есть аккаунт на Toxin', 'Войти', 'light')
+				+createMoveToAnotherForm(	{	text: "Уже есть аккаунт на Toxin",
+												buttonText: "Войти",
+												buttonTheme: "light"	}	)
+
+
 
 		div.container__column3
 
 			div.site-card.site-card_fields_30
-				//+createForm('form-booking-room', 'get', '/change-me', '', 'Забронировать', 'submit')
-					+createRoomInfo('room-info', 888, 'люкс', '9 990')
-
-					//+createFormGroup('_type_inline')
-						label.form-group__label.arrival-and-departure__text(for="booking-arrival") Прибытие
-						input.arrival-and-departure__date-field(type="date" name="arrival" id="booking-arrival")
-					//+createFormGroup('_type_inline')
-						label.form-group__label.arrival-and-departure__text(for="booking-departure") Выезд
-						input.arrival-and-departure__date-field(type="date" name="departure" id="booking-departure")
-
-
-					div.form-group.guests-quantity
-						label.form-group__label.guests-quantity__text Гости
-						select.guests-quantity__select-field(name="guests-quantity")
-							option.guests-quantity__option-field(value="" disabled selected) Сколько гостей
-							option.guests-quantity__option-field(value="1") 1 гость
-							option.guests-quantity__option-field(value="2") 2 гостя
-							option.guests-quantity__option-field(value="3") 3 гостя
-
-					div.form-group.services-list
-						+createServicesList('services-and-prices')
+				+createFormBooking()
 
 
 			div.site-card.site-card_fields_30
-				//+createForm('form-login', 'get', '/change-me', 'Войти', 'Войти', 'submit')
+				+createFormEnter("form-enter", "get", "/change-me", "Войти", "Войти", "submit")
 
-					div.form-group.client-login-pass
-							input.client-login-pass__email-field(type="email" name="email"  placeholder="Email")
-							input.client-login-pass__pass-field(type="password" name="password" placeholder="Пароль")
+				+createMoveToAnotherForm(	{	text: "Нет аккаунта на Toxin?",
+												buttonText: "Создать",
+												buttonTheme: "light"	}	)
 
-				+createEnterForm('create-login-button', 'Нет аккаунта на Toxin?', 'Создать', 'light')
 
 		div.container__column3.container__column3_width320
 
 			div.site-card.site-card_fields_20
+
 				div.calendar
 
 
 			div.site-card
-				div.room-card
-					- 
-						var arraySlides = [
-							{src: './img/room888_picture.png', alt: 'Слайд 1'},
-							{src: './img/room840_picture2.png', alt: 'Слайд 2'},
-							{src: './img/room840_picture3.png', alt: 'Слайд 3'},
-							{src: './img/room840_picture4.png', alt: 'Слайд 4'},
-						]
 
-					+createSlider('slider888', arraySlides, true, true)
+				+createRoomCard({	sliderData:	{	sliderName: "slider888", 
+													arraySlides: [
+														{src: "./img/room888_picture.png", alt: "Слайд 1"},
+														{src: "./img/room840_picture2.png", alt: "Слайд 2"},
+														{src: "./img/room840_picture3.png", alt: "Слайд 3"},
+														{src: "./img/room840_picture4.png", alt: "Слайд 4"},
+													], 
+													needDots: true, 
+													needPrevNext: true,	
+												},
 
+									roomData:	{	roomNumber: 888, 
+													roomType: "люкс", 
+													price: "9 990", 
+													modifier: "border_bottom",
+												},
 
-					div.room-card__data
-						+createRoomInfo('room-info', 888, 'люкс', '9 990', 'border_bottom')
+									ratingData:	{	fullStars: 5, 
+													emprtyStars: 0,
+												},
+									reviewsData:{	rewiewsQuantity: 145,
+												},														
 
-					div.room-card__rating
-						+createShowRating(5, 0)
-
-						div.room-card__reviews- 145
-							span.room-card__reviews отзывов
+								})
 
 
 			div.site-card
-				div.room-card
-					- 
-						var arraySlides = [
-							{src: './img/room840_picture.png', alt: 'Слайд 1'},
-							{src: './img/room840_picture2.png', alt: 'Слайд 2'},
-							{src: './img/room840_picture3.png', alt: 'Слайд 3'},
-							{src: './img/room840_picture4.png', alt: 'Слайд 4'},
-						]
 
-					+createSlider('slider840', arraySlides, false, true)
+				+createRoomCard({	sliderData:	{	sliderName: "slider840", 
+													arraySlides: [
+														{src: "./img/room840_picture.png", alt: "Слайд 1"},
+														{src: "./img/room840_picture2.png", alt: "Слайд 2"},
+														{src: "./img/room840_picture3.png", alt: "Слайд 3"},
+														{src: "./img/room840_picture4.png", alt: "Слайд 4"},
+													], 
+													needDots: false, 
+													needPrevNext: true,	
+												},
 
+									roomData:	{	roomNumber: 840, 
+													roomType: "", 
+													price: "9 990", 
+													modifier: "border_bottom",
+												},
 
+									ratingData:	{	fullStars: 4, 
+													emprtyStars: 1,
+												},
+									reviewsData:{	rewiewsQuantity: 65,
+												},											
 
-					div.room-card__data
-						+createRoomInfo('room-info', 840, '', '9 900', 'border_bottom')
+								})
 
-					div.room-card__rating
-						+createShowRating(4, 1)
-
-						div.room-card__reviews- 65
-							span.room-card__reviews отзывов
 
 block form-elements
 	div.container
@@ -187,9 +183,9 @@ block headers-footers
 			div.header__registration
 
 				div.header__button-wrapper
-					+createButton('enter-button', 'Login', 'light')
+					+createSiteButton('enter-button', 'Login', 'light')
 
-				+createButton('registration-button', 'Register', false)
+				+createSiteButton('registration-button', 'Register', false)
 
 
 	div.header.header_logged

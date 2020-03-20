@@ -29,5 +29,5 @@ mixin createFormSearchRoom()
 			+createGuestsQuantity('guests-quantity', 'Гости')
 
 
-		- var classnameButton = formClassname + '__button';
-		+createFormButton(classnameButton, 'Подобрать номер', 'submit')
+		+createDivClassesBEM({	blockBEM: formClassname, element: '__button', modifiers: []	})
+			+createFormButton('Подобрать номер', 'submit')

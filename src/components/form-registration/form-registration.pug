@@ -38,13 +38,16 @@ mixin createFormRegistration()
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
 			h3(class = formClassname + "__block-title") Данные для входа в сервис
-			+createTextField({	id:"email", name:"email", placeholder:"Email", type:"email", isRequired:true	})
-			+createTextField({	id:"password", name:"password", placeholder:"Пароль", type:"password", isRequired:true	})
+			+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: []	})
+				+createTextField({	id:"email", name:"email", placeholder:"Email", type:"email", isRequired:true	})
+
+			+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: []	})
+				+createTextField({	id:"password", name:"password", placeholder:"Пароль", type:"password", isRequired:true	})
 
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: ["_type_inline_row",]	})
 			+createToggleButton("toggle-button", "toggle-button", "Получать спецпредложения")
 
 
-		- var buttonFormClassname = formClassname + "__button";
-		+createFormButton(buttonFormClassname, "Перейти к оплате", "submit")
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__button", modifiers: []	})
+			+createFormButton("Перейти к оплате", "submit")

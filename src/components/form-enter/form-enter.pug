@@ -1,0 +1,35 @@
+include ../../components/form-button/form-button.pug
+include ../../components/text-field/text-field.pug
+include ../../components/block-BEM/block-BEM.pug
+
+
+mixin createFormEnter()
+	- var formClassname = "form-enter";
+
+	- var attributes = {};
+	- attributes.action = "/change-me";
+	- attributes.method = "get";
+	- attributes.class = formClassname;
+
+	form&attributes(attributes)
+
+
+		h1(class = formClassname + "__title") Войти
+
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: ["_padding_20",]	})
+			+createTextField({	id:"email", name:"email", placeholder:"Email", type:"email", isRequired:true})
+		//-а если тут убрать айдишник?????????????????????????????????????????????
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: []	})
+			+createTextField({	id:"password", name:"password", placeholder:"Пароль", type:"password", isRequired:true})
+
+
+
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__button", modifiers: []	})
+			+createFormButton("Войти", "submit")
+
+		
+
+
+				

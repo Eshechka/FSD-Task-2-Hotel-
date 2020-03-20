@@ -1,23 +1,23 @@
+include ../../components/show-rating/show-rating.pug
+include ../../components/slider/slider.pug
+include ../../components/room-info/room-info.pug
+
 //- Create list ul> n*(li > div > (div + div) )
 
-mixin createServicesList(classname)
-	- 
-		var arrDescPriceItems = [
-		{textDesc: '9 990&#8381; х 4 суток', textPrice: '39 960&#8381;', }, 
-		{textDesc: 'Сбор за услуги: скидка 2 179&#8381;', textPrice: '0&#8381;', needPseudo: true}, 
-		{textDesc: 'Сбор за дополнительные услуги', textPrice: '300&#8381;', needPseudo: true}, 
-		{textDesc: 'Итого', textPrice: '38 081&#8381;', modifierClass: 'total'}, 
+mixin createRoomCard(	{sliderData, roomData, ratingData, reviewsData}	)
+	
+	- var classname = "room-card"
 
-		];
+	div(class = classname)
 
-	ul(class= classname+"__list")
+		+createSlider(sliderData.sliderName, sliderData.arraySlides, sliderData.needDots, sliderData.needPrevNext)
 
-			each i in arrDescPriceItems
-				-
-					var myClass = classname+ '__item'
-					myClass += i.modifierClass ? " " + myClass + "_" + i.modifierClass : "" + (i.needPseudo ? " " + myClass + "_pseudo" : "")
-					
-				li(class = myClass)
 
-					div(class = classname + '__desc') !{i.textDesc}
-					div(class = classname + '__price') !{i.textPrice}
+		div(class = classname + "__data")
+			+createRoomInfo(roomData.roomNumber, roomData.roomType, roomData.price, roomData.modifier)
+
+		div(class = classname + "__rating")
+			+createShowRating(ratingData.fullStars, ratingData.emptyStars)
+
+			div(class = classname + "__reviews")= reviewsData.rewiewsQuantity
+				span(class = classname + "__reviews") отзывов
