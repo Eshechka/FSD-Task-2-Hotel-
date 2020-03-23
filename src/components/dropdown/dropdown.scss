@@ -1,0 +1,67 @@
+
+
+.iqdropdown {
+
+	min-width: 300px;
+
+	&-item {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+	}
+
+
+
+	& .iqdropdown-menu-option {
+		height: 35px;
+	}
+
+	& .iqdropdown-item-controls {
+		height: 30px;
+	}
+
+	& .iqdropdown-item-controls button.button-increment,
+	& .iqdropdown-item-controls button.button-decrement {
+		border: 1px solid $DarkShade25;
+		box-sizing: border-box;
+		border-radius: 50%;
+		padding: 11px;
+		height: 30px;
+	}
+
+	& .icon-decrement.icon-increment,
+	& .icon-decrement {
+		height: 8px;
+		width: 8px;
+		min-width: 0px;
+		
+		&:after,
+		&:before {
+			background-color: $DarkShade25;
+			position: absolute;
+			height: 2px;
+			width: 8px;
+			top: 2px;
+		}
+
+	}
+
+	& .iqdropdown-item-controls .counter {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $DarkShade100;
+		border: none;
+		padding: 4px 0px;
+		flex-basis: 40px;
+		width: 40px;
+		text-align: center;
+
+
+	}
+}

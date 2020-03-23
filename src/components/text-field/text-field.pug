@@ -1,3 +1,20 @@
-mixin createTextField({id, name, placeholder, type, isRequired})
-	
-	input(class='text-field' type=type name=name id=id placeholder=placeholder required=isRequired)
+mixin createTextField(	{id, name, placeholder, isRequired, isDataMasked, isFocusedHovered}	)
+	- var attributes = {};
+
+	-var classname = "text-field";
+	-var classes = classname;
+
+	if isDataMasked 
+		- classes += " data-masked "
+	if isFocusedHovered 
+		- classes += " " + classname + "_focus-hover"
+
+	if id 
+	- attributes.id = id;
+
+
+	- attributes.name = name;
+	- attributes.placeholder = placeholder || "";
+	- attributes.type = "text";
+
+	input(class = classes required=isRequired)&attributes(attributes)

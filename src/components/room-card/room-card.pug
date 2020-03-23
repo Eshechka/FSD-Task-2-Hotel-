@@ -17,7 +17,7 @@ mixin createRoomCard(	{sliderData, roomData, ratingData, reviewsData}	)
 			+createRoomInfo(roomData.roomNumber, roomData.roomType, roomData.price, roomData.modifier)
 
 		div(class = classname + "__rating")
-			+createShowRating(ratingData.fullStars, ratingData.emptyStars)
+			+createShowRating(ratingData.fullStars)
 
 			div(class = classname + "__reviews")= reviewsData.rewiewsQuantity
 				span(class = classname + "__reviews") отзывов

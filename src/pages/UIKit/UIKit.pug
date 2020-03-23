@@ -2,6 +2,10 @@ extends ../../common-files/UIKit-base-template
 
 include ../../components/color-example/color-example.pug
 include ../../components/fonts-example/fonts-example.pug
+
+include ../../components/extra-info-text-field/extra-info-text-field.pug
+include ../../components/dropdown/dropdown.pug
+
 include ../../components/form-search-room/form-search-room.pug
 include ../../components/form-registration/form-registration.pug
 include ../../components/form-booking/form-booking.pug
@@ -52,10 +56,48 @@ block colorAndType
 
 
 
+block form-elements
+	div.container
+		section.site-elements
+			div.site-elements__column
+				+createExtraInfoTextField(	{text: "Text Field", statusText: "Default"}	)
+					+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
+
+				+createExtraInfoTextField(	{text: "Text Field", statusText: "Hover / Focus"}	)
+					+createTextField(	{id:"", name:"somename", placeholder:"This is pretty awesome", isRequired:"", isDataMasked:false, isFocusedHovered: true	}	)
+
+
+				- 
+					var arrDropdownItems = [	{	
+													dataId: "item1",
+													name: "взрослые",
+												},
+												{	
+													dataId: "item2",
+													name: "дети",
+												},
+												{	
+													dataId: "item3",
+													name: "младенцы",
+												},
+											]
+				+createDropdown(arrDropdownItems)
+
+
+				+createExtraInfoTextField(	{text: "masked text field", statusText: "Default"}	)
+					+createTextField(	{id:"", name:"masked-text-field", placeholder:"ДД.ММ.ГГГГ", isRequired:"", isDataMasked:true, isFocusedHovered: false	}	)
+
+			div.site-elements__column
+
+
+			div.site-elements__column
+
+
+
 block cards
 	div.container
 		
-		div.container__column3
+		div.container__column.container__column_width380
 		
 			div.site-card.site-card_fields_30
 				+createFormSearchRoom()
@@ -71,7 +113,7 @@ block cards
 
 
 
-		div.container__column3
+		div.container__column.container__column_width380
 
 			div.site-card.site-card_fields_30
 				+createFormBooking()
@@ -85,7 +127,7 @@ block cards
 												buttonTheme: "light"	}	)
 
 
-		div.container__column3.container__column3_width320
+		div.container__column.container__column_width320
 
 			div.site-card.site-card_fields_20
 
@@ -112,7 +154,6 @@ block cards
 												},
 
 									ratingData:	{	fullStars: 5, 
-													emprtyStars: 0,
 												},
 									reviewsData:{	rewiewsQuantity: 145,
 												},														
@@ -140,7 +181,6 @@ block cards
 												},
 
 									ratingData:	{	fullStars: 4, 
-													emprtyStars: 1,
 												},
 									reviewsData:{	rewiewsQuantity: 65,
 												},											
@@ -148,32 +188,22 @@ block cards
 								})
 
 
-block form-elements
-	div.container
-		div.container__column3
-
-
-		div.container__column3
-
-
-		div.container__column3
-
 
 
 block headers-footers
 
 	div.header
 		div.header__container
-			+createLogotype('logotype', './img/TOXIN_Logo.svg')
+			+createLogotype("logotype", "./img/TOXIN_Logo.svg")
 
 			- 
 				var arrMenuItems = [
-				{url: './change-me', text: 'Home', needPseudoForLink: false, linkModifier: 'active'}, 
-				{url: './change-me', text: 'About us', needPseudoForLink: false}, 
-				{url: './change-me', text: 'Services', needPseudoForLink: true}, 
-				{url: './change-me', text: 'Careers', needPseudoForLink: false}, 
-				{url: './change-me', text: 'News', needPseudoForLink: false}, 
-				{url: './change-me', text: 'Documentation', needPseudoForLink: false}
+				{url: "./change-me", text: "Home", needPseudoForLink: false, linkModifier: "active"}, 
+				{url: "./change-me", text: "About us", needPseudoForLink: false}, 
+				{url: "./change-me", text: "Services", needPseudoForLink: true}, 
+				{url: "./change-me", text: "Careers", needPseudoForLink: false}, 
+				{url: "./change-me", text: "News", needPseudoForLink: false}, 
+				{url: "./change-me", text: "Documentation", needPseudoForLink: false}
 				];
 
 
@@ -183,20 +213,21 @@ block headers-footers
 			div.header__registration
 
 				div.header__button-wrapper
-					+createSiteButton('enter-button', 'Login', 'light')
+					+createSiteButton("Login", "light")
 
-				+createSiteButton('registration-button', 'Register', false)
+				+createSiteButton("Register", "")
 
 
 	div.header.header_logged
 		div.header__container
 
-			+createLogotype('logotype', './img/TOXIN_Logo.svg')
+			+createLogotype("logotype", "./img/TOXIN_Logo.svg")
 
 			+createMenu(arrMenuItems)
 
 			div.header__user
-				+createUserAccount('Cosmin Negoita')
+			-var username = "Cosmin Negoita";
+				+createUserAccount(username)
 
 
 	footer.footer
@@ -205,7 +236,7 @@ block headers-footers
 			div.footer__container
 				div.footer__left-side
 
-					+createLogotype('logotype', './img/TOXIN_Logo.svg')
+					+createLogotype("logotype", "./img/TOXIN_Logo.svg")
 
 					+createShortInfo('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
 

@@ -3,6 +3,7 @@ $DarkShade100: rgba(31, 32, 65, 1);
 $DarkShade75: rgba(31, 32, 65, 0.75);
 $DarkShade50: rgba(31, 32, 65, 0.50);
 $DarkShade25: rgba(31, 32, 65, 0.25);
+$DarkShade15: rgba(31, 32, 65, 0.15);
 $DarkShade5: rgba(31, 32, 65, 0.05);
 $Purple: #BC9CFF;
 $Purplegradient: #8BA4F9;
@@ -26,6 +27,8 @@ $colors: (
 @import "~air-datepicker/src/sass/navigation.scss";
 @import "~air-datepicker/src/sass/_datepicker-config.scss";
 @import "~air-datepicker/src/sass/timepicker.scss";
+
+@import "~item-quantity-dropdown/lib/item-quantity-dropdown.min.css";
 
 @import "../fonts/Montserrat.css";
 @import "../fonts/Quicksand.css";
@@ -82,11 +85,17 @@ div.container__right {
 
 
 
-div.container__column3 {
-	flex: 0 0 380px;
-}
-.container__column3.container__column3_width320 {
-	flex: 0 0 320px;
+.container__column {
+
+	flex: 0 0 auto;
+
+	&.container__column_width380 {
+		flex-basis: 380px;
+	}
+
+	&.container__column_width320 {
+		flex-basis: 320px;
+	}
 }
 
 
@@ -253,12 +262,15 @@ input {
 }
 
 
-
+@import "../components/block-BEM/block-BEM.scss";
 
 @import "../components/color-example/color-example.scss";
 @import "../components/fonts-example/fonts-example.scss";
 
-@import "../components/block-BEM/block-BEM.scss";
+@import "../components/extra-info-text-field/extra-info-text-field.scss";
+@import "../components/text-field/text-field.scss";
+@import "../components/dropdown/dropdown.scss";
+
 @import "../components/form-search-room/form-search-room.scss";
 @import "../components/form-registration/form-registration.scss";
 @import "../components/form-booking/form-booking.scss";

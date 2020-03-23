@@ -1,6 +1,13 @@
 // import * as $ from 'jquery';
 import 'air-datepicker';
+// import 'inputmask/dist/jquery.inputmask';
+import 'inputmask/lib/extensions/inputmask.date.extensions';
+// import 'item-quantity-dropdown';
+import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
+
+
 import '../../components/slider/slider';
+import '../../components/dropdown/dropdown';
 
 import '../../common-files/ui-style.scss';
 
@@ -25,6 +32,8 @@ $('.calendar').datepicker({
 
 
 
+
+$('.data-masked').inputmask( { placeholder: "ДД.ММ.ГГГГ", alias: "datetime", inputFormat: "dd.mm.yyyy", } ); 
 
 
 

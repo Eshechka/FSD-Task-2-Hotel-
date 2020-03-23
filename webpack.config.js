@@ -64,6 +64,12 @@ module.exports = {
 
   // },
 
+   // resolve: {
+   //      alias: {
+   //          './inputmask/lib/dependencyLibs/inputmask.dependencyLib': './inputmask/lib/dependencyLibs/inputmask.dependencyLib.jquery'
+   //      }
+   //  },
+
   plugins: [
 
     new webpack.ProvidePlugin({
@@ -91,57 +97,57 @@ module.exports = {
   ],
 
   module: {
-  rules: [
-    {
-      test: /\.s[ac]ss$/,
-              use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-            
+    rules: [
+      {
+        test: /\.s[ac]ss$/,
+                use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+              
+              },
             },
-          },
-          'css-loader',
-          'sass-loader',
-        ],
+            'css-loader',
+            'sass-loader',
+          ],
 
-    },
-
-    {
-    test: /\.pug$/,
-    loader: 'pug-loader',
-      options: {
-      pretty: true
-      }
-    },
-
-    {
-    test: /\.(ttf|woff|woff2|eot)$/,
-    use: ['file-loader']
-    },
-
-    {
-      test: /\.(svg|png)$/,
-      loader: 'file-loader',
-      options: {
-        name: '/[name].[ext]',
-        outputPath : 'img/',
       },
-    },
 
-    {
-        // Exposes jQuery for use outside Webpack build
-        test: require.resolve('jquery'),
-        use: [{
-          loader: 'expose-loader',
-          options: 'jQuery'
-        },{
-          loader: 'expose-loader',
-          options: '$'
-        }]
-    },
+      {
+      test: /\.pug$/,
+      loader: 'pug-loader',
+        options: {
+        pretty: true
+        }
+      },
 
-  ]
+      {
+      test: /\.(ttf|woff|woff2|eot)$/,
+      use: ['file-loader']
+      },
+
+      {
+        test: /\.(svg|png)$/,
+        loader: 'file-loader',
+        options: {
+          name: '/[name].[ext]',
+          outputPath : 'img/',
+        },
+      },
+
+      {
+          // Exposes jQuery for use outside Webpack build
+          test: require.resolve('jquery'),
+          use: [{
+            loader: 'expose-loader',
+            options: 'jQuery'
+          },{
+            loader: 'expose-loader',
+            options: '$'
+          }]
+      },
+
+    ]
 }
 
 };

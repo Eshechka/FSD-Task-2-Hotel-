@@ -1,0 +1,24 @@
+.extra-info {
+	display: flex;
+	justify-content: space-between;
+
+	&__text {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: $DarkShade100;
+	}
+
+	&__status {
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: $DarkShade50;
+	}
+}

@@ -1,0 +1,20 @@
+mixin createDropdown(	arrDropdownItems	)
+	-
+		var classname = "iqdropdown"
+
+	div(class=classname)
+
+		p(class = classname + "-selection")
+
+		div(class = classname + "-menu")
+
+			each item in arrDropdownItems
+
+				div(class = classname + "-menu-option" data-id=item.dataId)
+					div
+						p(class = classname + "-item")= item.name
+						
+
+
+
+
