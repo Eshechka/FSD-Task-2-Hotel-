@@ -1,0 +1,22 @@
+include ../../components/extra-info-text-field/extra-info-text-field.pug
+
+mixin createDatedropdown(	{extraInfoTextLeft, extraInfoTextRight}	)
+
+	-	var classname = "date-dropdown"
+	-	var classnameInput = classname + "__input"
+
+	div(class=classname)
+
+		div(class = classname + "__left")
+
+			+createExtraInfoTextField(	{text: extraInfoTextLeft, statusText: ""}	)
+				input(class = classnameInput type='date' name="date-dropdown-left")
+
+		div(class = classname + "__right")
+			+createExtraInfoTextField(	{text: extraInfoTextRight, statusText: ""}	)
+				input(class = classnameInput type='date' name="date-dropdown-right")
+		
+
+
+
+

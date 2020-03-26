@@ -2,6 +2,10 @@
 	display: flex;
 	justify-content: space-between;
 
+	&-inline {
+		display: inline-flex;
+	}
+
 	&__text {
 		font-family: Montserrat;
 		font-style: normal;

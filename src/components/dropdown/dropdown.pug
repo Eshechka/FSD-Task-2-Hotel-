@@ -1,8 +1,8 @@
-mixin createDropdown(	arrDropdownItems	)
+mixin createDropdown(	dropdownName, arrDropdownItems	)
 	-
 		var classname = "iqdropdown"
 
-	div(class=classname)
+	div(class=classname + " " + dropdownName)
 
 		p(class = classname + "-selection")
 

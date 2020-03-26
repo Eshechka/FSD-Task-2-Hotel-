@@ -5,6 +5,7 @@ include ../../components/fonts-example/fonts-example.pug
 
 include ../../components/extra-info-text-field/extra-info-text-field.pug
 include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
 
 include ../../components/form-search-room/form-search-room.pug
 include ../../components/form-registration/form-registration.pug
@@ -60,32 +61,42 @@ block form-elements
 	div.container
 		section.site-elements
 			div.site-elements__column
-				+createExtraInfoTextField(	{text: "Text Field", statusText: "Default"}	)
-					+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
 
-				+createExtraInfoTextField(	{text: "Text Field", statusText: "Hover / Focus"}	)
-					+createTextField(	{id:"", name:"somename", placeholder:"This is pretty awesome", isRequired:"", isDataMasked:false, isFocusedHovered: true	}	)
+					+createExtraInfoTextField(	{text: "Text Field", statusText: "Default"}	)
+						+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
 
-
-				- 
-					var arrDropdownItems = [	{	
-													dataId: "item1",
-													name: "взрослые",
-												},
-												{	
-													dataId: "item2",
-													name: "дети",
-												},
-												{	
-													dataId: "item3",
-													name: "младенцы",
-												},
-											]
-				+createDropdown(arrDropdownItems)
+					+createExtraInfoTextField(	{text: "Text Field", statusText: "Hover / Focus"}	)
+						+createTextField(	{id:"", name:"somename", placeholder:"This is pretty awesome", isRequired:"", isDataMasked:false, isFocusedHovered: true	}	)
 
 
-				+createExtraInfoTextField(	{text: "masked text field", statusText: "Default"}	)
-					+createTextField(	{id:"", name:"masked-text-field", placeholder:"ДД.ММ.ГГГГ", isRequired:"", isDataMasked:true, isFocusedHovered: false	}	)
+					- 
+						var arrDropdownItems = [	{	
+														dataId: "item1",
+														name: "взрослые",
+													},
+													{	
+														dataId: "item2",
+														name: "дети",
+													},
+													{	
+														dataId: "item3",
+														name: "младенцы",
+													},
+												]
+					+createExtraInfoTextField(	{text: "dropdown", statusText: "Default"}	)
+						+createDropdown("guestsQuant", arrDropdownItems)
+
+
+					+createExtraInfoTextField(	{text: "masked text field", statusText: "Default"}	)
+						+createTextField(	{id:"", name:"masked-text-field", placeholder:"ДД.ММ.ГГГГ", isRequired:"", isDataMasked:true, isFocusedHovered: false	}	)
+
+					+createDatedropdown(	{
+												extraInfoTextLeft: "date Dropdown",
+											 	extraInfoTextRight: "date Dropdown",
+											 }	) 
+
+
+
 
 			div.site-elements__column
 

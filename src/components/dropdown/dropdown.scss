@@ -2,7 +2,9 @@
 
 .iqdropdown {
 
-	min-width: 300px;
+	min-width: 320px;
+	background-color: #fff;
+	border: 1px solid $DarkShade50;
 
 	&-item {
 		font-family: Montserrat;
@@ -13,7 +15,22 @@
 		text-transform: uppercase;
 	}
 
+	& .iqdropdown-menu {
+		padding-bottom: 50px;
+		margin: -2px -1px 0px -1px;
 
+		background: #FFFFFF;
+		border: 1px solid $DarkShade50;
+		box-sizing: border-box;
+		border-radius: 0 0 2px 2px;
+	}
+
+
+	&.menu-open {
+		background-color: #fff;
+		border: 1px solid $DarkShade50;
+		border-radius: 4px 4px 0 0;
+	}
 
 	& .iqdropdown-menu-option {
 		height: 35px;
@@ -40,9 +57,9 @@
 		
 		&:after,
 		&:before {
-			background-color: $DarkShade25;
+			background-color: $DarkShade50;
 			position: absolute;
-			height: 2px;
+			height: 1px;
 			width: 8px;
 			top: 2px;
 		}

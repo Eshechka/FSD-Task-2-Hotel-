@@ -1,13 +1,14 @@
 // import * as $ from 'jquery';
 import 'air-datepicker';
-// import 'inputmask/dist/jquery.inputmask';
-import 'inputmask/lib/extensions/inputmask.date.extensions';
+import 'inputmask/dist/jquery.inputmask';
+// import 'inputmask/lib/extensions/inputmask.date.extensions';
 // import 'item-quantity-dropdown';
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
 
 import '../../components/slider/slider';
 import '../../components/dropdown/dropdown';
+import '../../components/calendar/calendar';
 
 import '../../common-files/ui-style.scss';
 
