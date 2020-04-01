@@ -9,6 +9,9 @@ import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 import '../../components/slider/slider';
 import '../../components/dropdown/dropdown';
 import '../../components/calendar/calendar';
+import '../../components/text-field/text-field';
+import '../../components/date-dropdown/date-dropdown';
+import '../../components/filter-date-dropdown/filter-date-dropdown';
 
 import '../../common-files/ui-style.scss';
 
@@ -30,13 +33,6 @@ $('.calendar').datepicker({
     // Парамтер {range: true} для выбора диапазона. В качестве разделителя дат будет использован multipleDatesSeparator
     range: true,
 });
-
-
-
-
-$('.data-masked').inputmask( { placeholder: "ДД.ММ.ГГГГ", alias: "datetime", inputFormat: "dd.mm.yyyy", } ); 
-
-
 
 
 

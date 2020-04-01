@@ -5,7 +5,7 @@ mixin createTextField(	{id, name, placeholder, isRequired, isDataMasked, isFocus
 	-var classes = classname;
 
 	if isDataMasked 
-		- classes += " data-masked "
+		- classes += " " + classname + "_data-masked "
 	if isFocusedHovered 
 		- classes += " " + classname + "_focus-hover"
 

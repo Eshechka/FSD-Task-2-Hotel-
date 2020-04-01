@@ -1,0 +1,14 @@
+include ../../components/extra-info-text-field/extra-info-text-field.pug
+
+mixin createFilterDatedropdown(	{extraInfoText}	)
+
+	-	var classname = "filter-date-dropdown"
+
+	div(class=classname)
+		+createExtraInfoTextField(	{text: extraInfoText}	)
+			input(class = classname + "__input" type='text' name="filter-date-dropdown")
+		
+
+
+
+

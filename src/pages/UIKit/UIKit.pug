@@ -6,6 +6,7 @@ include ../../components/fonts-example/fonts-example.pug
 include ../../components/extra-info-text-field/extra-info-text-field.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
+include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 
 include ../../components/form-search-room/form-search-room.pug
 include ../../components/form-registration/form-registration.pug
@@ -84,7 +85,7 @@ block form-elements
 													},
 												]
 					+createExtraInfoTextField(	{text: "dropdown", statusText: "Default"}	)
-						+createDropdown("guestsQuant", arrDropdownItems)
+					+createDropdown("guestsQuant", arrDropdownItems)
 
 
 					+createExtraInfoTextField(	{text: "masked text field", statusText: "Default"}	)
@@ -93,9 +94,15 @@ block form-elements
 					+createDatedropdown(	{
 												extraInfoTextLeft: "date Dropdown",
 											 	extraInfoTextRight: "date Dropdown",
-											 }	) 
+											 }	)
+
+					+createFilterDatedropdown(	{
+												extraInfoText: "filter date Dropdown",
+											 }	)
 
 
+					+createExtraInfoTextField(	{text: "subscription text field", statusText: ""}	)
+					+createSubscribeTextField()
 
 
 			div.site-elements__column

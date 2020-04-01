@@ -1,3 +1,4 @@
+include ../../components/subscription-text-field/subscription-text-field.pug
 
 mixin createSubscribe(titleText, text)
 	-
@@ -7,9 +8,4 @@ mixin createSubscribe(titleText, text)
 		h3(class=className+'__title')= titleText
 		p(class=className+'__text')= text
 		
-		-
-			var classNameConfirm = 'confirm-'+className
-
-		form(class=classNameConfirm action='./change-me' method='get')
-			input(class=classNameConfirm+'__input' type='email' placeholder='Email')
-			input(class=classNameConfirm+'__submit' type='submit' value='')
+		+createSubscribeTextField()

@@ -1,0 +1,7 @@
+mixin createSubscribeTextField()
+	
+	- var classname = 'confirm-subscribe'
+
+	form(class=classname action='./change-me' method='get')
+		input(class=classname+'__input' type='email' placeholder='Email')
+		input(class=classname+'__submit' type='submit' value='')

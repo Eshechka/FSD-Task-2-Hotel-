@@ -10,11 +10,11 @@ mixin createDatedropdown(	{extraInfoTextLeft, extraInfoTextRight}	)
 		div(class = classname + "__left")
 
 			+createExtraInfoTextField(	{text: extraInfoTextLeft, statusText: ""}	)
-				input(class = classnameInput type='date' name="date-dropdown-left")
+				input(class = classnameInput + " " + classnameInput + "_left" type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left")
 
 		div(class = classname + "__right")
 			+createExtraInfoTextField(	{text: extraInfoTextRight, statusText: ""}	)
-				input(class = classnameInput type='date' name="date-dropdown-right")
+				input(class = classnameInput + " " + classnameInput + "_right" type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right")
 		
 
 

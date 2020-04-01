@@ -1,0 +1,32 @@
+
+.confirm-subscribe {
+	display: flex;
+
+	&__input { 
+		box-sizing: border-box;
+		width: 216px;
+		height: 44px;
+		padding: 10px;
+		background: #FFFFFF;
+		border: 1px solid $DarkShade25;
+		border-right: none;
+		border-radius: 4px 0 0 4px;
+		color: $DarkShade25;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__submit {
+		box-sizing: border-box;
+		cursor: pointer;
+		background: #fff url('../img/arrow_forward.svg') no-repeat 50% 50%;
+		width: 44px;
+		height: 44px;
+		border: 1px solid $DarkShade25;
+		border-left: none;
+		border-radius: 0 4px 4px 0;
+		color: #BC9CFF;	
+	}
+}

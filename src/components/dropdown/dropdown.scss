@@ -1,10 +1,27 @@
-
-
 .iqdropdown {
 
+	height: 44px;
 	min-width: 320px;
 	background-color: #fff;
-	border: 1px solid $DarkShade50;
+	border: 1px solid $DarkShade25;
+
+	&::after {
+	    content: '';
+	    /*display: inline-block;*/
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    width: 44px;
+	    height: 44px;
+	    background: url("/img/expand_more.svg");
+		background-repeat: no-repeat;
+		background-position: right 1.2em top 50%, 0 0;
+		background-size: 0.9em;
+   }
+
+	& .iqdropdown-selection::after {
+		content: none;
+	}
 
 	&-item {
 		font-family: Montserrat;
@@ -17,7 +34,7 @@
 
 	& .iqdropdown-menu {
 		padding-bottom: 50px;
-		margin: -2px -1px 0px -1px;
+		margin: -8px -1px 0px -1px;
 
 		background: #FFFFFF;
 		border: 1px solid $DarkShade50;
@@ -30,6 +47,10 @@
 		background-color: #fff;
 		border: 1px solid $DarkShade50;
 		border-radius: 4px 4px 0 0;
+		
+		&::after {
+			transform: rotate(180deg);
+		}
 	}
 
 	& .iqdropdown-menu-option {
