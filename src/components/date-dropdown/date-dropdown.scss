@@ -1,5 +1,19 @@
 .date-dropdown {
 	
 	display: flex;
+	/*justify-content: space-between;*/
+	flex-wrap: wrap;
+	margin-right: -20px;
+
+	&__left, &__right {
+		flex-basis: 150px;
+		padding-right: 20px;
+	}
+
+	&__input {
+		width: 150px;
+
+	}
+
 
 }
