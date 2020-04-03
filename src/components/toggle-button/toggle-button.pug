@@ -1,8 +1,11 @@
-mixin createToggleButton(classname, id, text)
+mixin createToggleButton(id, text, isChecked)
+	- var classname = "toggle-button"
 
-	div(class=classname+'-cover')
-		div(class=classname)
-			input(class=classname+'__checkbox' type="checkbox" id=id)
-			div(class=classname+'__knobs')
-			div(class=classname+'__layer')
-	label.form-group__label(class=classname+'__text' for=id)= text
+	div(class=classname)
+	
+		div(class = classname + "__button")
+			input(class = classname+"__checkbox" type="checkbox" id=id checked=isChecked)
+			div(class = classname+"__knobs")
+			div(class = classname+"__layer")
+
+		label(class=classname+"__text" for=id)= text

@@ -1,24 +1,16 @@
-.toggle-button-cover {
-    height: 20px;
-    padding: 0;
-    margin-bottom: 5px;
-	margin-right: 10px;
-}
-
-.toggle-button__knobs, .toggle-button__layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
 .toggle-button {
-    position: relative;
-    overflow: hidden;
-    width: 40px;
-    height: 20px;
-    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    &__button {
+        position: relative;
+        overflow: hidden;
+        width: 40px;
+        height: 20px;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
 
     &__text {
         font-family: Montserrat;
@@ -67,15 +59,24 @@
             transition: 0.1s ease all;
         }
     }
+
+    &__knobs, &__layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__checkbox:checked + &__knobs:before {
+        content: '';
+        left: 24px;
+        background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
+    }
+    &__checkbox:checked ~ &__layer {
+        border-color: $Purplegradient;
+    }
 }
 
 
-
-.toggle-button__checkbox:checked + .toggle-button__knobs:before {
-    content: '';
-    left: 24px;
-    background: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);
-}
-.toggle-button__checkbox:checked ~ .toggle-button__layer {
-    border-color: $Purplegradient;
-}
+    

@@ -134,6 +134,10 @@ block form-elements
 						{name: "gender", value: "female", id: "ui-gender-female", text: "Женщина", isChecked: false},
 					])
 
+				+createExtraInfoTextField(	{text: "Toggle", statusText: ""}	)
+				+createToggleButton("ui-toggle-not-checked", "Получать спецпредложения", false)
+				+createToggleButton("ui-toggle-checked", "Получать спецпредложения", true)
+
 			div.container__column
 
 
