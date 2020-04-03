@@ -17,6 +17,9 @@ import '../../common-files/ui-style.scss';
 
 import '../../img/TOXIN_just_picture.svg';
 import '../../img/TOXIN_Logo.svg';
+import '../../components/checkbox-button/checked.svg';
+import '../../components/dropdown/dropdown_expand_more.svg';
+import '../../components/subscription-text-field/arrow_forward.svg';
 
 import '../../img/room888_picture.png';
 

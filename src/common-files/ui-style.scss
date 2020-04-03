@@ -62,7 +62,26 @@ section.headers-footers >footer:not(:last-child), {
 	max-width: 1160px;
 	overflow-x: hidden;
 	justify-content: space-between;
+
+	&__section {
+		display: flex;
+	}
+
+	&__column {
+
+		flex: 0 0 auto;
+
+		&.container__column_width380 {
+			flex-basis: 380px;
+		}
+
+		&.container__column_width320 {
+			flex-basis: 320px;
+		}
+	}
+
 }
+
 
 div.container__left {
 	min-width: 280px;
@@ -73,25 +92,6 @@ div.container__right {
 }
 
 
-
-
-
-
-
-
-
-.container__column {
-
-	flex: 0 0 auto;
-
-	&.container__column_width380 {
-		flex-basis: 380px;
-	}
-
-	&.container__column_width320 {
-		flex-basis: 320px;
-	}
-}
 
 
 
@@ -113,6 +113,7 @@ input {
 
 	background-color: #fff; 
 }
+
 
 
 
@@ -232,6 +233,7 @@ input {
 @import "../components/filter-date-dropdown/filter-date-dropdown.scss";
 @import "../components/calendar/calendar.scss";
 @import "../components/subscription-text-field/subscription-text-field.scss";
+@import "../components/checkbox-button/checkbox-button.scss";
 
 
 @import "../components/form-search-room/form-search-room.scss";

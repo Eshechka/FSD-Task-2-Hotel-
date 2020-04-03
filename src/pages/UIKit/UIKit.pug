@@ -8,6 +8,8 @@ include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 
+include ../../components/checkbox-button/checkbox-button.pug
+
 include ../../components/form-search-room/form-search-room.pug
 include ../../components/form-registration/form-registration.pug
 include ../../components/form-booking/form-booking.pug
@@ -60,8 +62,8 @@ block colorAndType
 
 block form-elements
 	div.container
-		section.site-elements
-			div.site-elements__column
+		section.container__section
+			div.container__column
 
 					+createExtraInfoTextField(	{text: "Text Field", statusText: "Default"}	)
 						+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
@@ -105,10 +107,28 @@ block form-elements
 					+createSubscribeTextField()
 
 
-			div.site-elements__column
+			div.container__column
+				- 
+					var arrCheckboxes = [	{	
+												checkboxId: "smoking",
+												checkboxText: "Можно курить",
+											},	
+											{	
+												checkboxId: "pets",
+												checkboxText: "Можно с питомцами",
+											},	
+											{	
+												checkboxId: "invite-guests",
+												checkboxText: "Можно пригласить гостей (до 10 человек)",
+											},
+										]
+
+				+createCheckboxButton( { text: "Checkbox Buttons", statusText: "", arrCheckboxes } )
 
 
-			div.site-elements__column
+
+
+			div.container__column
 
 
 
