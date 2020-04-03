@@ -1,17 +1,12 @@
-include ../../components/extra-info-text-field/extra-info-text-field.pug
-
-mixin createCheckboxButton( {	text, statusText, arrCheckboxes	} )
+mixin createCheckboxButton(arrCheckboxes)
 
 	- var classname = "checkbox-button"
 
 	div(class=classname)
 
-		+createExtraInfoTextField( {text: text, statusText: statusText}	 )
+		each item in arrCheckboxes
 
-		div(class = classname + "__group")
-			each item in arrCheckboxes
+			div(class = classname + "__item")
 
-				div(class = classname + "__item")
-
-					input(class = classname + "__input" type="checkbox" id = item.checkboxId)
-					label(class = classname + "__label"  for = item.checkboxId)= item.checkboxText
+				input(class = classname + "__input" type="checkbox" id = item.checkboxId)
+				label(class = classname + "__label"  for = item.checkboxId)= item.checkboxText

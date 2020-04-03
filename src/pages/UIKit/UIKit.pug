@@ -108,6 +108,8 @@ block form-elements
 
 
 			div.container__column
+
+				+createExtraInfoTextField(	{text: "Checkbox Buttons", statusText: ""}	)
 				- 
 					var arrCheckboxes = [	{	
 												checkboxId: "smoking",
@@ -123,10 +125,14 @@ block form-elements
 											},
 										]
 
-				+createCheckboxButton( { text: "Checkbox Buttons", statusText: "", arrCheckboxes } )
+				+createCheckboxButton( arrCheckboxes )
 
 
-
+				+createExtraInfoTextField(	{text: "Radio Buttons", statusText: ""}	)
+				+createRadioGroup(	[	
+						{name: "gender", value: "male", id: "ui-gender-male", text: "Мужчина", isChecked: true},
+						{name: "gender", value: "female", id: "ui-gender-female", text: "Женщина", isChecked: false},
+					])
 
 			div.container__column
 
