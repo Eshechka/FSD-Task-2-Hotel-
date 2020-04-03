@@ -25,11 +25,11 @@ mixin createFormRegistration()
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: []	})
 			+createTextField({	id:"surname", name:"surname", placeholder:"Фамилия", type:"text", isRequired:true	})
 
-
-		+createRadioGroup(	[	
-								{name: "gender", value: "male", id: "gender-male", text: "Мужчина", isChecked: true},
-								{name: "gender", value: "female", id: "gender-female", text: "Женщина", isChecked: false},
-							])
+		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
+			+createRadioGroup(	[	
+									{name: "gender", value: "male", id: "gender-male", text: "Мужчина", isChecked: true},
+									{name: "gender", value: "female", id: "gender-female", text: "Женщина", isChecked: false},
+								])
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
 			h3(class = formClassname + "__block-title") Дата рождения
