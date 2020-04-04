@@ -1,7 +1,15 @@
+const ghpages = require('gh-pages');
+ghpages.publish('dist', 
+                {
+                  branch: 'master',
+                  repo: 'https://eshechka.github.io/FSD-Task-2-Hotel-/'
+                },
+                function(err) {});
+
+
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
-
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
