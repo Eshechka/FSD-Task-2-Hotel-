@@ -2,9 +2,9 @@ html{box-sizing:border-box}html *{box-sizing:inherit}html *::after,html *::befor
 @font-face {
 	font-family: 'Montserrat';
 
-	src: url(ee6539921d713482b8ccd4d0d23961bb.ttf) format('truetype'), 
-		 url(af0492c24e83e57b6b8a843d96c818af.eot),		 
-		 url(7b258dce7ee780dba8c571327e224a4a.woff) format('woff'), 
+	src: url(fonts/Montserrat-Regular.ttf) format('truetype'), 
+		 url(fonts/Montserrat-Regular.eot),		 
+		 url(fonts/Montserrat-Regular.woff) format('woff'), 
 		 url(img/Montserrat-Regular.svg) format('svg');
 
 	font-weight: normal;
@@ -13,9 +13,9 @@ html{box-sizing:border-box}html *{box-sizing:inherit}html *::after,html *::befor
 @font-face {
 	font-family: 'Quicksand';
 
-	src: url(9a891411c3856f2db214f3507349a424.ttf) format('truetype'), 
-		 url(fcd8bf69cc78b58d6962738f67219ec0.eot),		 
-		 url(91e02e3516d442601ed29e2ece181471.woff) format('woff'), 
+	src: url(fonts/Quicksand-Regular.ttf) format('truetype'), 
+		 url(fonts/Quicksand-Regular.eot),		 
+		 url(fonts/Quicksand-Regular.woff) format('woff'), 
 		 url(img/Quicksand-Regular.svg) format('svg');
 
 	font-weight: normal;
@@ -25,12 +25,12 @@ html{box-sizing:border-box}html *{box-sizing:inherit}html *::after,html *::befor
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(e79bfd88537def476913f3ed52f4f4b3.eot); /* For IE6-8 */
+  src: url(fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
   src: local('Material Icons'),
        local('MaterialIcons-Regular'),
-       url(570eb83859dc23dd0eec423a49e147fe.woff2) format('woff2'),
-       url(012cf6a10129e2275d79d6adac7f3b02.woff) format('woff'),
-       url(a37b0c01c0baf1888ca812cc0508f6e2.ttf) format('truetype');
+       url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 .material-icons {
