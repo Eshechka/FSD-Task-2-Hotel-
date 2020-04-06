@@ -1,10 +1,9 @@
-const ghpages = require('gh-pages');
-ghpages.publish('dist', 
-                {
-                  branch: 'master',
-                  repo: 'https://eshechka.github.io/FSD-Task-2-Hotel-/'
-                },
-                function(err) {});
+// const ghpages = require('gh-pages');
+// ghpages.publish('dist', 
+//                 {
+
+//                 },
+//                 function(err) {});
 
 
 const path = require('path');
@@ -17,7 +16,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'dist')
+  dist: path.join(__dirname, 'dist'),
+  fonts: path.join(__dirname, 'fonts'),
 };
 
 
@@ -87,7 +87,7 @@ module.exports = {
     }),
 
 
-    ...getFilesPathes(PATHS.src, '.pug').map(page => new HtmlWebpackPlugin ({
+    ...getFilesPathes(PAGES_DIR, '.pug').map(page => new HtmlWebpackPlugin ({
           template: page,
           filename: `./${path.basename(page).replace(/\.pug/,'.html')}`,
           // chunks: [`${path.basename(page, path.extname(page))}`],
@@ -111,9 +111,9 @@ module.exports = {
                 use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {
-              
-              },
+                options: {
+
+                }
             },
             'css-loader',
             'sass-loader',
@@ -125,21 +125,27 @@ module.exports = {
       test: /\.pug$/,
       loader: 'pug-loader',
         options: {
-        pretty: true
+          pretty: true,
         }
       },
 
       {
-      test: /\.(ttf|woff|woff2|eot)$/,
-      use: ['file-loader']
+        test: /\.(ttf|woff|woff2|eot|svg)$/,
+        exclude: [/img/],
+        loader: 'file-loader',
+
+        options: {
+          name: 'fonts/[name].[ext]',
+        },
       },
 
       {
-        test: /\.(svg|png)$/,
+        test: /\.(gif|png|jpe?g|svg)$/,
+        exclude: [/fonts/],
         loader: 'file-loader',
+
         options: {
           name: 'img/[name].[ext]',
-          // outputPath : 'img/',
         },
       },
 

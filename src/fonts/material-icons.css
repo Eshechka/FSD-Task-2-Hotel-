@@ -7,7 +7,8 @@
        local('MaterialIcons-Regular'),
        url(./Material-icons/MaterialIcons-Regular.woff2) format('woff2'),
        url(./Material-icons/MaterialIcons-Regular.woff) format('woff'),
-       url(./Material-icons/MaterialIcons-Regular.ttf) format('truetype');
+       url(./Material-icons/MaterialIcons-Regular.ttf) format('truetype'),
+       url(./Material-icons/MaterialIcons-Regular.svg) format('svg');
 }
 
 .material-icons {
