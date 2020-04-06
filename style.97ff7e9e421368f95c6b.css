@@ -5,10 +5,21 @@ html{box-sizing:border-box}html *{box-sizing:inherit}html *::after,html *::befor
 	src: url(fonts/Montserrat-Regular.ttf) format('truetype'), 
 		 url(fonts/Montserrat-Regular.eot),		 
 		 url(fonts/Montserrat-Regular.woff) format('woff'), 
-		 url(img/Montserrat-Regular.svg) format('svg');
+		 url(fonts/Montserrat-Regular.svg) format('svg');
 
 	font-weight: normal;
 	font-style: normal;
+}
+@font-face {
+    font-family: 'Opensans';
+
+    src: url(fonts/Opensans-regular-webfont.woff2) format('woff2'),
+         url(fonts/Opensans-regular-webfont.woff) format('woff'),
+         url(fonts/Opensans-regular-webfont.ttf) format('truetype'),
+         url(fonts/Opensans-regular-webfont.svg) format('svg');
+
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
 	font-family: 'Quicksand';
@@ -16,7 +27,7 @@ html{box-sizing:border-box}html *{box-sizing:inherit}html *::after,html *::befor
 	src: url(fonts/Quicksand-Regular.ttf) format('truetype'), 
 		 url(fonts/Quicksand-Regular.eot),		 
 		 url(fonts/Quicksand-Regular.woff) format('woff'), 
-		 url(img/Quicksand-Regular.svg) format('svg');
+		 url(fonts/Quicksand-Regular.svg) format('svg');
 
 	font-weight: normal;
 	font-style: normal;
@@ -30,7 +41,8 @@ html{box-sizing:border-box}html *{box-sizing:inherit}html *::after,html *::befor
        local('MaterialIcons-Regular'),
        url(fonts/MaterialIcons-Regular.woff2) format('woff2'),
        url(fonts/MaterialIcons-Regular.woff) format('woff'),
-       url(fonts/MaterialIcons-Regular.ttf) format('truetype');
+       url(fonts/MaterialIcons-Regular.ttf) format('truetype'),
+       url(fonts/MaterialIcons-Regular.svg) format('svg');
 }
 
 .material-icons {
