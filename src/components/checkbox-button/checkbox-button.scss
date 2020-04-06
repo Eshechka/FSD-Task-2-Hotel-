@@ -18,7 +18,7 @@
         &:checked + .checkbox-button__label:before {   
             color: $DarkShade75;
             border: 1px solid $Purple;
-            background-image: url('/img/checked.svg');
+            background: url("/img/checked.svg");
             background-repeat: no-repeat; 
             background-position: 4px 3px; 
             /*background-color: linear-gradient(180deg, $Purple 0%, $Purplegradient 100%);*/

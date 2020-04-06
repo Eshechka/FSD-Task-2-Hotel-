@@ -131,7 +131,9 @@ module.exports = {
 
       {
         test: /\.(ttf|woff|woff2|eot|svg)$/,
-        exclude: [/img/],
+        include: [
+          path.resolve(__dirname, 'src/fonts/'),
+        ],
         loader: 'file-loader',
 
         options: {
