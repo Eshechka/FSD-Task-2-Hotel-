@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html></html>
-<head><link href="./style.1abd699189766ce15a68.css" rel="stylesheet"></head>
+<head><link href="./style.9ca83220bad2afc62a14.css" rel="stylesheet"></head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, width=device-width">
 <meta name="Keywords" content="Toxin UIKit">
@@ -65,12 +65,12 @@
         <section class="container__section">
           <div class="container__column">
             <div class="extra-info"><span class="extra-info__text">Text Field</span><span class="extra-info__status">Default</span></div>
-            <input class="text-field" required="" id="" name="email" placeholder="Email" type="text">
+            <input class="text-field" required="" name="email" placeholder="Email" type="text">
             <div class="extra-info"><span class="extra-info__text">Text Field</span><span class="extra-info__status">Hover / Focus</span></div>
-            <input class="text-field text-field_focus-hover" required="" id="" name="somename" placeholder="This is pretty awesome" type="text">
+            <input class="text-field text-field_focus-hover" required="" name="somename" placeholder="This is pretty awesome" type="text">
             <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status">Default</span></div>
-            <div class="iqdropdown guestsQuant">
-              <p class="iqdropdown-selection"></p>
+            <div class="iqdropdown js-iqdropdown">
+              <p class="iqdropdown-selection js-iqdropdown-selection"></p>
               <div class="iqdropdown-menu">
                 <div class="iqdropdown-menu-option" data-id="item1">
                   <div>
@@ -90,7 +90,7 @@
               </div>
             </div>
             <div class="extra-info"><span class="extra-info__text">masked text field</span><span class="extra-info__status">Default</span></div>
-            <input class="text-field text-field_data-masked " required="" id="" name="masked-text-field" placeholder="ДД.ММ.ГГГГ" type="text">
+            <input class="text-field text-field_data-masked " required="" name="masked-text-field" placeholder="ДД.ММ.ГГГГ" type="text">
             <div class="date-dropdown">
               <div class="date-dropdown__left">
                 <div class="extra-info"><span class="extra-info__text">date Dropdown</span><span class="extra-info__status"></span></div>
@@ -166,27 +166,35 @@
           <div class="site-card site-card_fields_30">
             <form class="form-search-room" action="/change-me" method="get">
               <h1 class="form-search-room__title">Найдем номера под ваши желания</h1>
-              <div class="form-search-room__block form-search-room__block_type_inline">
-                <div class="arrival-and-departure">
-                  <label class="form-group__label arrival-and-departure__text" for="arrival">Прибытие</label>
-                  <input class="arrival-and-departure__date-field" type="date" name="arrival" id="arrival">
+              <div class="date-dropdown">
+                <div class="date-dropdown__left">
+                  <div class="extra-info"><span class="extra-info__text">Прибытие</span><span class="extra-info__status"></span></div>
+                  <input class="date-dropdown__input date-dropdown__input_left" type="text" placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left">
+                </div>
+                <div class="date-dropdown__right">
+                  <div class="extra-info"><span class="extra-info__text">Выезд</span><span class="extra-info__status"></span></div>
+                  <input class="date-dropdown__input date-dropdown__input_right" type="text" placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right">
                 </div>
               </div>
-              <div class="form-search-room__block form-search-room__block_type_inline">
-                <div class="arrival-and-departure">
-                  <label class="form-group__label arrival-and-departure__text" for="departure">Выезд</label>
-                  <input class="arrival-and-departure__date-field" type="date" name="departure" id="departure">
-                </div>
-              </div>
-              <div class="form-search-room__block">
-                <div class="guests-quantity">
-                  <label class="guests-quantity__text">Гости</label>
-                  <select class="guests-quantity__select-field" name="guests-quantity">
-                    <option class="guests-quantity__option-field" value="" disabled selected>Сколько гостей</option>
-                    <option class="guests-quantity__option-field" value="1">1 гость</option>
-                    <option class="guests-quantity__option-field" value="2">2 гостя</option>
-                    <option class="guests-quantity__option-field" value="3">3 гостя</option>
-                  </select>
+              <div class="extra-info"><span class="extra-info__text">Гости</span><span class="extra-info__status"></span></div>
+              <div class="iqdropdown js-iqdropdown">
+                <p class="iqdropdown-selection js-iqdropdown-selection"></p>
+                <div class="iqdropdown-menu">
+                  <div class="iqdropdown-menu-option" data-id="item1">
+                    <div>
+                      <p class="iqdropdown-item">взрослые</p>
+                    </div>
+                  </div>
+                  <div class="iqdropdown-menu-option" data-id="item2">
+                    <div>
+                      <p class="iqdropdown-item">дети</p>
+                    </div>
+                  </div>
+                  <div class="iqdropdown-menu-option" data-id="item3">
+                    <div>
+                      <p class="iqdropdown-item">младенцы</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="form-search-room__button">
@@ -222,10 +230,10 @@
               <div class="form-registration__block">
                 <h3 class="form-registration__block-title">Данные для входа в сервис</h3>
                 <div class="form-registration__text-field">
-                  <input class="text-field" required id="email" name="email" placeholder="Email" type="text">
+                  <input class="text-field" required name="email" placeholder="Email" type="text">
                 </div>
                 <div class="form-registration__text-field">
-                  <input class="text-field" required id="password" name="password" placeholder="Пароль" type="text">
+                  <input class="text-field" required name="password" placeholder="Пароль" type="text">
                 </div>
               </div>
               <div class="form-registration__block form-registration__block_type_inline_row">
@@ -255,23 +263,35 @@
                 <div class="room-info__type">люкс</div>
                 <div class="room-info__price">9 990&#8381; <span>в сутки</span></div>
               </div>
-              <div class="form-booking__block form-booking__block_type_inline">
-                <label class="form-group__label arrival-and-departure__text" for="booking-arrival">Прибытие</label>
-                <input class="arrival-and-departure__date-field" type="date" name="arrival" id="booking-arrival">
+              <div class="date-dropdown">
+                <div class="date-dropdown__left">
+                  <div class="extra-info"><span class="extra-info__text">Прибытие</span><span class="extra-info__status"></span></div>
+                  <input class="date-dropdown__input date-dropdown__input_left" type="text" placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left">
+                </div>
+                <div class="date-dropdown__right">
+                  <div class="extra-info"><span class="extra-info__text">Выезд</span><span class="extra-info__status"></span></div>
+                  <input class="date-dropdown__input date-dropdown__input_right" type="text" placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right">
+                </div>
               </div>
-              <div class="form-booking__block form-booking__block_type_inline">
-                <label class="form-group__label arrival-and-departure__text" for="booking-departure">Выезд</label>
-                <input class="arrival-and-departure__date-field" type="date" name="departure" id="booking-departure">
-              </div>
-              <div class="form-booking__block">
-                <div class="guests-quantity">
-                  <label class="guests-quantity__text">Гости</label>
-                  <select class="guests-quantity__select-field" name="guests-quantity">
-                    <option class="guests-quantity__option-field" value="" disabled selected>Сколько гостей</option>
-                    <option class="guests-quantity__option-field" value="1">1 гость</option>
-                    <option class="guests-quantity__option-field" value="2">2 гостя</option>
-                    <option class="guests-quantity__option-field" value="3">3 гостя</option>
-                  </select>
+              <div class="extra-info"><span class="extra-info__text">Гости</span><span class="extra-info__status"></span></div>
+              <div class="iqdropdown js-iqdropdown">
+                <p class="iqdropdown-selection js-iqdropdown-selection"></p>
+                <div class="iqdropdown-menu">
+                  <div class="iqdropdown-menu-option" data-id="item1">
+                    <div>
+                      <p class="iqdropdown-item">взрослые</p>
+                    </div>
+                  </div>
+                  <div class="iqdropdown-menu-option" data-id="item2">
+                    <div>
+                      <p class="iqdropdown-item">дети</p>
+                    </div>
+                  </div>
+                  <div class="iqdropdown-menu-option" data-id="item3">
+                    <div>
+                      <p class="iqdropdown-item">младенцы</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="form-booking__block">
@@ -305,10 +325,10 @@
             <form class="form-enter" action="/change-me" method="get">
               <h1 class="form-enter__title">Войти</h1>
               <div class="form-enter__text-field form-enter__text-field_padding_20">
-                <input class="text-field" required id="email" name="email" placeholder="Email" type="text">
+                <input class="text-field" required name="email" placeholder="Email" type="text">
               </div>
               <div class="form-enter__text-field">
-                <input class="text-field" required id="password" name="password" placeholder="Пароль" type="text">
+                <input class="text-field" required name="password" placeholder="Пароль" type="text">
               </div>
               <div class="form-enter__button">
                 <button class="form-button" type="submit">Войти<i class="material-icons form-button__icon">arrow_forward</i></button>
@@ -326,10 +346,10 @@
           <div class="site-card">
             <div class="room-card">
               <div class="sliders slider888">
-                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room888_picture.png" alt="Слайд 1"></div>
-                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture2.png" alt="Слайд 2"></div>
-                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture3.png" alt="Слайд 3"></div>
-                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture4.png" alt="Слайд 4"></div><a class="sliders__prev">&#10094;</a><a class="sliders__next">&#10095;</a>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="img/room888_picture.png" alt="Слайд 1"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="img/room888_picture2.png" alt="Слайд 2"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="img/room888_picture3.png" alt="Слайд 3"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="img/room888_picture4.png" alt="Слайд 4"></div><a class="sliders__prev">&#10094;</a><a class="sliders__next">&#10095;</a>
                 <div class="sliders-dots"><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span>
                 </div>
               </div>
@@ -350,10 +370,12 @@
           <div class="site-card">
             <div class="room-card">
               <div class="sliders slider840">
-                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture.png" alt="Слайд 1"></div>
-                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture2.png" alt="Слайд 2"></div>
-                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture3.png" alt="Слайд 3"></div>
-                <div class="sliders__item"><img class="sliders__picture" width="320px" src="./img/room840_picture4.png" alt="Слайд 4"></div><a class="sliders__prev">&#10094;</a><a class="sliders__next">&#10095;</a>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="img/room840_picture.png" alt="Слайд 1"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="img/room840_picture2.png" alt="Слайд 2"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="img/room840_picture3.png" alt="Слайд 3"></div>
+                <div class="sliders__item"><img class="sliders__picture" width="320px" src="img/room840_picture4.png" alt="Слайд 4"></div>
+                <div class="sliders-dots"><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span><span class="sliders-dots__item"></span>
+                </div>
               </div>
               <div class="room-card__data">
                 <div class="room-info room-info_border_bottom">
@@ -514,4 +536,4 @@
     </section>
   </main>
   <footer class="ui-footer"></footer>
-<script type="text/javascript" src="./js/UIKit.9672cc8e4d55c77a4672.js"></script></body>
+<script type="text/javascript" src="./js/UIKit.fa6f7c4304b0daa7d360.js"></script></body>
