@@ -39,10 +39,10 @@ mixin createFormRegistration()
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
 			h3(class = formClassname + "__block-title") Данные для входа в сервис
 			+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: []	})
-				+createTextField({	id:"email", name:"email", placeholder:"Email", type:"email", isRequired:true	})
+				+createTextField({	id:"", name:"email", placeholder:"Email", type:"email", isRequired:true	})
 
 			+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: []	})
-				+createTextField({	id:"password", name:"password", placeholder:"Пароль", type:"password", isRequired:true	})
+				+createTextField({	id:"", name:"password", placeholder:"Пароль", type:"password", isRequired:true	})
 
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: ["_type_inline_row",]	})

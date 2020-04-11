@@ -18,12 +18,10 @@ mixin createFormEnter()
 
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: ["_padding_20",]	})
-			+createTextField({	id:"email", name:"email", placeholder:"Email", type:"email", isRequired:true})
-		//-а если тут убрать айдишник?????????????????????????????????????????????
+			+createTextField({	id:"", name:"email", placeholder:"Email", type:"email", isRequired:true})
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__text-field", modifiers: []	})
-			+createTextField({	id:"password", name:"password", placeholder:"Пароль", type:"password", isRequired:true})
-
+			+createTextField({	id:"", name:"password", placeholder:"Пароль", type:"password", isRequired:true})
 
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__button", modifiers: []	})

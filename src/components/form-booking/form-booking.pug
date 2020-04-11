@@ -1,5 +1,6 @@
-include ../../components/guests-quantity/guests-quantity.pug
-include ../../components/arrival-and-departure/arrival-and-departure.pug
+include ../../components/extra-info-text-field/extra-info-text-field.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/form-button/form-button.pug
 include ../../components/room-info/room-info.pug
 include ../../components/price-detalization/price-detalization.pug
@@ -20,18 +21,26 @@ mixin createFormBooking()
 
 		+createRoomInfo(888, "люкс", "9 990")
 
+		+createDatedropdown(	{
+									extraInfoTextLeft: "Прибытие",
+								 	extraInfoTextRight: "Выезд",
+								 }	)
 
-		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: ["_type_inline",]	})
-			label.form-group__label.arrival-and-departure__text(for="booking-arrival") Прибытие
-			input.arrival-and-departure__date-field(type="date" name="arrival" id="booking-arrival")
+		- 
+			var arrDropdownItems = [	{	dataId: "item1",
+											name: "взрослые",
+										},
+										{	dataId: "item2",
+											name: "дети",
+										},
+										{	dataId: "item3",
+											name: "младенцы",
+										},
+									]
 
-		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: ["_type_inline",]	})
-			label.form-group__label.arrival-and-departure__text(for="booking-departure") Выезд
-			input.arrival-and-departure__date-field(type="date" name="departure" id="booking-departure")
+		+createExtraInfoTextField(	{text: "Гости", statusText: ""}	)
+			+createDropdown(arrDropdownItems)
 
-
-		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
-			+createGuestsQuantity("guests-quantity", "Гости")
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
 			div.price-detalization 

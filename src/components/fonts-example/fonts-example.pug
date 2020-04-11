@@ -1,7 +1,11 @@
 //- div>(div+tag)
 
-mixin createFontsExample(tag, text, classname)
+mixin createAnyTag(tag, text, classname)
+	- var newTag = '<'+ tag +' class="'+classname+'"' + '>'+text+'</'+ tag +'>'
+	!=newTag
 
+mixin createFontsExample(tag, text)
+	- var classname = "fonts-example"
 	- var tagsForChange = ['body', 'html', 'title']
 
 	div(class=classname) 

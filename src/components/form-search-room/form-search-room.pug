@@ -1,9 +1,9 @@
-include ../../components/guests-quantity/guests-quantity.pug
-include ../../components/arrival-and-departure/arrival-and-departure.pug
+include ../../components/extra-info-text-field/extra-info-text-field.pug
+include ../../components/dropdown/dropdown.pug
+include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/form-button/form-button.pug
 include ../../components/block-BEM/block-BEM.pug
 
-//-переделать кнопку формы на элемент!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 mixin createFormSearchRoom()
 	- var formClassname = 'form-search-room';
@@ -16,17 +16,26 @@ mixin createFormSearchRoom()
 
 	form&attributes(attributes)
 
-		h1(class = formClassname + '__title')= formTitle
-	
+		h1(class = formClassname + '__title')= formTitle	
 
-		+createDivClassesBEM({	blockBEM: formClassname, element: '__block', modifiers: ['_type_inline',]	})
-			+createArrivalAndDeparture('arrival', 'Прибытие')
+		+createDatedropdown(	{
+									extraInfoTextLeft: "Прибытие",
+								 	extraInfoTextRight: "Выезд",
+								 }	)
 
-		+createDivClassesBEM({	blockBEM: formClassname, element: '__block', modifiers: ['_type_inline',]	})
-			+createArrivalAndDeparture('departure', 'Выезд')
-
-		+createDivClassesBEM({	blockBEM: formClassname, element: '__block', modifiers: []	})
-			+createGuestsQuantity('guests-quantity', 'Гости')
+		- 
+			var arrDropdownItems = [	{	dataId: "item1",
+											name: "взрослые",
+										},
+										{	dataId: "item2",
+											name: "дети",
+										},
+										{	dataId: "item3",
+											name: "младенцы",
+										},
+									]
+		+createExtraInfoTextField(	{text: "Гости", statusText: ""}	)
+		+createDropdown(arrDropdownItems)
 
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: '__button', modifiers: []	})

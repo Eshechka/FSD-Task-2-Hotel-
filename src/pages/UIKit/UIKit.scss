@@ -22,18 +22,16 @@ $colors: (
 
 @import "~normalize.css";
 
-
 @import "~item-quantity-dropdown/lib/item-quantity-dropdown.min.css";
 
 
-@import "../fonts/Montserrat.css";
-@import "../fonts/Opensans.css";
-@import "../fonts/Quicksand.css";
-@import "../fonts/Material-icons.css";
+@import "../../fonts/Montserrat.css";
+@import "../../fonts/Opensans.css";
+@import "../../fonts/Quicksand.css";
+@import "../../fonts/Material-icons.css";
 
 
-
-@import "./common.scss";
+@import "../../common-files/common.scss";
 
 
 
@@ -42,7 +40,7 @@ body {
 	min-width: 1460px;
 	background: #F4F4F6;
 	
-background-color: red;
+background-color: lightblue;
 }
 
 
@@ -227,45 +225,44 @@ input {
 }
 
 
-@import "../components/block-BEM/block-BEM.scss";
+@import "../../components/block-BEM/block-BEM.scss";
 
-@import "../components/color-example/color-example.scss";
-@import "../components/fonts-example/fonts-example.scss";
+@import "../../components/color-example/color-example.scss";
+@import "../../components/fonts-example/fonts-example.scss";
 
-@import "../components/extra-info-text-field/extra-info-text-field.scss";
-@import "../components/text-field/text-field.scss";
-@import "../components/dropdown/dropdown.scss";
-@import "../components/date-dropdown/date-dropdown.scss";
-@import "../components/filter-date-dropdown/filter-date-dropdown.scss";
-@import "../components/calendar/calendar.scss";
-@import "../components/subscription-text-field/subscription-text-field.scss";
-@import "../components/checkbox-button/checkbox-button.scss";
+@import "../../components/extra-info-text-field/extra-info-text-field.scss";
+@import "../../components/text-field/text-field.scss";
+@import "../../components/dropdown/dropdown.scss";
+@import "../../components/date-dropdown/date-dropdown.scss";
+@import "../../components/filter-date-dropdown/filter-date-dropdown.scss";
+@import "../../components/calendar/calendar.scss";
+@import "../../components/subscription-text-field/subscription-text-field.scss";
+@import "../../components/checkbox-button/checkbox-button.scss";
 
 
-@import "../components/form-search-room/form-search-room.scss";
-@import "../components/form-registration/form-registration.scss";
-@import "../components/form-booking/form-booking.scss";
-@import "../components/form-enter/form-enter.scss";
-@import "../components/form-button/form-button.scss";
-@import "../components/site-card/site-card.scss";
-@import "../components/site-card/_fields_20/site-card_fields_20.scss";
-@import "../components/site-card/_fields_30/site-card_fields_30.scss";
-@import "../components/guests-quantity/guests-quantity.scss";
-@import "../components/arrival-and-departure/arrival-and-departure.scss";
+@import "../../components/form-search-room/form-search-room.scss";
+@import "../../components/form-registration/form-registration.scss";
+@import "../../components/form-booking/form-booking.scss";
+@import "../../components/form-enter/form-enter.scss";
+@import "../../components/form-button/form-button.scss";
+@import "../../components/site-card/site-card.scss";
+@import "../../components/site-card/_fields_20/site-card_fields_20.scss";
+@import "../../components/site-card/_fields_30/site-card_fields_30.scss";
 
-@import "../components/radio-group/radio-group.scss";
-@import "../components/toggle-button/toggle-button.scss";
-@import "../components/room-info/room-info.scss";
-@import "../components/price-detalization/price-detalization.scss";
-@import "../components/move-to-another-form/move-to-another-form.scss";
-@import "../components/room-card/room-card.scss";
-@import "../components/show-rating/show-rating.scss";
-@import "../components/slider/slider.scss";
-@import "../components/logotype/logotype.scss";
-@import "../components/menu/menu.scss";
-@import "../components/site-button/site-button.scss";
-@import "../components/user/user.scss";
-@import "../components/all-nav/all-nav.scss";
-@import "../components/subscribe/subscribe.scss";
-@import "../components/short-info/short-info.scss";
-@import "../components/social/social.scss";
+
+@import "../../components/radio-group/radio-group.scss";
+@import "../../components/toggle-button/toggle-button.scss";
+@import "../../components/room-info/room-info.scss";
+@import "../../components/price-detalization/price-detalization.scss";
+@import "../../components/move-to-another-form/move-to-another-form.scss";
+@import "../../components/room-card/room-card.scss";
+@import "../../components/show-rating/show-rating.scss";
+@import "../../components/slider/slider.scss";
+@import "../../components/logotype/logotype.scss";
+@import "../../components/menu/menu.scss";
+@import "../../components/site-button/site-button.scss";
+@import "../../components/user/user.scss";
+@import "../../components/all-nav/all-nav.scss";
+@import "../../components/subscribe/subscribe.scss";
+@import "../../components/short-info/short-info.scss";
+@import "../../components/social/social.scss";

@@ -10,11 +10,11 @@ mixin createTextField(	{id, name, placeholder, isRequired, isDataMasked, isFocus
 		- classes += " " + classname + "_focus-hover"
 
 	if id 
-	- attributes.id = id;
+		- attributes.id = id;
 
 
 	- attributes.name = name;
 	- attributes.placeholder = placeholder || "";
 	- attributes.type = "text";
 
-	input(class = classes required=isRequired)&attributes(attributes)
+	input(class = classes required = isRequired)&attributes(attributes)

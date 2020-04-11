@@ -1,5 +1,3 @@
-include ../components/pug_mixins
-
 doctype html
 html
 head
@@ -16,7 +14,7 @@ title
 body
 	
 	header.ui-header
-		+createLogo('ui-logo', 'img/TOXIN_just_picture.svg')
+		block ui-logo
 
 
 	main.ui-main

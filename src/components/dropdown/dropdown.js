@@ -1,18 +1,36 @@
-$('.iqdropdown').iqDropdown({  
-	// selectionText: 'гость',
-	textPlural: 'гостей', 
+import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
-	// fires when an item quantity changes
-		onChange: (id, count, totalItems) => {
-			
-				let mult = 10;
-				while (mult < totalItems/10)
-					mult *= 10;
+class Dropdown {
+	constructor(element) {
 
-				let remain = totalItems > 14 ? totalItems % mult : totalItems > 10 ?  0 : totalItems % mult;
+		this.element = element;
+		this.elementText = element.find('.js-iqdropdown-selection');
+		this.addDropdown();
 
+	}
 
-		function returnText (remain) {
+	addDropdown() {
+		this.element.iqDropdown({
+
+			setSelectionText: (itemCount, totalItems) => { return 'Сколько гостей' },
+
+			onChange: (id, count, totalItems) => {
+				
+					let mult = 10;
+					while (mult < totalItems/10)
+						mult *= 10;
+
+					let remain = totalItems > 14 ? totalItems % mult : totalItems > 10 ?  0 : totalItems % mult;
+
+				this.elementText.text(totalItems + ' ' + _returnText(remain, totalItems));
+
+			},
+
+		});
+
+		function _returnText (remain, totalItems) {
+
+			if (totalItems === 0) return 'Сколько гостей';
 
 			switch(remain) {
 				case 1:  
@@ -35,8 +53,9 @@ $('.iqdropdown').iqDropdown({
 					break;
 			}
 		}
+	}
 
 
-				$('.iqdropdown-selection').text(totalItems + ' ' + returnText (remain));
-		},
-});
+}
+
+export default Dropdown;

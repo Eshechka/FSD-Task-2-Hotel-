@@ -1,4 +1,4 @@
-extends ../../common-files/UIKit-base-template
+extends ./UIKit-base-template
 
 include ../../components/color-example/color-example.pug
 include ../../components/fonts-example/fonts-example.pug
@@ -17,8 +17,8 @@ include ../../components/form-enter/form-enter.pug
 include ../../components/block-BEM/block-BEM.pug
 include ../../components/form-button/form-button.pug
 include ../../components/text-field/text-field.pug
-include ../../components/guests-quantity/guests-quantity.pug
-include ../../components/arrival-and-departure/arrival-and-departure.pug
+
+
 include ../../components/toggle-button/toggle-button.pug
 include ../../components/move-to-another-form/move-to-another-form.pug
 include ../../components/room-card/room-card.pug
@@ -42,21 +42,24 @@ include ../../components/social/social.pug
 //- переделать подключение шрифтов через node_modules и потом import их в js
 //- во всех стилях найти rgba и заменить их на переменные DarkShade
 
+block ui-logo	
+	+createLogotype("ui-logo", "img/TOXIN_just_picture.svg")
+
 block colorAndType
 	div.container
 		div.container__left
-			+createRect("color-example", "DarkShade100", "Dark Shade 100%", "#1F2041")
-			+createRect("color-example", "DarkShade75", "Dark Shade 75%", "#1F2041")
-			+createRect("color-example", "DarkShade50", "Dark Shade 50%", "#1F2041")
-			+createRect("color-example", "DarkShade25", "Dark Shade 25%", "#1F2041")
-			+createRect("color-example", "DarkShade5", "Dark Shade 5%", "#1F2041")
-			+createRect("color-example", "Purple", "Purple", "#BC9CFF")
-			+createRect("color-example", "Green", "Green", "#6FCF97")
+			+createRect("DarkShade100", "Dark Shade 100%", "#1F2041")
+			+createRect("DarkShade75", "Dark Shade 75%", "#1F2041")
+			+createRect("DarkShade50", "Dark Shade 50%", "#1F2041")
+			+createRect("DarkShade25", "Dark Shade 25%", "#1F2041")
+			+createRect("DarkShade5", "Dark Shade 5%", "#1F2041")
+			+createRect("Purple", "Purple", "#BC9CFF")
+			+createRect("Green", "Green", "#6FCF97")
 		div.container__right
-			+createFontsExample("h1", "This one is the sub-section or widget title", "fonts-example")
-			+createFontsExample("h2", "Next one is the item title inside widgets", "fonts-example")
-			+createFontsExample("h3", "This is a label or CTA text", "fonts-example")
-			+createFontsExample("body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.", "fonts-example")
+			+createFontsExample("h1", "This one is the sub-section or widget title")
+			+createFontsExample("h2", "Next one is the item title inside widgets")
+			+createFontsExample("h3", "This is a label or CTA text")
+			+createFontsExample("body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")
 
 
 
@@ -66,10 +69,10 @@ block form-elements
 			div.container__column
 
 					+createExtraInfoTextField(	{text: "Text Field", statusText: "Default"}	)
-						+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
+					+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
 
 					+createExtraInfoTextField(	{text: "Text Field", statusText: "Hover / Focus"}	)
-						+createTextField(	{id:"", name:"somename", placeholder:"This is pretty awesome", isRequired:"", isDataMasked:false, isFocusedHovered: true	}	)
+					+createTextField(	{id:"", name:"somename", placeholder:"This is pretty awesome", isRequired:"", isDataMasked:false, isFocusedHovered: true	}	)
 
 
 					- 
@@ -87,11 +90,11 @@ block form-elements
 													},
 												]
 					+createExtraInfoTextField(	{text: "dropdown", statusText: "Default"}	)
-					+createDropdown("guestsQuant", arrDropdownItems)
+					+createDropdown(arrDropdownItems)
 
 
 					+createExtraInfoTextField(	{text: "masked text field", statusText: "Default"}	)
-						+createTextField(	{id:"", name:"masked-text-field", placeholder:"ДД.ММ.ГГГГ", isRequired:"", isDataMasked:true, isFocusedHovered: false	}	)
+					+createTextField(	{id:"", name:"masked-text-field", placeholder:"ДД.ММ.ГГГГ", isRequired:"", isDataMasked:true, isFocusedHovered: false	}	)
 
 					+createDatedropdown(	{
 												extraInfoTextLeft: "date Dropdown",
@@ -186,10 +189,10 @@ block cards
 
 				+createRoomCard({	sliderData:	{	sliderName: "slider888", 
 													arraySlides: [
-														{src: "./img/room888_picture.png", alt: "Слайд 1"},
-														{src: "./img/room840_picture2.png", alt: "Слайд 2"},
-														{src: "./img/room840_picture3.png", alt: "Слайд 3"},
-														{src: "./img/room840_picture4.png", alt: "Слайд 4"},
+														{src: "img/room888_picture.png", alt: "Слайд 1"},
+														{src: "img/room888_picture2.png", alt: "Слайд 2"},
+														{src: "img/room888_picture3.png", alt: "Слайд 3"},
+														{src: "img/room888_picture4.png", alt: "Слайд 4"},
 													], 
 													needDots: true, 
 													needPrevNext: true,	
@@ -213,13 +216,13 @@ block cards
 
 				+createRoomCard({	sliderData:	{	sliderName: "slider840", 
 													arraySlides: [
-														{src: "./img/room840_picture.png", alt: "Слайд 1"},
-														{src: "./img/room840_picture2.png", alt: "Слайд 2"},
-														{src: "./img/room840_picture3.png", alt: "Слайд 3"},
-														{src: "./img/room840_picture4.png", alt: "Слайд 4"},
+														{src: "img/room840_picture.png", alt: "Слайд 1"},
+														{src: "img/room840_picture2.png", alt: "Слайд 2"},
+														{src: "img/room840_picture3.png", alt: "Слайд 3"},
+														{src: "img/room840_picture4.png", alt: "Слайд 4"},
 													], 
-													needDots: false, 
-													needPrevNext: true,	
+													needDots: true, 
+													needPrevNext: false,	
 												},
 
 									roomData:	{	roomNumber: 840, 

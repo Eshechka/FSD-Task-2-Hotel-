@@ -5,6 +5,8 @@
 //                 },
 //                 function(err) {});
 
+// Try the environment variable, otherwise use root
+// const ASSET_PATH = process.env.ASSET_PATH || '/';
 
 const path = require('path');
 const fs = require('fs');
@@ -17,7 +19,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PATHS = {
   src: path.join(__dirname, 'src'),
   dist: path.join(__dirname, 'dist'),
-  fonts: path.join(__dirname, 'fonts'),
 };
 
 
@@ -54,7 +55,9 @@ module.exports = {
   },
 
   output: {
+    // publicPath: ASSET_PATH,
     path: PATHS.dist,
+    // publicPath: '/',
     filename: './js/[name].[contenthash].js'
   },
 
@@ -78,6 +81,7 @@ module.exports = {
    //      }
    //  },
 
+
   plugins: [
 
     new webpack.ProvidePlugin({
@@ -97,7 +101,7 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     new MiniCssExtractPlugin({
-          filename: 'style.[contenthash].css',
+          filename: './style.[contenthash].css',
       }),
 
 
@@ -112,10 +116,21 @@ module.exports = {
             {
               loader: MiniCssExtractPlugin.loader,
                 options: {
-
+                  name: 'style/[name].[ext]',
                 }
             },
-            'css-loader',
+            
+            {
+              loader: 'css-loader',
+                options: {
+                  // url: false,
+                }
+            },
+
+            {
+              loader: 'resolve-url-loader',
+            },
+
             'sass-loader',
           ],
 

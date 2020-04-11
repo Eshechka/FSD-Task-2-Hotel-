@@ -24,7 +24,7 @@
 	@each $social in 'fb','tw','ig' {
 
 		&_#{$social} {
-			background-image: url(../img/#{$social}.svg);
+			background-image: url("/img/#{$social}.svg");
 		}
 
 	}
