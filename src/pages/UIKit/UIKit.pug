@@ -5,6 +5,7 @@ include ../../components/fonts-example/fonts-example.pug
 
 include ../../components/extra-info-text-field/extra-info-text-field.pug
 include ../../components/dropdown/dropdown.pug
+include ../../components/calendar/calendar.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 
@@ -182,7 +183,7 @@ block cards
 
 			div.site-card.site-card_fields_20
 
-				div.calendar
+				+createCalendar()
 
 
 			div.site-card
