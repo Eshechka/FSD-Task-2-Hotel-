@@ -1,11 +1,11 @@
 mixin createDropdown(	arrDropdownItems	)
 	-
-		var classname = "iqdropdown"
-		var textClassname = classname + "-selection"
+		let classname = "iqdropdown";
+		let classnameJS = ' js-' + classname;
 
 	div(class = classname + " js-" + classname)
 
-		p(class = textClassname + " js-" + textClassname)
+		p(class = classname + "-selection" + classnameJS + "-selection")
 
 		div(class = classname + "-menu")
 

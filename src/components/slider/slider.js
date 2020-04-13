@@ -1,53 +1,84 @@
-// Все слайдеры c классом sliders перебираем в цикле
-let allSliders = document.querySelectorAll('.sliders');
+class Slider {
 
-for (let slider of allSliders) {
-let slideIndex = 1;
+	constructor(element) {
 
-	// Получаем каждый слайдер по его уникальному классу
-	let sliderName = document.querySelector('.'+slider.classList[1]);
-	let slides = sliderName.querySelectorAll('.sliders__item');
-    let dots = sliderName.querySelectorAll('.sliders-dots__item');
+		this.slider = element;
 
-	setCurrentSlide();
+		this.slides = this.slider.querySelectorAll('.js-slider__item');
 
-	function setCurrentSlide () {
-		for (let i = 0; i < slides.length; i++) {
-			slides[i].style.display = 'none';
-		}
-		slides[slideIndex - 1].style.display = 'block';
-		// Если слайдер будет работать через dots		
-		if (dots.length) {
-			for (let i = 0; i < dots.length; i++) {
-				dots[i].className = dots[i].className.replace(' sliders-dots__item_active', '');
-			}
-			dots[slideIndex - 1].className += ' sliders-dots__item_active';
-		}
+		this.dots = this.slider.querySelectorAll('.js-slider-dots__item');
+
+		this.sliderPrev = this.slider.querySelector('.js-slider__prev');
+		this.sliderNext = this.slider.querySelector('.js-slider__next');
+		
+		this.addSlider();
+
 	}
-    
-	let sliderPrev = sliderName.querySelector('.sliders__prev')
-		if (sliderPrev) 
-			sliderPrev.addEventListener('click', function () {	
-				slideIndex = slideIndex-1 < 1 ? slides.length : slideIndex-1;
-				setCurrentSlide();
-			});
 
-	let sliderNext = sliderName.querySelector('.sliders__next')
-		if (sliderNext) 
-			sliderNext.addEventListener('click', function () {		
-				slideIndex = (slideIndex+1 > slides.length) ? 1 : slideIndex+1;
-				setCurrentSlide();
-			});
+	addSlider() {
 
-// Если слайдер будет работать через dots
-	// if (dots.length) {
-		let k = 0;
-		dots.forEach( (elem, k) => {
-			k++;
-			elem.addEventListener('click', function () {
-				slideIndex = k;
-				setCurrentSlide();
-			})
-		})
-	// }
+		let slideIndex = 1;
+
+		setCurrentSlide(slideIndex, this.slides);
+		setCurrentDot(slideIndex, this.dots);
+
+		setDotsClicks(this.dots, this.slides);
+
+		if (this.sliderPrev || this.sliderNext)
+			setPrevNextClicks(this.sliderPrev, this.sliderNext, this.slides, this.dots);
+
+
+		function setCurrentSlide(slideIndex, slides) {
+
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].style.display = 'none';
+			}
+
+			slides[slideIndex - 1].style.display = 'block';
+		}
+
+		function setCurrentDot(slideIndex, dots) {
+
+			for (let i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(' slider-dots__item_active', '');
+			}
+
+			dots[slideIndex - 1].className += ' slider-dots__item_active';
+		}
+
+		function setPrevNextClicks(prev, next, slides, dots) {
+				if (prev)
+					prev.addEventListener('click', function () {	
+						slideIndex = slideIndex-1 < 1 ? slides.length : slideIndex-1;
+						setCurrentSlide(slideIndex, slides);
+						if (dots) setCurrentDot(slideIndex, dots);
+					});
+
+				if (next)
+					next.addEventListener('click', function () {		
+						slideIndex = (slideIndex+1 > slides.length) ? 1 : slideIndex+1;
+						setCurrentSlide(slideIndex, slides);
+						if (dots) setCurrentDot(slideIndex, dots);
+					});
+		}
+
+		function setDotsClicks(dots, slides) {
+			let k = 0;
+
+			dots.forEach( (elem, k) => {
+				k++;
+				elem.addEventListener('click', function () {
+					slideIndex = k;
+					setCurrentSlide(slideIndex, slides);
+					setCurrentDot(slideIndex, dots);
+				})
+			})				
+			
+		}
+
+	}
+
 }
+
+
+export default Slider;

@@ -1,19 +1,21 @@
-mixin createSlider(classname, arraySlides, needDots, needPrevNext)
+mixin createSlider(arraySlides, needDots, needPrevNext)
 
-	- var sliderClassName = 'sliders';
+	- 
+		let classname = 'slider';
+		let classnameJS = ' js-' + classname;
 
-	div(class = sliderClassName + ' ' + classname)
+	div(class = classname + classnameJS)
 		each i in arraySlides
-			div(class=sliderClassName+'__item')
-				img(class=sliderClassName+'__picture'  width='320px' src=i.src  alt=i.alt)
+			div(class = classname + '__item' + classnameJS + '__item')
+				img(class = classname + '__picture'  width = '320px' src = i.src  alt = i.alt)
 
 		if (needPrevNext)
-			a(class=sliderClassName+'__prev') &#10094;
-			a(class=sliderClassName+'__next') &#10095;
+			a(class = classname + '__prev' + classnameJS + '__prev') &#10094;
+			a(class = classname + '__next' + classnameJS + '__next') &#10095;
 
 		if (needDots)
-			div(class=sliderClassName+'-dots')
+			div(class = classname + '-dots')
 				each i in arraySlides
-					span(class=sliderClassName+'-dots__item')
+					span(class = classname + '-dots__item' + classnameJS + '-dots__item')
 
 
