@@ -1,5 +1,11 @@
 .show-rating {
+	display: inline-flex;
     width: 120px;
+
+
+    &:not(:first-child) {
+    	margin-left: 20px;
+    }
     
     &__icon {
         width: 24px;

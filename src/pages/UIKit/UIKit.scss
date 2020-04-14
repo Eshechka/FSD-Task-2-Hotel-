@@ -84,6 +84,11 @@ section.headers-footers >footer:not(:last-child), {
 		}
 	}
 
+	&__group {
+		display: flex;
+	}
+
+
 }
 
 
