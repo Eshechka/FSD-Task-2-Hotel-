@@ -10,6 +10,7 @@ include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 
 include ../../components/checkbox-button/checkbox-button.pug
+include ../../components/like-button/like-button.pug
 
 include ../../components/form-search-room/form-search-room.pug
 include ../../components/form-registration/form-registration.pug
@@ -141,6 +142,15 @@ block form-elements
 				+createExtraInfoTextField(	{text: "Toggle", statusText: ""}	)
 				+createToggleButton("ui-toggle-not-checked", "Получать спецпредложения", false)
 				+createToggleButton("ui-toggle-checked", "Получать спецпредложения", true)
+
+
+				+createExtraInfoTextField(	{text: "Like button", statusText: ""}	)
+				+createLikeButton(2, false)
+				+createLikeButton(12, true)
+
+
+				+createExtraInfoTextField(	{text: "Rate button", statusText: ""}	)
+
 
 			div.container__column
 

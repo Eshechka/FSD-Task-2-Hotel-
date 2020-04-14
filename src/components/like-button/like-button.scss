@@ -1,0 +1,44 @@
+.like-button {
+    display: inline-flex;
+	align-items: center;
+    min-width: 40px;
+    height: 20px;
+
+    background: #FFFFFF;
+    border: 1px solid $DarkShade25;
+    border-radius: 10px;
+	padding: 5px;
+
+    &__icon {
+	    font-family: Material Icons;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: $DarkShade25;		
+    }
+
+    &__likes {
+    	margin-left: 8px;
+    	font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		line-height: 12px;
+		color: $DarkShade25;
+    }
+
+	&_liked {
+		color: $Purple;
+		border-color: $Purple;
+
+	    & .like-button__icon {
+			color: $Purple;		
+	    }
+
+	    & .like-button__likes {
+			color: $Purple;
+	    }
+	}
+
+
+}

@@ -40,8 +40,7 @@ class CalendarDateDropdown {
 
 			onSelect: function () {
 				rightDate.val(dateDropdown.selectedDates[1]);
-				leftDate.val(dateDropdown.selectedDates[0]);
-				
+				leftDate.val(dateDropdown.selectedDates[0]);				
 			}
 
 		}).data('datepicker');
