@@ -1,0 +1,61 @@
+.range-slider {
+	position: relative;
+    width: 266px;
+	height: 12px;
+	
+
+    &__inner {
+		position: absolute;
+		display: flex;
+
+		background: #FFFFFF;
+		border: 1px solid $DarkShade25;
+		border-radius: 3px;
+
+		height: 6px;
+		width: 100%;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+
+    }
+
+    &__left-circle, &__right-circle {		
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+
+		width: 12px;
+		height: 12px;
+
+		background: linear-gradient(180deg, $Green 0%, $Greengradient 100%);
+		border: 2px solid #FFFFFF;
+		border-radius: 10px;
+		box-sizing: border-box;
+		z-index: 3;
+    }
+
+    &__body {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+
+		height: 6px;
+		min-width: 4px;
+
+		background: linear-gradient(180deg, $Green 0%, $Greengradient 100%);
+		z-index: 2;
+
+		margin-left: -2px;
+		margin-right: -2px;
+    }
+
+    &__inner {		
+		padding-left: 75px;
+    }
+
+    &__body {
+		width: 73px;
+	}
+
+}

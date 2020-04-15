@@ -11,6 +11,7 @@ include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 
 include ../../components/checkbox-button/checkbox-button.pug
 include ../../components/like-button/like-button.pug
+include ../../components/range-slider/range-slider.pug
 
 include ../../components/form-search-room/form-search-room.pug
 include ../../components/form-registration/form-registration.pug
@@ -154,8 +155,10 @@ block form-elements
 					+createShowRating(4)
 					+createShowRating(5)
 
-			div.container__column
+			div.container__column_width320
 
+				+createExtraInfoTextField(	{text: "Range Slider", statusText: "5 000₽ - 10 000₽" }	)
+				+createRangeSlider()
 
 
 block cards
