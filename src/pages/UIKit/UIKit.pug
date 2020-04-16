@@ -160,6 +160,12 @@ block form-elements
 				+createExtraInfoTextField(	{text: "Range Slider", statusText: "5 000₽ - 10 000₽" }	)
 				+createRangeSlider()
 
+				+createExtraInfoTextField(	{text: "Buttons", statusText: "" }	)
+				+createSiteButton("Click me", "", "./change-me")
+				+createSiteButton("Click me", "", "./change-me")
+				+createSiteButton("Click me", "light", "./change-me")
+				+createSiteButton("Click me", "light", "./change-me")
+
 
 block cards
 	div.container
@@ -278,9 +284,9 @@ block headers-footers
 			div.header__registration
 
 				div.header__button-wrapper
-					+createSiteButton("Login", "light")
+					+createSiteButton("Login", "light", "./change-me")
 
-				+createSiteButton("Register", "")
+				+createSiteButton("Register", "", "./change-me")
 
 
 	div.header.header_logged
