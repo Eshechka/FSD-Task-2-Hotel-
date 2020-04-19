@@ -30,7 +30,7 @@ include ../../components/room-info/room-info.pug
 include ../../components/slider/slider.pug
 include ../../components/logotype/logotype.pug
 include ../../components/menu/menu.pug
-include ../../components/site-button/site-button.pug
+include ../../components/link-button/link-button.pug
 include ../../components/user/user.pug
 include ../../components/all-nav/all-nav.pug
 include ../../components/subscribe/subscribe.pug
@@ -164,17 +164,17 @@ block form-elements
 
 				+createExtraInfo(	{text: "Buttons", statusText: "", modifier: "bottom16px"}	)
 				div.container__group.container__group_right20
-					+createSiteButton("Click me", "btn_theme_basic", "./change-me")
+					+createLinkButton("Click me", "theme_basic", "./change-me")
 				div.container__group.container__group_right20
-					+createSiteButton("Click me", "btn_theme_basic btn_opacity50", "./change-me")
+					+createLinkButton("Click me", "theme_basic opacity50", "./change-me")
 				div.container__group.container__group_right20
-					+createSiteButton("Click me", "btn_theme_light", "./change-me")
+					+createLinkButton("Click me", "theme_light", "./change-me")
 				div.container__group.container__group_right20
-					+createSiteButton("Click me", "btn_theme_light btn_opacity50", "./change-me")
+					+createLinkButton("Click me", "theme_light opacity50", "./change-me")
 				div.container__group.container__group_right20
-					+createSiteButton("Click me", "link_theme_basic", "./change-me")
+					+createLinkButton("Click me", "link_theme_basic", "./change-me")
 				div.container__group
-					+createSiteButton("Click me", "link_theme_gray", "./change-me")
+					+createLinkButton("Click me", "link_theme_gray", "./change-me")
 
 
 block cards
@@ -192,7 +192,7 @@ block cards
 
 				+createMoveToAnotherForm(	{	text: "Уже есть аккаунт на Toxin",
 												buttonText: "Войти",
-												buttonTheme: "btn_theme_light"	}	)
+												buttonTheme: "theme_light"	}	)
 
 
 
@@ -207,7 +207,7 @@ block cards
 
 				+createMoveToAnotherForm(	{	text: "Нет аккаунта на Toxin?",
 												buttonText: "Создать",
-												buttonTheme: "btn_theme_light"	}	)
+												buttonTheme: "theme_light"	}	)
 
 
 		div.container__column.container__column_width320
@@ -294,9 +294,9 @@ block headers-footers
 			div.header__registration
 
 				div.header__button-wrapper
-					+createSiteButton("Login", "btn_theme_light", "./change-me")
+					+createLinkButton("Login", "theme_light", "./change-me")
 
-				+createSiteButton("Register", "", "./change-me")
+				+createLinkButton("Register", "", "./change-me")
 
 
 	div.header.header_logged

@@ -1,7 +1,7 @@
-include ../../components/site-button/site-button.pug
+include ../../components/link-button/link-button.pug
 
 mixin createMoveToAnotherForm({text, buttonText, buttonTheme})
 	div.move-to-another-form
 		p.move-to-another-form__text= text
 
-		+createSiteButton(buttonText, buttonTheme)
+		+createLinkButton(buttonText, buttonTheme)
