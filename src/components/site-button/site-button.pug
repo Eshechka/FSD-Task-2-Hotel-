@@ -1,9 +1,12 @@
-mixin createSiteButton(text, modifier, href)
-	- let classname = "site-button"
-	- let classnameLink = classname + "__link"
+mixin createSiteButton(text, modifiers, href)
+	- 
+		let classname = "site-button"
+		let classnameLink = classname + "__link"
 
-	if (modifier) 
-		- classnameLink += " " + classnameLink + "_" + modifier
+	if (modifiers) 
+		-modifiers = modifiers.split( " " );
+		each modifier in modifiers
+			- classnameLink += " " + classname + "__link" + "_" + modifier
 
 	div(class = classname)
 		a(class = classnameLink  href = href)= text

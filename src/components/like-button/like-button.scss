@@ -9,6 +9,14 @@
     border-radius: 10px;
 	padding: 5px;
 
+	&__link {
+	    font-family: Material Icons;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: $DarkShade25;		
+    }
+
     &__icon {
 	    font-family: Material Icons;
 		font-style: normal;

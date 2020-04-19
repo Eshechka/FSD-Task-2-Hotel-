@@ -3,7 +3,7 @@ extends ./UIKit-base-template
 include ../../components/color-example/color-example.pug
 include ../../components/fonts-example/fonts-example.pug
 
-include ../../components/extra-info-text-field/extra-info-text-field.pug
+include ../../components/extra-info/extra-info.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/calendar/calendar.pug
 include ../../components/date-dropdown/date-dropdown.pug
@@ -71,10 +71,10 @@ block form-elements
 		section.container__section
 			div.container__column
 
-					+createExtraInfoTextField(	{text: "Text Field", statusText: "Default"}	)
+					+createExtraInfo(	{text: "Text Field", statusText: "Default"}	)
 					+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
 
-					+createExtraInfoTextField(	{text: "Text Field", statusText: "Hover / Focus"}	)
+					+createExtraInfo(	{text: "Text Field", statusText: "Hover / Focus"}	)
 					+createTextField(	{id:"", name:"somename", placeholder:"This is pretty awesome", isRequired:"", isDataMasked:false, isFocusedHovered: true	}	)
 
 
@@ -92,11 +92,12 @@ block form-elements
 														name: "младенцы",
 													},
 												]
-					+createExtraInfoTextField(	{text: "dropdown", statusText: "Default"}	)
+
+					+createExtraInfo(	{text: "dropdown", statusText: "Default"}	)
 					+createDropdown(arrDropdownItems)
 
 
-					+createExtraInfoTextField(	{text: "masked text field", statusText: "Default"}	)
+					+createExtraInfo(	{text: "masked text field", statusText: "Default"}	)
 					+createTextField(	{id:"", name:"masked-text-field", placeholder:"ДД.ММ.ГГГГ", isRequired:"", isDataMasked:true, isFocusedHovered: false	}	)
 
 					+createDatedropdown(	{
@@ -109,13 +110,13 @@ block form-elements
 											 }	)
 
 
-					+createExtraInfoTextField(	{text: "subscription text field", statusText: ""}	)
+					+createExtraInfo(	{text: "subscription text field", statusText: ""}	)
 					+createSubscribeTextField()
 
 
 			div.container__column
 
-				+createExtraInfoTextField(	{text: "Checkbox Buttons", statusText: ""}	)
+				+createExtraInfo(	{text: "Checkbox Buttons", statusText: "", modifier: "bottom16px"}	)
 				- 
 					var arrCheckboxes = [	{	
 												checkboxId: "smoking",
@@ -134,37 +135,46 @@ block form-elements
 				+createCheckboxButton( arrCheckboxes )
 
 
-				+createExtraInfoTextField(	{text: "Radio Buttons", statusText: ""}	)
+				+createExtraInfo(	{text: "Radio Buttons", statusText: "", modifier: "bottom16px"}	)
 				+createRadioGroup(	[	
 						{name: "gender", value: "male", id: "ui-gender-male", text: "Мужчина", isChecked: true},
 						{name: "gender", value: "female", id: "ui-gender-female", text: "Женщина", isChecked: false},
 					])
 
-				+createExtraInfoTextField(	{text: "Toggle", statusText: ""}	)
+				+createExtraInfo(	{text: "Toggle", statusText: "", modifier: "bottom16px"}	)
 				+createToggleButton("ui-toggle-not-checked", "Получать спецпредложения", false)
 				+createToggleButton("ui-toggle-checked", "Получать спецпредложения", true)
 
 
-				+createExtraInfoTextField(	{text: "Like button", statusText: ""}	)
-				+createLikeButton(2, false)
-				+createLikeButton(12, true)
+				+createExtraInfo(	{text: "Like button", statusText: "", modifier: "bottom16px"}	)
+
+				+createLikeButton(2, false, "./change-me")
+				+createLikeButton(12, true, "./change-me")
 
 
-				+createExtraInfoTextField(	{text: "Rate button", statusText: ""}	)
+				+createExtraInfo(	{text: "Rate button", statusText: "", modifier: "bottom16px"}	)
 				div.container__group
 					+createShowRating(4)
 					+createShowRating(5)
 
-			div.container__column_width320
+			div.container__column.container__column_width320
+				div.container__group.container__group_flexcolumn
+					+createExtraInfo(	{text: "Range Slider", statusText: "5 000₽ - 10 000₽", modifier: "bottom16px"}	)
+					+createRangeSlider()
 
-				+createExtraInfoTextField(	{text: "Range Slider", statusText: "5 000₽ - 10 000₽" }	)
-				+createRangeSlider()
-
-				+createExtraInfoTextField(	{text: "Buttons", statusText: "" }	)
-				+createSiteButton("Click me", "", "./change-me")
-				+createSiteButton("Click me", "", "./change-me")
-				+createSiteButton("Click me", "light", "./change-me")
-				+createSiteButton("Click me", "light", "./change-me")
+				+createExtraInfo(	{text: "Buttons", statusText: "", modifier: "bottom16px"}	)
+				div.container__group.container__group_right20
+					+createSiteButton("Click me", "btn_theme_basic", "./change-me")
+				div.container__group.container__group_right20
+					+createSiteButton("Click me", "btn_theme_basic btn_opacity50", "./change-me")
+				div.container__group.container__group_right20
+					+createSiteButton("Click me", "btn_theme_light", "./change-me")
+				div.container__group.container__group_right20
+					+createSiteButton("Click me", "btn_theme_light btn_opacity50", "./change-me")
+				div.container__group.container__group_right20
+					+createSiteButton("Click me", "link_theme_basic", "./change-me")
+				div.container__group
+					+createSiteButton("Click me", "link_theme_gray", "./change-me")
 
 
 block cards
@@ -182,7 +192,7 @@ block cards
 
 				+createMoveToAnotherForm(	{	text: "Уже есть аккаунт на Toxin",
 												buttonText: "Войти",
-												buttonTheme: "light"	}	)
+												buttonTheme: "btn_theme_light"	}	)
 
 
 
@@ -197,7 +207,7 @@ block cards
 
 				+createMoveToAnotherForm(	{	text: "Нет аккаунта на Toxin?",
 												buttonText: "Создать",
-												buttonTheme: "light"	}	)
+												buttonTheme: "btn_theme_light"	}	)
 
 
 		div.container__column.container__column_width320
@@ -284,7 +294,7 @@ block headers-footers
 			div.header__registration
 
 				div.header__button-wrapper
-					+createSiteButton("Login", "light", "./change-me")
+					+createSiteButton("Login", "btn_theme_light", "./change-me")
 
 				+createSiteButton("Register", "", "./change-me")
 

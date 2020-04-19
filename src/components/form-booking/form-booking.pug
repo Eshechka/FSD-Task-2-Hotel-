@@ -1,4 +1,4 @@
-include ../../components/extra-info-text-field/extra-info-text-field.pug
+include ../../components/extra-info/extra-info.pug
 include ../../components/dropdown/dropdown.pug
 include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/form-button/form-button.pug
@@ -38,7 +38,7 @@ mixin createFormBooking()
 										},
 									]
 
-		+createExtraInfoTextField(	{text: "Гости", statusText: ""}	)
+		+createExtraInfo(	{text: "Гости", statusText: ""}	)
 			+createDropdown(arrDropdownItems)
 
 

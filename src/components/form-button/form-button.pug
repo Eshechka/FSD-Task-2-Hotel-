@@ -1,10 +1,6 @@
-//- create button(attributes) for forms
-
-
 mixin createFormButton(text, type)
-	- var buttonClassname = "form-button";
-	- var attributes = {};
-	- attributes.type = type || "button";
-	- attributes.class = buttonClassname;
-	button&attributes(attributes)= text || "OK"
-		i.material-icons.form-button__icon arrow_forward
+	- 
+		let classname = "form-button";
+
+	button(class = classname type = type || "button")= text || "OK"
+		i.material-icons(class = classname + "__icon") arrow_forward

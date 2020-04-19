@@ -1,13 +1,15 @@
-mixin createLikeButton(likes, isLiked)
+mixin createLikeButton(likes, isLiked, href)
 	- 
 		let classname = "like-button";
 
 	if isLiked
 		div(class = classname + " " + classname + "_liked")
-			i(class = classname + "__icon" + " " + "material-icons") favorite
+			a(class = classname + "__link" href = href)
+				i(class = classname + "__icon" + " " + "material-icons") favorite
 			span(class = classname + "__likes")= likes
 
 	else
 		div(class = classname)
-			i(class = classname + "__icon" + " " + "material-icons") favorite_border
+			a(class = classname + "__link" href = href)
+				i(class = classname + "__icon" + " " + "material-icons") favorite_border
 			span(class = classname + "__likes")= likes

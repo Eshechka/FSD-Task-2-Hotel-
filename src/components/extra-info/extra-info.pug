@@ -1,0 +1,9 @@
+mixin createExtraInfo(	{text, statusText, modifier}	)
+	- 
+		let classname = "extra-info";
+		let classnameModif = ""
+		if (modifier) classnameModif = " " + classname + "_" + modifier
+
+	div(class = classname + classnameModif)
+		span(class = classname + "__text")= text
+		span(class = classname + "__status")= statusText

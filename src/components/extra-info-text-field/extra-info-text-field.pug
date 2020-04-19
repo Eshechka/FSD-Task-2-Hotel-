@@ -1,9 +1,0 @@
-mixin createExtraInfoTextField(	{text, statusText}	)
-	- var classname = "extra-info";
-
-	div(class = classname)
-		span(class = classname + "__text")= text
-		span(class = classname + "__status")= statusText
-
-	if block
-		block

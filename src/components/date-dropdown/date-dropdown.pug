@@ -1,4 +1,4 @@
-include ../../components/extra-info-text-field/extra-info-text-field.pug
+include ../../components/extra-info/extra-info.pug
 
 mixin createDatedropdown(	{extraInfoTextLeft, extraInfoTextRight}	)
 
@@ -13,12 +13,12 @@ mixin createDatedropdown(	{extraInfoTextLeft, extraInfoTextRight}	)
 
 		div(class = classname + "__left" + classnameJS + "__left")
 
-			+createExtraInfoTextField(	{text: extraInfoTextLeft, statusText: ""}	)
-				input(class = classnameInput + " " + classnameInput + "_left" + classnameInputJS + "_left" type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left")
+			+createExtraInfo(	{text: extraInfoTextLeft, statusText: ""}	)
+			input(class = classnameInput + " " + classnameInput + "_left" + classnameInputJS + "_left" type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left")
 
 		div(class = classname + "__right" + classnameJS + "__right")
-			+createExtraInfoTextField(	{text: extraInfoTextRight, statusText: ""}	)
-				input(class = classnameInput + " " + classnameInput + "_right" + classnameInputJS + "_right" type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right")
+			+createExtraInfo(	{text: extraInfoTextRight, statusText: ""}	)
+			input(class = classnameInput + " " + classnameInput + "_right" + classnameInputJS + "_right" type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right")
 		
 
 

@@ -73,17 +73,26 @@ section.headers-footers >footer:not(:last-child), {
 
 		flex: 0 0 auto;
 
-		&.container__column_width380 {
+		&_width380 {
 			flex-basis: 380px;
 		}
 
-		&.container__column_width320 {
+		&_width320 {
 			flex-basis: 320px;
 		}
 	}
 
 	&__group {
-		display: flex;
+		display: inline-flex;
+		margin-bottom: 30px;
+
+		&_flexcolumn {
+			flex-direction: column;
+		}
+
+		&_right20 {
+			padding-right: 20px;
+		}
 	}
 
 
@@ -233,7 +242,7 @@ input {
 @import "../../components/color-example/color-example.scss";
 @import "../../components/fonts-example/fonts-example.scss";
 
-@import "../../components/extra-info-text-field/extra-info-text-field.scss";
+@import "../../components/extra-info/extra-info.scss";
 @import "../../components/text-field/text-field.scss";
 @import "../../components/dropdown/dropdown.scss";
 @import "../../components/date-dropdown/date-dropdown.scss";
