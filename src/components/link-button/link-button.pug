@@ -8,6 +8,6 @@ mixin createLinkButton(text, modifiers, href)
 			each modifier in modifiers
 				- classnameLink += " " + classname + "__link" + "_" + modifier
 
-		div(class = classname)
-			a(class = classnameLink href = href)= text
+	div(class = classname)
+		a(class = classnameLink href = href)= text
 

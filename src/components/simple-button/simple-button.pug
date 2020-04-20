@@ -1,0 +1,12 @@
+mixin createSimpleButton(text, modifiers)
+	- 
+		let classname = "simple-button"
+		let classnameText = classname + "__text"
+
+	if (modifiers) 
+		- modifiers = modifiers.split( " " );
+			each modifier in modifiers
+				- classnameText += " " + classname + "__text" + "_" + modifier
+
+	div(class = classname)
+		span(class = classnameText)= text

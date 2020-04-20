@@ -31,6 +31,7 @@ include ../../components/slider/slider.pug
 include ../../components/logotype/logotype.pug
 include ../../components/menu/menu.pug
 include ../../components/link-button/link-button.pug
+include ../../components/simple-button/simple-button.pug
 include ../../components/user/user.pug
 include ../../components/all-nav/all-nav.pug
 include ../../components/subscribe/subscribe.pug
@@ -172,9 +173,11 @@ block form-elements
 				div.container__group.container__group_right20
 					+createLinkButton("Click me", "theme_light opacity50", "./change-me")
 				div.container__group.container__group_right20
-					+createLinkButton("Click me", "link_theme_basic", "./change-me")
+					+createSimpleButton("Click me", "")
 				div.container__group
-					+createLinkButton("Click me", "link_theme_gray", "./change-me")
+					+createSimpleButton("Click me", "theme_no color_gray")
+
+				+createFormButton("перейти к оплате", "submit")
 
 
 block cards
