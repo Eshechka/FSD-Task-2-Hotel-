@@ -12,6 +12,7 @@ include ../../components/filter-date-dropdown/filter-date-dropdown.pug
 include ../../components/checkbox-button/checkbox-button.pug
 include ../../components/like-button/like-button.pug
 include ../../components/range-slider/range-slider.pug
+include ../../components/pagination/pagination.pug
 
 include ../../components/form-search-room/form-search-room.pug
 include ../../components/form-registration/form-registration.pug
@@ -178,6 +179,19 @@ block form-elements
 					+createSimpleButton("Click me", "theme_no color_gray")
 
 				+createFormButton("перейти к оплате", "submit")
+
+				- 
+					var arrPaginationItems = [
+					{href: "./change-me", pageNumber: "1", isActive: true}, 
+					{href: "./change-me", pageNumber: "2", }, 
+					{href: "./change-me", pageNumber: "3", }, 
+					{href: "./change-me", pageNumber: "...", }, 
+					{href: "./change-me", pageNumber: "15", }, 
+					];
+
+				+createExtraInfo(	{text: "Pagination", statusText: "", modifier: "bottom16px"}	)
+				+createPagination(	{text: "1 – 12 из 100+ вариантов аренды", items: arrPaginationItems}	)
+
 
 
 block cards

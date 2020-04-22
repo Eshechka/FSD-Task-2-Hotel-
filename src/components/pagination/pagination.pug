@@ -1,0 +1,17 @@
+mixin createPagination(	{text, items}	)
+	- 
+		let classname = "pagination";
+
+	div(class = classname)
+		ul(class = classname + "__list")
+
+			each item in items
+				- let arrClassname = [classname + "__item"]
+				if item.isActive
+					- arrClassname.push(classname + "__item_active")
+				li(class = arrClassname)
+					a(class = classname + "__link" href = item.href)= item.pageNumber
+
+
+		button(class = classname + "__next" + " " + "material-icons") arrow_forward
+		div(class = classname + "__text")= text
