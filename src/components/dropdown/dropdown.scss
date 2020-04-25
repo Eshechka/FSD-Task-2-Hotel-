@@ -1,9 +1,10 @@
 .iqdropdown {
 
 	height: 44px;
-	min-width: 320px;
+	min-width: 266px;
 	background-color: #fff;
 	border: 1px solid $DarkShade25;
+	padding: 0 44px 0 15px;
 
 	&::after {
 	    content: '';
@@ -18,8 +19,20 @@
 		background-size: 0.9em;
    }
 
-	& .iqdropdown-selection::after {
-		content: none;
+   &_bottom160 {
+   	margin-bottom: 160px;
+   }
+
+	& .iqdropdown-selection {
+
+		text-overflow: ellipsis;
+		max-width: 185px;
+		overflow: hidden;
+		white-space: nowrap;
+
+		&::after {
+			content: none;
+		}
 	}
 
 	&-item {
@@ -32,13 +45,16 @@
 	}
 
 	& .iqdropdown-menu {
-		padding-bottom: 50px;
 		margin: -8px -1px 0px -1px;
 
 		background: #FFFFFF;
 		border: 1px solid $DarkShade50;
 		box-sizing: border-box;
 		border-radius: 0 0 2px 2px;
+
+		&_buttonspace {
+			padding-bottom: 50px;			
+		}
 	}
 
 
@@ -54,6 +70,7 @@
 
 	& .iqdropdown-menu-option {
 		height: 35px;
+		padding-right: 7px;
 	}
 
 	& .iqdropdown-item-controls {
@@ -95,10 +112,8 @@
 		color: $DarkShade100;
 		border: none;
 		padding: 4px 0px;
-		flex-basis: 40px;
-		width: 40px;
+		flex-basis: 32px;
+		width: 32px;
 		text-align: center;
-
-
 	}
 }

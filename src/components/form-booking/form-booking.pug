@@ -4,47 +4,24 @@ include ../../components/date-dropdown/date-dropdown.pug
 include ../../components/form-button/form-button.pug
 include ../../components/room-info/room-info.pug
 include ../../components/price-detalization/price-detalization.pug
-include ../../components/block-BEM/block-BEM.pug
 
 
 //-переделать кнопку формы на элемент!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 mixin createFormBooking()
-	- var formClassname = "form-booking";
 
-	- var attributes = {};
-	- attributes.action = "/change-me";
-	- attributes.method = "get";
-	- attributes.class = formClassname;
-
-	form&attributes(attributes)
+	form.form-booking(action = "/change-me" method = "get")
 
 		+createRoomInfo(888, "люкс", "9 990")
 
-		+createDatedropdown(	{
-									extraInfoTextLeft: "Прибытие",
-								 	extraInfoTextRight: "Выезд",
-								 }	)
-
-		- 
-			var arrDropdownItems = [	{	dataId: "item1",
-											name: "взрослые",
-										},
-										{	dataId: "item2",
-											name: "дети",
-										},
-										{	dataId: "item3",
-											name: "младенцы",
-										},
-									]
+		+createDatedropdown(	{extraInfoTextLeft: "Прибытие", extraInfoTextRight: "Выезд"})
 
 		+createExtraInfo(	{text: "Гости", statusText: ""}	)
-		+createDropdown(arrDropdownItems)
+		+createDropdown(	{items: dropdownsItems.guests} )
 
-
-		+createDivClassesBEM({	blockBEM: formClassname, element: "__block", modifiers: []	})
+		div.form-booking.form-booking__block
 			div.price-detalization 
 				+createPriceDetalization("price-detalization")
 
-		+createDivClassesBEM({	blockBEM: formClassname, element: "__button", modifiers: []	})
+		div.form-booking.form-booking__button
 			+createFormButton("Забронировать", "submit")

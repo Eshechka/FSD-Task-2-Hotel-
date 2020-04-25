@@ -1,12 +1,10 @@
 mixin createCheckboxButton(arrCheckboxes)
 
-	- var classname = "checkbox-button"
-
-	div(class=classname)
+	div.checkbox-button
 
 		each item in arrCheckboxes
 
-			div(class = classname + "__item")
+			div.checkbox-button__item
 
-				input(class = classname + "__input" type="checkbox" id = item.checkboxId)
-				label(class = classname + "__label"  for = item.checkboxId)= item.checkboxText
+				input.checkbox-button__input(type="checkbox" id = item.checkboxId)
+				label.checkbox-button__label(for = item.checkboxId)= item.checkboxText

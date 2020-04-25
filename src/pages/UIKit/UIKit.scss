@@ -67,6 +67,8 @@ section.headers-footers >footer:not(:last-child), {
 
 	&__section {
 		display: flex;
+		padding-top: 65px;
+		padding-bottom: 35px;
 	}
 
 	&__column {
@@ -79,6 +81,14 @@ section.headers-footers >footer:not(:last-child), {
 
 		&_width320 {
 			flex-basis: 320px;
+		}
+
+		&_right126 {
+			margin-right: 126px;
+		}
+
+		&_right132 {
+			margin-right: 132px;
 		}
 	}
 

@@ -24,7 +24,7 @@ mixin createFormSearchRoom()
 								 }	)
 
 		- 
-			var arrDropdownItems = [	{	dataId: "item1",
+			let arrDropdownItems = [	{	dataId: "item1",
 											name: "взрослые",
 										},
 										{	dataId: "item2",
@@ -35,7 +35,7 @@ mixin createFormSearchRoom()
 										},
 									]
 		+createExtraInfo(	{text: "Гости", statusText: ""}	)
-		+createDropdown(arrDropdownItems)
+		+createDropdown( {items: arrDropdownItems} )
 
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: '__button', modifiers: []	})

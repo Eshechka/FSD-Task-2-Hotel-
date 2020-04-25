@@ -2,23 +2,17 @@ include ../../components/extra-info/extra-info.pug
 
 mixin createDatedropdown(	{extraInfoTextLeft, extraInfoTextRight}	)
 
-	-	
-		let classname = "date-dropdown";
-		let classnameJS = " js-" + classname;
+	div.date-dropdown.js-date-dropdown
 
-		let classnameInput = classname + "__input"
-		let classnameInputJS = ' js-' + classnameInput
-
-	div(class = classname + classnameJS)
-
-		div(class = classname + "__left" + classnameJS + "__left")
+		div.date-dropdown__left.js-date-dropdown__left
 
 			+createExtraInfo(	{text: extraInfoTextLeft, statusText: ""}	)
-			input(class = classnameInput + " " + classnameInput + "_left" + classnameInputJS + "_left" type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left")
+			input.date-dropdown__input.date-dropdown__input_left.js-date-dropdown__input_left(type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left")
 
-		div(class = classname + "__right" + classnameJS + "__right")
+		div.date-dropdown__right.js-date-dropdown__right
+
 			+createExtraInfo(	{text: extraInfoTextRight, statusText: ""}	)
-			input(class = classnameInput + " " + classnameInput + "_right" + classnameInputJS + "_right" type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right")
+			input.date-dropdown__input.date-dropdown__input_right.js-date-dropdown__input_right(type='text' placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right")
 		
 
 

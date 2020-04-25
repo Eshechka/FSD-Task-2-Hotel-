@@ -1,21 +1,25 @@
-mixin createDropdown(	arrDropdownItems	)
-	-
-		let classname = "iqdropdown";
-		let classnameJS = ' js-' + classname;
+mixin createDropdown( {items, type, isExpand, spaceForButtons, menuMarginBottom} )
+	
+	if !items
+		-items = []
 
-	div(class = classname + " js-" + classname)
+	- let classes = ["iqdropdown"]
+		- classes.push("js-iqdropdown")
+		if isExpand
+			- classes.push(" menu-open")
+		if menuMarginBottom
+			- classes.push("iqdropdown_bottom160")
 
-		p(class = classname + "-selection" + classnameJS + "-selection")
+	- let classMenu = ["iqdropdown-menu"]
+		if spaceForButtons
+			- classMenu.push("iqdropdown-menu_buttonspace")
 
-		div(class = classname + "-menu")
 
-			each item in arrDropdownItems
+	div(class = classes data-type=type || "guests")
+		p.iqdropdown-selection.js-iqdropdown-selection
 
-				div(class = classname + "-menu-option" data-id=item.dataId)
+		div(class = classMenu)
+			each item in items
+				div.iqdropdown-menu-option(data-id=item.dataId)
 					div
-						p(class = classname + "-item")= item.name
-						
-
-
-
-
+						p.iqdropdown-item= item.name

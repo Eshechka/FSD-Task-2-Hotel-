@@ -5,14 +5,23 @@ class Dropdown {
 
 		this.element = element;
 		this.elementText = element.find('.js-iqdropdown-selection');
+		this.type = element.data('type');
 		this.addDropdown();
-
 	}
 
 	addDropdown() {
 		this.element.iqDropdown({
 
-			setSelectionText: (itemCount, totalItems) => { return 'Сколько гостей' },
+			setSelectionText: (itemCount, totalItems) => { 
+				switch(this.type) {
+					case "rooms": 
+						return "2 спальни, 2 кровати, 0 ванных комнат";
+						break;
+					case "guests":	
+						return 'Сколько гостей';
+						break;
+				}
+			},
 
 			onChange: (id, count, totalItems) => {
 				
@@ -23,7 +32,6 @@ class Dropdown {
 					let remain = totalItems > 14 ? totalItems % mult : totalItems > 10 ?  0 : totalItems % mult;
 
 				this.elementText.text(totalItems + ' ' + _returnText(remain, totalItems));
-
 			},
 
 		});
@@ -56,6 +64,25 @@ class Dropdown {
 	}
 
 
+
 }
 
 export default Dropdown;
+
+
+
+// let dropdownTypes = { 
+// 	guests: {	1: 'гость',
+// 				2: 'гостя',
+// 				3: 'гостя',
+// 				4: 'гостя', 
+// 				5: 'гостей', 
+// 			},
+// 	rooms: {	1: 'комната',
+// 				2: 'комнаты',
+// 				3: 'комнаты',
+// 				4: 'комнаты', 
+// 				5: 'комнат', 
+// 			},
+
+// }

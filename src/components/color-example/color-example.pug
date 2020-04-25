@@ -1,11 +1,12 @@
-//- Create rectangles for UIKit div
-
 mixin createRect(colorModifier, colorName, colorCSS)
-	- classname = "color-example";
-	div(class=classname)
-		- 
-			var classnameModificator = classname+"__rect"
-			classnameModificator += colorModifier ? " "+classnameModificator+"_"+colorModifier : ""
-		div(class=classnameModificator)
-		b(class=classname+'__name')= colorName
-		p(class=classname+'__desc')= colorCSS	
+
+	div.color-example
+		-	
+			let classes = ["color-example__rect"]
+			if (colorModifier)
+				classes.push("color-example__rect_" + colorModifier)
+
+
+		div(class = classes)
+		b.color-example__name= colorName
+		p.color-example__desc= colorCSS	
