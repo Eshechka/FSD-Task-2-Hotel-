@@ -87,7 +87,8 @@ block form-elements
 
 	div.container
 		section.container__section
-			div.container__column.container__column_right126
+			div.container__column.container__column_width447
+				div.container__block.container__block_right126
 
 					+createExtraInfo(	{text: "Text Field", statusText: "Default"}	)
 					+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
@@ -116,48 +117,50 @@ block form-elements
 					+createExtraInfo(	{text: "subscription text field", statusText: ""}	)
 					+createSubscribeTextField()
 
-			div.container__column.container__column_right132
 
-				+createExtraInfo(	{text: "Checkbox Buttons", statusText: "", modifier: "bottom16px"}	)
-				- 
-					var arrCheckboxes = [	{	
-												checkboxId: "smoking",
-												checkboxText: "Можно курить",
-											},	
-											{	
-												checkboxId: "pets",
-												checkboxText: "Можно с питомцами",
-											},	
-											{	
-												checkboxId: "invite-guests",
-												checkboxText: "Можно пригласить гостей (до 10 человек)",
-											},
-										]
+			div.container__column.container__column_width392
+				div.container__block.container__block_right72
 
-				+createCheckboxButton( arrCheckboxes )
+					+createExtraInfo(	{text: "Checkbox Buttons", statusText: "", modifier: "bottom16px"}	)
+					- 
+						var arrCheckboxes = [	{	
+													checkboxId: "smoking",
+													checkboxText: "Можно курить",
+												},	
+												{	
+													checkboxId: "pets",
+													checkboxText: "Можно с питомцами",
+												},	
+												{	
+													checkboxId: "invite-guests",
+													checkboxText: "Можно пригласить гостей (до 10 человек)",
+												},
+											]
 
-
-				+createExtraInfo(	{text: "Radio Buttons", statusText: "", modifier: "bottom16px"}	)
-				+createRadioGroup(	[	
-						{name: "gender", value: "male", id: "ui-gender-male", text: "Мужчина", isChecked: true},
-						{name: "gender", value: "female", id: "ui-gender-female", text: "Женщина", isChecked: false},
-					])
-
-				+createExtraInfo(	{text: "Toggle", statusText: "", modifier: "bottom16px"}	)
-				+createToggleButton("ui-toggle-not-checked", "Получать спецпредложения", false)
-				+createToggleButton("ui-toggle-checked", "Получать спецпредложения", true)
+					+createCheckboxButton( arrCheckboxes )
 
 
-				+createExtraInfo(	{text: "Like button", statusText: "", modifier: "bottom16px"}	)
+					+createExtraInfo(	{text: "Radio Buttons", statusText: "", modifier: "bottom16px"}	)
+					+createRadioGroup(	[	
+							{name: "gender", value: "male", id: "ui-gender-male", text: "Мужчина", isChecked: true},
+							{name: "gender", value: "female", id: "ui-gender-female", text: "Женщина", isChecked: false},
+						])
 
-				+createLikeButton(2, false, "./change-me")
-				+createLikeButton(12, true, "./change-me")
+					+createExtraInfo(	{text: "Toggle", statusText: "", modifier: "bottom16px"}	)
+					+createToggleButton("ui-toggle-not-checked", "Получать спецпредложения", false)
+					+createToggleButton("ui-toggle-checked", "Получать спецпредложения", true)
 
 
-				+createExtraInfo(	{text: "Rate button", statusText: "", modifier: "bottom16px"}	)
-				div.container__group
-					+createShowRating(4)
-					+createShowRating(5)
+					+createExtraInfo(	{text: "Like button", statusText: "", modifier: "bottom16px"}	)
+
+					+createLikeButton(2, false, "./change-me")
+					+createLikeButton(12, true, "./change-me")
+
+
+					+createExtraInfo(	{text: "Rate button", statusText: "", modifier: "bottom16px"}	)
+					div.container__group
+						+createShowRating(4)
+						+createShowRating(5)
 
 			div.container__column.container__column_width320
 				div.container__group.container__group_flexcolumn
@@ -194,13 +197,45 @@ block form-elements
 
 
 		section.container__section
-			div.container__colum.container__colum_right126
+			div.container__column.container__column_width447
+				div.container__block.container__block_right181
+					+createExtraInfo(	{text: "dropdown", statusText: "Default"}	)
+					+createDropdown(	{items: dropdownsItems.rooms, type: "rooms"} )
 
-				+createExtraInfo(	{text: "dropdown", statusText: "Default"}	)
-				+createDropdown(	{items: dropdownsItems.rooms, type: "rooms"} )
 
-				+createExtraInfo(	{text: "dropdown", statusText: "Expanded"}	)
-				+createDropdown(	{items: dropdownsItems.rooms, type: "rooms", isExpand: true, spaceForButtons: true, menuMarginBottom: true})
+					- 
+						let setDefaultQuantity = [];
+						let arrDataDefault = [2,2,0];
+						dropdownsItems.rooms.forEach( function(item, index) 
+							{
+								item["dataDefault"] = arrDataDefault[index];
+								setDefaultQuantity.push(item);
+							});	
+
+
+					+createExtraInfo(	{text: "dropdown", statusText: "Expanded"}	)
+					+createDropdown(	{items: setDefaultQuantity, type: "rooms", isExpand: true, menuMarginBottom: true})
+
+			div.container__column.container__column_width392
+				div.container__block.container__block_right72
+
+					+createExtraInfo(	{text: "dropdown"}	)
+					+createDropdown(	{items: dropdownsItems.guests, type: "guests", isExpand: true, spaceForButtons: true, menuMarginBottom: true})
+
+			div.container__column
+				div.container__block
+
+					- 
+						setDefaultQuantity = [];
+						arrDataDefault = [2,1,0];
+						dropdownsItems.guests.forEach( function(item, index) 
+							{
+								item["dataDefault"] = arrDataDefault[index];
+								setDefaultQuantity.push(item);
+							});	
+
+					+createExtraInfo(	{text: "dropdown"}	)
+					+createDropdown(	{items: setDefaultQuantity, type: "guests", isExpand: true, spaceForButtons: true, menuMarginBottom: true})
 
 
 block cards

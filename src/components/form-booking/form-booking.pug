@@ -17,7 +17,7 @@ mixin createFormBooking()
 		+createDatedropdown(	{extraInfoTextLeft: "Прибытие", extraInfoTextRight: "Выезд"})
 
 		+createExtraInfo(	{text: "Гости", statusText: ""}	)
-		+createDropdown(	{items: dropdownsItems.guests} )
+		+createDropdown(	{items: dropdownsItems.guests, type: "guests"} )
 
 		div.form-booking.form-booking__block
 			div.price-detalization 

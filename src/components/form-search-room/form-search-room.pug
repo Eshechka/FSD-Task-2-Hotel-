@@ -35,7 +35,7 @@ mixin createFormSearchRoom()
 										},
 									]
 		+createExtraInfo(	{text: "Гости", statusText: ""}	)
-		+createDropdown( {items: arrDropdownItems} )
+		+createDropdown( {items: dropdownsItems.guests, type: "guests"} )
 
 
 		+createDivClassesBEM({	blockBEM: formClassname, element: '__button', modifiers: []	})

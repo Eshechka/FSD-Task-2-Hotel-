@@ -20,6 +20,6 @@ mixin createDropdown( {items, type, isExpand, spaceForButtons, menuMarginBottom}
 
 		div(class = classMenu)
 			each item in items
-				div.iqdropdown-menu-option(data-id=item.dataId)
+				div.iqdropdown-menu-option(data-id=item.dataId data-defaultcount=item.dataDefault || 0)
 					div
 						p.iqdropdown-item= item.name

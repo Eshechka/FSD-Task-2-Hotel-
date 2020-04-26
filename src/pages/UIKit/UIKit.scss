@@ -83,12 +83,29 @@ section.headers-footers >footer:not(:last-child), {
 			flex-basis: 320px;
 		}
 
-		&_right126 {
-			margin-right: 126px;
+		&_width447 {
+			width: 447px;
 		}
 
-		&_right132 {
-			margin-right: 132px;
+		&_width392 {
+			width: 392px;
+		}
+
+	}
+
+	&__block {
+		overflow: hidden;
+
+		&_right181 {
+			padding-right: 181px;
+		}
+
+		&_right126 {
+			padding-right: 126px;
+		}
+
+		&_right72 {
+			padding-right: 72px;
 		}
 	}
 
