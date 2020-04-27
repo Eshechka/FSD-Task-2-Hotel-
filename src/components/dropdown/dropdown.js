@@ -1,5 +1,20 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
+class TypeWithTextEndings {
+	constructor(noItems, equal0More4, equal1, defaultItems) {
+		this.noItems = noItems;
+		this.equal0More4 = equal0More4;
+		this.equal1 = equal1;
+		this.defaultItems = defaultItems;
+	}
+}
+
+let types = {};
+
+types.guests = new TypeWithTextEndings('Сколько гостей','гостей','гость','гостя');
+types.rooms = new TypeWithTextEndings('Выберите количество','комнат','комната','комнаты');
+
+
 class Dropdown {
 	constructor(element) {
 
@@ -45,58 +60,32 @@ class Dropdown {
 		}
 
 		function _getTextNoItems(type) {
-			switch(type) {
-				case 'rooms': 
-					return 'Выберите значения';
-					break;
-				case 'guests':	
-					return 'Сколько гостей';
-					break;
-			}
+			return types[type].noItems;
 		}
 
 		function _getText(remain, totalItems, type) {
 
-			if (totalItems === 0) return 'Сколько гостей';
+			if (totalItems === 0) 
+				_getTextNoItems(type);
 
 			switch(true) {
-				case remain === 1:  
-					totalItems += ' гость';
+				case remain > 4: 
+				case remain === 0:  
+					totalItems += ' ' + types[type].equal0More4;
 					break;
 
-				case remain < 5:
-					totalItems += ' гостя';
+				case remain === 1:  
+					totalItems += ' ' + types[type].equal1;
 					break;
 
 				default:
-					totalItems += ' гостей';
+					totalItems += ' ' + types[type].defaultItems;
 					break;
 			}
 
 			return totalItems;
 		}
 	}
-
-
-
 }
 
 export default Dropdown;
-
-
-
-// let dropdownTypes = { 
-// 	guests: {	1: 'гость',
-// 				2: 'гостя',
-// 				3: 'гостя',
-// 				4: 'гостя', 
-// 				5: 'гостей', 
-// 			},
-// 	rooms: {	1: 'комната',
-// 				2: 'комнаты',
-// 				3: 'комнаты',
-// 				4: 'комнаты', 
-// 				5: 'комнат', 
-// 			},
-
-// }

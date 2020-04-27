@@ -84,11 +84,11 @@ section.headers-footers >footer:not(:last-child), {
 		}
 
 		&_width447 {
-			width: 447px;
+			flex-basis: 447px;
 		}
 
 		&_width392 {
-			width: 392px;
+			flex-basis: 392px;
 		}
 
 	}
