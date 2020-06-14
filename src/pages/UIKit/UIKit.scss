@@ -264,8 +264,8 @@ input {
 }
 
 
-@import "../../components/block-BEM/block-BEM.scss";
 
+@import "../../components/block-BEM/block-BEM.scss";
 @import "../../components/color-example/color-example.scss";
 @import "../../components/fonts-example/fonts-example.scss";
 
@@ -288,6 +288,7 @@ input {
 @import "../../components/form-enter/form-enter.scss";
 @import "../../components/form-button/form-button.scss";
 @import "../../components/site-card/site-card.scss";
+
 @import "../../components/site-card/_fields_20/site-card_fields_20.scss";
 @import "../../components/site-card/_fields_30/site-card_fields_30.scss";
 

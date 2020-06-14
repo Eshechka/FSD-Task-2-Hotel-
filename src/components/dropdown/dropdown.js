@@ -13,6 +13,7 @@ let types = {};
 
 types.guests = new TypeWithTextEndings('Сколько гостей','гостей','гость','гостя');
 types.rooms = new TypeWithTextEndings('Выберите количество','комнат','комната','комнаты');
+types.bedrooms = new TypeWithTextEndings('Выберите количество','спален','спальня','спальни');
 
 
 class Dropdown {
@@ -26,16 +27,30 @@ class Dropdown {
 
 	addDropdown() {
 		this.element.iqDropdown({
+			
+			// let str = '';
 
 			setSelectionText: (itemCount, totalItems) => {
 
 				if (totalItems === 0) {
 					return _getTextNoItems(this.type);
 				}
-				else {
-					let remain = _getRemain(totalItems);
-					return _getText(remain, totalItems, this.type);
-				}
+				else 
+					if (false) {
+						let remain = _getRemain(totalItems);
+						// console.log(itemCount);
+						return _getText(remain, totalItems, this.type);
+					}
+					else 
+						for (let key in itemCount) {
+							let remain = _getRemain(itemCount[key]);
+							// str += itemCount[key];
+
+							// console.log(remain);
+							// console.log("!!!!!! = ", itemCount);
+							// console.log("!!! = ", itemCount[key]);
+					}
+				
 
 			},
 

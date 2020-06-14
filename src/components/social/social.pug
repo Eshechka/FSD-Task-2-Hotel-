@@ -1,12 +1,12 @@
 mixin createSocials(arrSocialItems)
-	- var className = 'social';
 
-	div(class= className)
-		ul(class= className+'__list')
-			each i in arrSocialItems			
-				li(class= className+'__item')
+	div.social
+		ul.social__list
+			each i in arrSocialItems
+				li.social__item
 					-
-						var classnameLink = className+'__link'
-						classnameLink += i.linkModifier ? ' ' + classnameLink + '_' + i.linkModifier : ''
+						let classesLink = ["social__link"]
+							if (i.linkModifier)
+								- classesLink.push(classesLink + '_' + i.linkModifier)
 					
-					a(class= classnameLink href= i.url)= i.text
+					a(class= classesLink href= i.url)= i.text

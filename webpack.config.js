@@ -1,13 +1,3 @@
-// const ghpages = require('gh-pages');
-// ghpages.publish('dist', 
-//                 {
-
-//                 },
-//                 function(err) {});
-
-// Try the environment variable, otherwise use root
-// const ASSET_PATH = process.env.ASSET_PATH || '/';
-
 const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
@@ -31,7 +21,7 @@ function getFilesPathes(startPath, filter) {
   let filePathes = [];
   let files = fs.readdirSync(startPath);
 
-  for(var i=0;i<files.length;i++) {
+  for(let i=0; i<files.length; i++) {
     let filename = path.join(startPath, files[i]);
     let stat = fs.lstatSync(filename);
     if (stat.isDirectory()) {
@@ -48,7 +38,7 @@ function getFilesPathes(startPath, filter) {
 module.exports = {
   entry: {
 
-    'UIKit': PATHS.src + '/pages/UIKit/UIKit.js',   
+    'UIKit': PATHS.src + '/pages/UIKit/UIKit.js',
     'index': PATHS.src + '/pages/index/index.js',
     // 'services': PATHS.src + '/pages/services/services.js',
     // 'about_us': PATHS.src + '/pages/about_us/about_us.js'
@@ -57,7 +47,7 @@ module.exports = {
   output: {
     // publicPath: ASSET_PATH,
     path: PATHS.dist,
-    // publicPath: '/',
+    publicPath: '/FSD-Task-2-Hotel-/',
     filename: './js/[name].[contenthash].js'
   },
 
