@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html></html>
-<head><link href="/FSD-Task-2-Hotel-/./style.be47e8394b320c9fcc7c.css" rel="stylesheet"></head>
+<head><link href="/FSD-Task-2-Hotel-/./style.98622947849ac9f1e4ee.css" rel="stylesheet"></head>
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1.0, width=device-width">
 <meta name="Keywords" content="Toxin UIKit">
@@ -9,7 +9,7 @@
 </title>
 <body>
   <header class="ui-header">
-    <div class="ui-logo"><a class="ui-logo__link" href="./change-me"><img class="ui-logo__img" src="img/TOXIN_just_picture.svg" alt="Logotype"></a></div>
+    <div class="logotype"><a class="logotype__link" href="./change-me"><img class="logotype__img" src="img/TOXIN_just_picture.svg" alt="Logotype"></a></div>
   </header>
   <main class="ui-main">
     <section class="colorAndType">
@@ -62,116 +62,112 @@
     </section>
     <section class="form-elements">
       <div class="container">
-        <section class="container__section">
-          <div class="container__column container__column_width447">
-            <div class="container__block container__block_right126">
-              <div class="extra-info"><span class="extra-info__text">Text Field</span><span class="extra-info__status">Default</span></div>
-              <input class="text-field" required="" name="email" placeholder="Email" type="text">
-              <div class="extra-info"><span class="extra-info__text">Text Field</span><span class="extra-info__status">Hover / Focus</span></div>
-              <input class="text-field text-field_focus-hover" required="" name="somename" placeholder="This is pretty awesome" type="text">
-              <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status">Default</span></div>
-              <div class="iqdropdown js-iqdropdown" data-type="guests">
-                <p class="iqdropdown-selection js-iqdropdown-selection"></p>
-                <div class="iqdropdown-menu">
-                  <div class="iqdropdown-menu-option" data-id="item1" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">взрослые</p>
-                    </div>
-                  </div>
-                  <div class="iqdropdown-menu-option" data-id="item2" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">дети</p>
-                    </div>
-                  </div>
-                  <div class="iqdropdown-menu-option" data-id="item3" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">младенцы</p>
-                    </div>
+        <div class="elements">
+          <div class="elements__column elements__column_left">
+            <div class="extra-info"><span class="extra-info__text">Text Field</span><span class="extra-info__status">Default</span></div>
+            <input class="text-field" required="" name="email" placeholder="Email" type="text">
+            <div class="extra-info"><span class="extra-info__text">Text Field</span><span class="extra-info__status">Hover / Focus</span></div>
+            <input class="text-field text-field_focus-hover" required="" name="somename" placeholder="This is pretty awesome" type="text">
+            <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status">Default</span></div>
+            <div class="iqdropdown js-iqdropdown" data-type="guests">
+              <p class="iqdropdown-selection js-iqdropdown-selection"></p>
+              <div class="iqdropdown-menu">
+                <div class="iqdropdown-menu-option" data-id="adults" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">взрослые</p>
                   </div>
                 </div>
-              </div>
-              <div class="extra-info"><span class="extra-info__text">masked text field</span><span class="extra-info__status">Default</span></div>
-              <input class="text-field text-field_data-masked " required="" name="masked-text-field" placeholder="ДД.ММ.ГГГГ" type="text">
-              <div class="date-dropdown js-date-dropdown">
-                <div class="date-dropdown__left js-date-dropdown__left">
-                  <div class="extra-info"><span class="extra-info__text">date Dropdown</span><span class="extra-info__status"></span></div>
-                  <input class="date-dropdown__input date-dropdown__input_left js-date-dropdown__input_left" type="text" placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left">
+                <div class="iqdropdown-menu-option" data-id="children" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">дети</p>
+                  </div>
                 </div>
-                <div class="date-dropdown__right js-date-dropdown__right">
-                  <div class="extra-info"><span class="extra-info__text">date Dropdown</span><span class="extra-info__status"></span></div>
-                  <input class="date-dropdown__input date-dropdown__input_right js-date-dropdown__input_right" type="text" placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right">
-                </div>
-              </div>
-              <div class="filter-date-dropdown">
-                <div class="extra-info"><span class="extra-info__text">filter date Dropdown</span><span class="extra-info__status"></span></div>
-                <input class="filter-date-dropdown__input" type="text" name="filter-date-dropdown">
-              </div>
-              <div class="extra-info"><span class="extra-info__text">subscription text field</span><span class="extra-info__status"></span></div>
-              <form class="subscription" action="./change-me" method="get">
-                <input class="subscription__input" type="email" placeholder="Email">
-                <input class="subscription__submit" type="submit" value="">
-              </form>
-            </div>
-          </div>
-          <div class="container__column container__column_width392">
-            <div class="container__block container__block_right72">
-              <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Checkbox Buttons</span><span class="extra-info__status"></span></div>
-              <div class="checkbox-button">
-                <div class="checkbox-button__item">
-                  <input class="checkbox-button__input" type="checkbox" id="smoking">
-                  <label class="checkbox-button__label" for="smoking">Можно курить</label>
-                </div>
-                <div class="checkbox-button__item">
-                  <input class="checkbox-button__input" type="checkbox" id="pets">
-                  <label class="checkbox-button__label" for="pets">Можно с питомцами</label>
-                </div>
-                <div class="checkbox-button__item">
-                  <input class="checkbox-button__input" type="checkbox" id="invite-guests">
-                  <label class="checkbox-button__label" for="invite-guests">Можно пригласить гостей (до 10 человек)</label>
-                </div>
-              </div>
-              <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Radio Buttons</span><span class="extra-info__status"></span></div>
-              <div class="radio-group">
-                <div class="radio-group__item">
-                  <input class="radio-group__input" type="radio" name="gender" value="male" id="ui-gender-male" checked>
-                  <label class="radio-group__label" for="ui-gender-male">Мужчина</label>
-                </div>
-                <div class="radio-group__item">
-                  <input class="radio-group__input" type="radio" name="gender" value="female" id="ui-gender-female">
-                  <label class="radio-group__label" for="ui-gender-female">Женщина</label>
-                </div>
-              </div>
-              <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Toggle</span><span class="extra-info__status"></span></div>
-              <div class="toggle-button">
-                <div class="toggle-button__button">
-                  <input class="toggle-button__checkbox" type="checkbox" id="ui-toggle-not-checked">
-                  <div class="toggle-button__knobs"></div>
-                  <div class="toggle-button__layer"></div>
-                </div>
-                <label class="toggle-button__text" for="ui-toggle-not-checked">Получать спецпредложения</label>
-              </div>
-              <div class="toggle-button">
-                <div class="toggle-button__button">
-                  <input class="toggle-button__checkbox" type="checkbox" id="ui-toggle-checked" checked>
-                  <div class="toggle-button__knobs"></div>
-                  <div class="toggle-button__layer"></div>
-                </div>
-                <label class="toggle-button__text" for="ui-toggle-checked">Получать спецпредложения</label>
-              </div>
-              <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Like button</span><span class="extra-info__status"></span></div>
-              <div class="like-button"><a class="like-button__link" href="./change-me"><i class="like-button__icon material-icons">favorite_border</i></a><span class="like-button__likes">2</span></div>
-              <div class="like-button like-button_liked"><a class="like-button__link" href="./change-me"><i class="like-button__icon material-icons">favorite</i></a><span class="like-button__likes">12</span></div>
-              <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Rate button</span><span class="extra-info__status"></span></div>
-              <div class="container__group">
-                <div class="show-rating"><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star_border</i>
-                </div>
-                <div class="show-rating"><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i>
+                <div class="iqdropdown-menu-option" data-id="infants" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">младенцы</p>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="extra-info"><span class="extra-info__text">masked text field</span><span class="extra-info__status">Default</span></div>
+            <input class="text-field text-field_data-masked " required="" name="masked-text-field" placeholder="ДД.ММ.ГГГГ" type="text">
+            <div class="date-dropdown js-date-dropdown">
+              <div class="date-dropdown__left js-date-dropdown__left">
+                <div class="extra-info"><span class="extra-info__text">date Dropdown</span><span class="extra-info__status"></span></div>
+                <input class="date-dropdown__input date-dropdown__input_left js-date-dropdown__input_left" type="text" placeholder="ДД.ММ.ГГГГ" name="date-dropdown-left">
+              </div>
+              <div class="date-dropdown__right js-date-dropdown__right">
+                <div class="extra-info"><span class="extra-info__text">date Dropdown</span><span class="extra-info__status"></span></div>
+                <input class="date-dropdown__input date-dropdown__input_right js-date-dropdown__input_right" type="text" placeholder="ДД.ММ.ГГГГ" name="date-dropdown-right">
+              </div>
+            </div>
+            <div class="filter-date-dropdown">
+              <div class="extra-info"><span class="extra-info__text">filter date Dropdown</span><span class="extra-info__status"></span></div>
+              <input class="filter-date-dropdown__input" type="text" name="filter-date-dropdown">
+            </div>
+            <div class="extra-info"><span class="extra-info__text">subscription text field</span><span class="extra-info__status"></span></div>
+            <form class="subscription" action="./change-me" method="get">
+              <input class="subscription__input" type="email" placeholder="Email">
+              <input class="subscription__submit" type="submit" value="">
+            </form>
           </div>
-          <div class="container__column container__column_width320">
-            <div class="container__group container__group_flexcolumn">
+          <div class="elements__column elements__column_center">
+            <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Checkbox Buttons</span><span class="extra-info__status"></span></div>
+            <div class="checkbox-button">
+              <div class="checkbox-button__item">
+                <input class="checkbox-button__input" type="checkbox" id="smoking">
+                <label class="checkbox-button__label" for="smoking">Можно курить</label>
+              </div>
+              <div class="checkbox-button__item">
+                <input class="checkbox-button__input" type="checkbox" id="pets">
+                <label class="checkbox-button__label" for="pets">Можно с питомцами</label>
+              </div>
+              <div class="checkbox-button__item">
+                <input class="checkbox-button__input" type="checkbox" id="invite-guests">
+                <label class="checkbox-button__label" for="invite-guests">Можно пригласить гостей (до 10 человек)</label>
+              </div>
+            </div>
+            <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Radio Buttons</span><span class="extra-info__status"></span></div>
+            <div class="radio-group">
+              <div class="radio-group__item">
+                <input class="radio-group__input" type="radio" name="gender" value="male" id="ui-gender-male" checked>
+                <label class="radio-group__label" for="ui-gender-male">Мужчина</label>
+              </div>
+              <div class="radio-group__item">
+                <input class="radio-group__input" type="radio" name="gender" value="female" id="ui-gender-female">
+                <label class="radio-group__label" for="ui-gender-female">Женщина</label>
+              </div>
+            </div>
+            <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Toggle</span><span class="extra-info__status"></span></div>
+            <div class="toggle-button">
+              <div class="toggle-button__button">
+                <input class="toggle-button__checkbox" type="checkbox" id="ui-toggle-not-checked">
+                <div class="toggle-button__knobs"></div>
+                <div class="toggle-button__layer"></div>
+              </div>
+              <label class="toggle-button__text" for="ui-toggle-not-checked">Получать спецпредложения</label>
+            </div>
+            <div class="toggle-button">
+              <div class="toggle-button__button">
+                <input class="toggle-button__checkbox" type="checkbox" id="ui-toggle-checked" checked>
+                <div class="toggle-button__knobs"></div>
+                <div class="toggle-button__layer"></div>
+              </div>
+              <label class="toggle-button__text" for="ui-toggle-checked">Получать спецпредложения</label>
+            </div>
+            <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Like button</span><span class="extra-info__status"></span></div>
+            <div class="like-button"><a class="like-button__link" href="./change-me"><i class="like-button__icon material-icons">favorite_border</i></a><span class="like-button__likes">2</span></div>
+            <div class="like-button like-button_liked"><a class="like-button__link" href="./change-me"><i class="like-button__icon material-icons">favorite</i></a><span class="like-button__likes">12</span></div>
+            <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Rate button</span><span class="extra-info__status"></span></div>
+            <div class="elements__group">
+              <div class="show-rating"><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star_border</i>
+              </div>
+              <div class="show-rating"><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i><i class="material-icons show-rating__icon">star</i>
+              </div>
+            </div>
+          </div>
+          <div class="elements__column elements__column_right">
+            <div class="elements__group elements__group_flexcolumn">
               <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Range Slider</span><span class="extra-info__status">5 000₽ - 10 000₽</span></div>
               <div class="range-slider">
                 <div class="range-slider__inner">
@@ -182,22 +178,22 @@
               </div>
             </div>
             <div class="extra-info extra-info_bottom16px"><span class="extra-info__text">Buttons</span><span class="extra-info__status"></span></div>
-            <div class="container__group container__group_right20">
+            <div class="elements__group elements__group_right20">
               <div class="link-button"><a class="link-button__link link-button__link_theme_basic" href="./change-me">Click me</a></div>
             </div>
-            <div class="container__group container__group_right20">
+            <div class="elements__group elements__group_right20">
               <div class="link-button"><a class="link-button__link link-button__link_theme_basic link-button__link_opacity50" href="./change-me">Click me</a></div>
             </div>
-            <div class="container__group container__group_right20">
+            <div class="elements__group elements__group_right20">
               <div class="link-button"><a class="link-button__link link-button__link_theme_light" href="./change-me">Click me</a></div>
             </div>
-            <div class="container__group container__group_right20">
+            <div class="elements__group elements__group_right20">
               <div class="link-button"><a class="link-button__link link-button__link_theme_light link-button__link_opacity50" href="./change-me">Click me</a></div>
             </div>
-            <div class="container__group container__group_right20">
+            <div class="elements__group elements__group_right20">
               <div class="simple-button"><span class="simple-button__text">Click me</span></div>
             </div>
-            <div class="container__group">
+            <div class="elements__group">
               <div class="simple-button"><span class="simple-button__text simple-button__text_theme_no simple-button__text_color_gray">Click me</span></div>
             </div>
             <button class="form-button" type="submit">перейти к оплате<i class="material-icons form-button__icon">arrow_forward</i></button>
@@ -214,96 +210,92 @@
               <div class="pagination__text">1 – 12 из 100+ вариантов аренды</div>
             </div>
           </div>
-        </section>
-        <section class="container__section">
-          <div class="container__column container__column_width447">
-            <div class="container__block container__block_right181">
-              <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status">Default</span></div>
-              <div class="iqdropdown js-iqdropdown" data-type="rooms">
-                <p class="iqdropdown-selection js-iqdropdown-selection"></p>
-                <div class="iqdropdown-menu">
-                  <div class="iqdropdown-menu-option" data-id="item1" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">спальни</p>
-                    </div>
+        </div>
+        <div class="dropdowns">
+          <div class="dropdowns__column dropdowns__column_left">
+            <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status">Default</span></div>
+            <div class="iqdropdown js-iqdropdown" data-type="rooms">
+              <p class="iqdropdown-selection js-iqdropdown-selection"></p>
+              <div class="iqdropdown-menu">
+                <div class="iqdropdown-menu-option" data-id="bedrooms" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">спальни</p>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item2" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">кровати</p>
-                    </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="beds" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">кровати</p>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item3" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">ванные комнаты</p>
-                    </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="bathrooms" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">ванные комнаты</p>
                   </div>
                 </div>
               </div>
-              <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status">Expanded</span></div>
-              <div class="iqdropdown js-iqdropdown  menu-open iqdropdown_bottom160" data-type="rooms">
-                <p class="iqdropdown-selection js-iqdropdown-selection"></p>
-                <div class="iqdropdown-menu">
-                  <div class="iqdropdown-menu-option" data-id="item1" data-defaultcount="2">
-                    <div>
-                      <p class="iqdropdown-item">спальни</p>
-                    </div>
+            </div>
+            <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status">Expanded</span></div>
+            <div class="iqdropdown js-iqdropdown menu-open iqdropdown_bottom160" data-type="rooms" data-splitsum>
+              <p class="iqdropdown-selection js-iqdropdown-selection"></p>
+              <div class="iqdropdown-menu">
+                <div class="iqdropdown-menu-option" data-id="bedrooms" data-defaultcount="2">
+                  <div>
+                    <p class="iqdropdown-item">спальни</p>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item2" data-defaultcount="2">
-                    <div>
-                      <p class="iqdropdown-item">кровати</p>
-                    </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="beds" data-defaultcount="2">
+                  <div>
+                    <p class="iqdropdown-item">кровати</p>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item3" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">ванные комнаты</p>
-                    </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="bathrooms" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">ванные комнаты</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="container__column container__column_width392">
-            <div class="container__block container__block_right72">
-              <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status"></span></div>
-              <div class="iqdropdown js-iqdropdown  menu-open iqdropdown_bottom160" data-type="guests">
-                <p class="iqdropdown-selection js-iqdropdown-selection"></p>
-                <div class="iqdropdown-menu iqdropdown-menu_buttonspace">
-                  <div class="iqdropdown-menu-option" data-id="item1" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">взрослые</p>
-                    </div>
+          <div class="dropdowns__column dropdowns__column_center">
+            <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status"></span></div>
+            <div class="iqdropdown js-iqdropdown menu-open iqdropdown_bottom160" data-type="guests">
+              <p class="iqdropdown-selection js-iqdropdown-selection"></p>
+              <div class="iqdropdown-menu iqdropdown-menu_buttonspace">
+                <div class="iqdropdown-menu-option" data-id="adults" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">взрослые</p>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item2" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">дети</p>
-                    </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="children" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">дети</p>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item3" data-defaultcount="0">
-                    <div>
-                      <p class="iqdropdown-item">младенцы</p>
-                    </div>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="infants" data-defaultcount="0">
+                  <div>
+                    <p class="iqdropdown-item">младенцы</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="container__column">
+          <div class="dropdowns__column">
             <div class="container__block">
               <div class="extra-info"><span class="extra-info__text">dropdown</span><span class="extra-info__status"></span></div>
-              <div class="iqdropdown js-iqdropdown  menu-open iqdropdown_bottom160" data-type="guests">
+              <div class="iqdropdown js-iqdropdown menu-open iqdropdown_bottom160" data-type="guests">
                 <p class="iqdropdown-selection js-iqdropdown-selection"></p>
                 <div class="iqdropdown-menu iqdropdown-menu_buttonspace">
-                  <div class="iqdropdown-menu-option" data-id="item1" data-defaultcount="2">
+                  <div class="iqdropdown-menu-option" data-id="adults" data-defaultcount="2">
                     <div>
                       <p class="iqdropdown-item">взрослые</p>
                     </div>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item2" data-defaultcount="1">
+                  <div class="iqdropdown-menu-option" data-id="children" data-defaultcount="1">
                     <div>
                       <p class="iqdropdown-item">дети</p>
                     </div>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item3" data-defaultcount="0">
+                  <div class="iqdropdown-menu-option" data-id="infants" data-defaultcount="0">
                     <div>
                       <p class="iqdropdown-item">младенцы</p>
                     </div>
@@ -312,12 +304,12 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </section>
     <section class="cards">
       <div class="container">
-        <div class="container__column container__column_width380">
+        <div class="cards__column cards__column_left">
           <div class="site-card site-card_fields_30">
             <form class="form-search-room" action="/change-me" method="get">
               <h1 class="form-search-room__title">Найдем номера под ваши желания</h1>
@@ -335,17 +327,17 @@
               <div class="iqdropdown js-iqdropdown" data-type="guests">
                 <p class="iqdropdown-selection js-iqdropdown-selection"></p>
                 <div class="iqdropdown-menu">
-                  <div class="iqdropdown-menu-option" data-id="item1" data-defaultcount="2">
+                  <div class="iqdropdown-menu-option" data-id="adults" data-defaultcount="2">
                     <div>
                       <p class="iqdropdown-item">взрослые</p>
                     </div>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item2" data-defaultcount="1">
+                  <div class="iqdropdown-menu-option" data-id="children" data-defaultcount="1">
                     <div>
                       <p class="iqdropdown-item">дети</p>
                     </div>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item3" data-defaultcount="0">
+                  <div class="iqdropdown-menu-option" data-id="infants" data-defaultcount="0">
                     <div>
                       <p class="iqdropdown-item">младенцы</p>
                     </div>
@@ -353,7 +345,7 @@
                 </div>
               </div>
               <div class="form-search-room__button">
-                <button class="form-button" type="submit">Подобрать номер<i class="material-icons form-button__icon">arrow_forward</i></button>
+                <button class="form-button" type="button">OK<i class="material-icons form-button__icon">arrow_forward</i></button>
               </div>
             </form>
           </div>
@@ -402,16 +394,16 @@
                 </div>
               </div>
               <div class="form-registration__button">
-                <button class="form-button" type="submit">Перейти к оплате<i class="material-icons form-button__icon">arrow_forward</i></button>
+                <button class="form-button" type="button">OK<i class="material-icons form-button__icon">arrow_forward</i></button>
               </div>
             </form>
             <div class="move-to-another-form">
               <p class="move-to-another-form__text">Уже есть аккаунт на Toxin</p>
-              <div class="link-button"><a class="link-button__link link-button__link_theme_light">Войти</a></div>
+              <div class="link-button"><a class="link-button__link"></a></div>
             </div>
           </div>
         </div>
-        <div class="container__column container__column_width380">
+        <div class="cards__column cards__column_center">
           <div class="site-card site-card_fields_30">
             <form class="form-booking" action="/change-me" method="get">
               <div class="room-info">
@@ -433,17 +425,17 @@
               <div class="iqdropdown js-iqdropdown" data-type="guests">
                 <p class="iqdropdown-selection js-iqdropdown-selection"></p>
                 <div class="iqdropdown-menu">
-                  <div class="iqdropdown-menu-option" data-id="item1" data-defaultcount="2">
+                  <div class="iqdropdown-menu-option" data-id="adults" data-defaultcount="2">
                     <div>
                       <p class="iqdropdown-item">взрослые</p>
                     </div>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item2" data-defaultcount="1">
+                  <div class="iqdropdown-menu-option" data-id="children" data-defaultcount="1">
                     <div>
                       <p class="iqdropdown-item">дети</p>
                     </div>
                   </div>
-                  <div class="iqdropdown-menu-option" data-id="item3" data-defaultcount="0">
+                  <div class="iqdropdown-menu-option" data-id="infants" data-defaultcount="0">
                     <div>
                       <p class="iqdropdown-item">младенцы</p>
                     </div>
@@ -473,7 +465,7 @@
                 </div>
               </div>
               <div class="form-booking form-booking__button">
-                <button class="form-button" type="submit">Забронировать<i class="material-icons form-button__icon">arrow_forward</i></button>
+                <button class="form-button" type="button">OK<i class="material-icons form-button__icon">arrow_forward</i></button>
               </div>
             </form>
           </div>
@@ -487,16 +479,16 @@
                 <input class="text-field" required name="password" placeholder="Пароль" type="text">
               </div>
               <div class="form-enter__button">
-                <button class="form-button" type="submit">Войти<i class="material-icons form-button__icon">arrow_forward</i></button>
+                <button class="form-button" type="button">OK<i class="material-icons form-button__icon">arrow_forward</i></button>
               </div>
             </form>
             <div class="move-to-another-form">
               <p class="move-to-another-form__text">Нет аккаунта на Toxin?</p>
-              <div class="link-button"><a class="link-button__link link-button__link_theme_light">Создать</a></div>
+              <div class="link-button"><a class="link-button__link"></a></div>
             </div>
           </div>
         </div>
-        <div class="container__column container__column_width320">
+        <div class="cards__column cards__column_right">
           <div class="site-card site-card_fields_20">
             <div class="calendar js-calendar"></div>
           </div>
@@ -695,4 +687,4 @@
     </section>
   </main>
   <footer class="ui-footer"></footer>
-<script type="text/javascript" src="/FSD-Task-2-Hotel-/./js/UIKit.9d0361b63389b1705158.js"></script></body>
+<script type="text/javascript" src="/FSD-Task-2-Hotel-/./js/UIKit.a3a9072623754f88cb68.js"></script></body>
