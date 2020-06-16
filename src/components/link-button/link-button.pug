@@ -1,13 +1,12 @@
-mixin createLinkButton(text, modifiers, href)
+mixin createLinkButton(options)
 	- 
-		let classname = "link-button"
-		let classnameLink = classname + "__link"
+		let classes = ["link-button__link"]
 
-	if (modifiers) 
-		- modifiers = modifiers.split( " " );
-			each modifier in modifiers
-				- classnameLink += " " + classname + "__link" + "_" + modifier
+	if (options.modifiers) 
+		- options.modifiers = options.modifiers.split( " " );
+			each modifier in options.modifiers
+				- classes.push(`link-button__link_${modifier}`)
 
-	div(class = classname)
-		a(class = classnameLink href = href)= text
+	div.link-button
+		a(class = classes href = options.href)= options.text
 

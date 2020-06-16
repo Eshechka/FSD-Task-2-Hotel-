@@ -1,12 +1,12 @@
-mixin createRect(colorModifier, colorName, colorCSS)
+mixin createColorExample(options)
 
 	div.color-example
 		-	
 			let classes = ["color-example__rect"]
-			if (colorModifier)
-				classes.push("color-example__rect_" + colorModifier)
+			if (options.colorModifier)
+				classes.push("color-example__rect_" + options.colorModifier)
 
 
 		div(class = classes)
-		b.color-example__name= colorName
-		p.color-example__desc= colorCSS	
+		b.color-example__name= options.colorName
+		p.color-example__desc= options.colorCSS	

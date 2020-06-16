@@ -1,6 +1,4 @@
-//- create Logotype
-
-mixin createLogotype(classname, srcImg)
-	div(class=classname)
-		a(class=classname+"__link" href = "./change-me")
-			img(class=classname+"__img" src=srcImg alt="Logotype")
+mixin createLogotype(options)
+	div.logotype
+		a.logotype__link(href="./change-me")
+			img.logotype__img(src=options.srcImg alt="Logotype")

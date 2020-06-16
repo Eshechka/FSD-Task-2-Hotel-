@@ -3,21 +3,21 @@ mixin createAnyTag(tag, text, classname)
 	!=newTag
 
 
-mixin createFontsExample(tag, text)
+mixin createFontsExample(options)
 
 	//- теги, которые надо будет заменить на p, тк вставлять их в разметку не получится
 	- let tagsForChange = ["body", "html", "title"]
 
 	div.fonts-example
-		- let changeTag = tag
+		- let changeTag = options.tag
 
 		each val in tagsForChange
 			if changeTag === val 
-				-tag = "p"
+				- options.tag = "p"
 		-	
 			let classes = ["fonts-example__tagname"]
-				classes.push("fonts-example__tagname_" + tag)
+				classes.push("fonts-example__tagname_" + options.tag)
 		
-		div(class = classes)= tag==='p' ? changeTag : tag.toUpperCase()
+		div(class = classes)= options.tag === 'p' ? changeTag : options.tag.toUpperCase()
 		
-		+createAnyTag(tag, text, "fonts-example__tagtext")
+		+createAnyTag(options.tag, options.text, "fonts-example__tagtext")

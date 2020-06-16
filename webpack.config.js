@@ -52,10 +52,13 @@ module.exports = {
   },
 
   devServer: {
-    port: 3000,
+    port: 4000,
     stats: 'errors-only',
     index: 'UIKit.html',
     openPage: '',
+    historyApiFallback: true,
+    noInfo: false,
+    overlay: true
   },
 
   //   optimization: {
@@ -97,6 +100,7 @@ module.exports = {
 
 
   ],
+  devtool: "#eval-source-map",
 
   module: {
     rules: [

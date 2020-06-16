@@ -1,4 +1,4 @@
-mixin createDropdown( {items, type, isExpand, spaceForButtons, menuMarginBottom} )
+mixin createDropdown( {items, type, isExpand, isSplitItemsSum, spaceForButtons, menuMarginBottom} )
 	
 	if !items
 		-items = []
@@ -6,7 +6,7 @@ mixin createDropdown( {items, type, isExpand, spaceForButtons, menuMarginBottom}
 	- let classes = ["iqdropdown"]
 		- classes.push("js-iqdropdown")
 		if isExpand
-			- classes.push(" menu-open")
+			- classes.push("menu-open")
 		if menuMarginBottom
 			- classes.push("iqdropdown_bottom160")
 
@@ -15,7 +15,7 @@ mixin createDropdown( {items, type, isExpand, spaceForButtons, menuMarginBottom}
 			- classMenu.push("iqdropdown-menu_buttonspace")
 
 
-	div(class = classes data-type=type || "guests")
+	div(class = classes data-type=type || "guests" data-splitsum=isSplitItemsSum)
 		p.iqdropdown-selection.js-iqdropdown-selection
 
 		div(class = classMenu)

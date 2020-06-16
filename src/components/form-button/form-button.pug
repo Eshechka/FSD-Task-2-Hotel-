@@ -1,6 +1,5 @@
-mixin createFormButton(text, type)
-	- 
-		let classname = "form-button";
+mixin createFormButton( options )
 
-	button(class = classname type = type || "button")= text || "OK"
-		i.material-icons(class = classname + "__icon") arrow_forward
+	button.form-button(type = options.type || "button")= options.text || "OK"
+		i.material-icons.form-button__icon arrow_forward
+

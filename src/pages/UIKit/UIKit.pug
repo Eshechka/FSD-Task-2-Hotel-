@@ -50,24 +50,23 @@ include ../../components/social/social.pug
 
 
 block ui-logo	
-	+createLogotype("ui-logo", "img/TOXIN_just_picture.svg")
+	+createLogotype( {srcImg: "img/TOXIN_just_picture.svg"} )
 
 block colorAndType
 	div.container
 		div.container__left
-			+createRect("DarkShade100", "Dark Shade 100%", "#1F2041")
-			+createRect("DarkShade75", "Dark Shade 75%", "#1F2041")
-			+createRect("DarkShade50", "Dark Shade 50%", "#1F2041")
-			+createRect("DarkShade25", "Dark Shade 25%", "#1F2041")
-			+createRect("DarkShade5", "Dark Shade 5%", "#1F2041")
-			+createRect("Purple", "Purple", "#BC9CFF")
-			+createRect("Green", "Green", "#6FCF97")
+			+createColorExample( {colorModifier: "DarkShade100", colorName: "Dark Shade 100%", colorCSS: "#1F2041"} )
+			+createColorExample( {colorModifier: "DarkShade75", colorName: "Dark Shade 75%", colorCSS: "#1F2041"} )
+			+createColorExample( {colorModifier: "DarkShade50", colorName: "Dark Shade 50%", colorCSS: "#1F2041"} )
+			+createColorExample( {colorModifier: "DarkShade25", colorName: "Dark Shade 25%", colorCSS: "#1F2041"} )
+			+createColorExample( {colorModifier: "DarkShade5", colorName: "Dark Shade 5%", colorCSS: "#1F2041"} )
+			+createColorExample( {colorModifier: "Purple", colorName: "Purple", colorCSS: "#BC9CFF"} )
+			+createColorExample( {colorModifier: "Green", colorName: "Green", colorCSS: "#6FCF97"} )
 		div.container__right
-			+createFontsExample("h1", "This one is the sub-section or widget title")
-			+createFontsExample("h2", "Next one is the item title inside widgets")
-			+createFontsExample("h3", "This is a label or CTA text")
-			+createFontsExample("body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")
-
+			+createFontsExample( {tag: "h1", text: "This one is the sub-section or widget title"} )
+			+createFontsExample( {tag: "h2", text: "Next one is the item title inside widgets"} )
+			+createFontsExample( {tag: "h3", text: "This is a label or CTA text"} )
+			+createFontsExample( {tag: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."} )
 
 
 block form-elements
@@ -75,116 +74,105 @@ block form-elements
 	-
 		const dropdownsItems = {
 			guests: [	
-						{	dataId: "item1", name: "взрослые"},
-						{	dataId: "item2", name: "дети"},
-						{	dataId: "item3", name: "младенцы"},
+						{dataId: "adults", name: "взрослые"},
+						{dataId: "children", name: "дети"},
+						{dataId: "infants", name: "младенцы"},
 					],
-			rooms:	[	{dataId: "item1", name: "спальни"},
-						{dataId: "item2", name: "кровати"},
-						{dataId: "item3", name: "ванные комнаты"}
+			rooms:	[	{dataId: "bedrooms", name: "спальни"},
+						{dataId: "beds", name: "кровати"},
+						{dataId: "bathrooms", name: "ванные комнаты"}
 					],
 		}
 
 	div.container
-		section.container__section
-			div.container__column.container__column_width447
-				div.container__block.container__block_right126
+		div.elements
+			div.elements__column.elements__column_left
 
-					+createExtraInfo(	{text: "Text Field", statusText: "Default"}	)
-					+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
+				+createExtraInfo(	{text: "Text Field", statusText: "Default"}	)
+				+createTextField(	{id:"", name:"email", placeholder:"Email", isRequired:"", isDataMasked:false, isFocusedHovered: false	}	)
 
-					+createExtraInfo(	{text: "Text Field", statusText: "Hover / Focus"}	)
-					+createTextField(	{id:"", name:"somename", placeholder:"This is pretty awesome", isRequired:"", isDataMasked:false, isFocusedHovered: true	}	)
+				+createExtraInfo(	{text: "Text Field", statusText: "Hover / Focus"}	)
+				+createTextField(	{id:"", name:"somename", placeholder:"This is pretty awesome", isRequired:"", isDataMasked:false, isFocusedHovered: true	}	)
+				
+				+createExtraInfo(	{text: "dropdown", statusText: "Default"}	)
+				+createDropdown(	{items: dropdownsItems.guests, type: "guests"}	 )
 
-					
-					+createExtraInfo(	{text: "dropdown", statusText: "Default"}	)
-					+createDropdown(	{items: dropdownsItems.guests, type: "guests"}	 )
+				+createExtraInfo(	{text: "masked text field", statusText: "Default"}	)
+				+createTextField(	{id:"", name:"masked-text-field", placeholder:"ДД.ММ.ГГГГ", isRequired:"", isDataMasked:true, isFocusedHovered: false	}	)
 
+				+createDatedropdown(	{
+											extraInfoTextLeft: "date Dropdown",
+											extraInfoTextRight: "date Dropdown",
+											}	)
 
-					+createExtraInfo(	{text: "masked text field", statusText: "Default"}	)
-					+createTextField(	{id:"", name:"masked-text-field", placeholder:"ДД.ММ.ГГГГ", isRequired:"", isDataMasked:true, isFocusedHovered: false	}	)
-
-					+createDatedropdown(	{
-												extraInfoTextLeft: "date Dropdown",
-											 	extraInfoTextRight: "date Dropdown",
-											 }	)
-
-					+createFilterDatedropdown(	{
-												extraInfoText: "filter date Dropdown",
-											 }	)
+				+createFilterDatedropdown(	{
+											extraInfoText: "filter date Dropdown",
+											}	)
 
 
-					+createExtraInfo(	{text: "subscription text field", statusText: ""}	)
-					+createSubscribeTextField()
+				+createExtraInfo(	{text: "subscription text field", statusText: ""}	)
+				+createSubscribeTextField()
+
+			div.elements__column.elements__column_center
+
+				+createExtraInfo(	{text: "Checkbox Buttons", statusText: "", modifier: "bottom16px"}	)
+				- 
+					const arrCheckboxes = [	{	checkboxId: "smoking",
+												checkboxText: "Можно курить"},	
+											{	checkboxId: "pets",
+												checkboxText: "Можно с питомцами"},	
+											{	checkboxId: "invite-guests",
+												checkboxText: "Можно пригласить гостей (до 10 человек)"},
+										]
+
+				+createCheckboxButton( arrCheckboxes )
 
 
-			div.container__column.container__column_width392
-				div.container__block.container__block_right72
+				+createExtraInfo(	{text: "Radio Buttons", statusText: "", modifier: "bottom16px"}	)
+				+createRadioGroup(	[	
+						{name: "gender", value: "male", id: "ui-gender-male", text: "Мужчина", isChecked: true},
+						{name: "gender", value: "female", id: "ui-gender-female", text: "Женщина", isChecked: false},
+					])
 
-					+createExtraInfo(	{text: "Checkbox Buttons", statusText: "", modifier: "bottom16px"}	)
-					- 
-						var arrCheckboxes = [	{	
-													checkboxId: "smoking",
-													checkboxText: "Можно курить",
-												},	
-												{	
-													checkboxId: "pets",
-													checkboxText: "Можно с питомцами",
-												},	
-												{	
-													checkboxId: "invite-guests",
-													checkboxText: "Можно пригласить гостей (до 10 человек)",
-												},
-											]
-
-					+createCheckboxButton( arrCheckboxes )
+				+createExtraInfo(	{text: "Toggle", statusText: "", modifier: "bottom16px"}	)
+				+createToggleButton("ui-toggle-not-checked", "Получать спецпредложения", false)
+				+createToggleButton("ui-toggle-checked", "Получать спецпредложения", true)
 
 
-					+createExtraInfo(	{text: "Radio Buttons", statusText: "", modifier: "bottom16px"}	)
-					+createRadioGroup(	[	
-							{name: "gender", value: "male", id: "ui-gender-male", text: "Мужчина", isChecked: true},
-							{name: "gender", value: "female", id: "ui-gender-female", text: "Женщина", isChecked: false},
-						])
+				+createExtraInfo(	{text: "Like button", statusText: "", modifier: "bottom16px"}	)
 
-					+createExtraInfo(	{text: "Toggle", statusText: "", modifier: "bottom16px"}	)
-					+createToggleButton("ui-toggle-not-checked", "Получать спецпредложения", false)
-					+createToggleButton("ui-toggle-checked", "Получать спецпредложения", true)
+				+createLikeButton(2, false, "./change-me")
+				+createLikeButton(12, true, "./change-me")
 
 
-					+createExtraInfo(	{text: "Like button", statusText: "", modifier: "bottom16px"}	)
+				+createExtraInfo(	{text: "Rate button", statusText: "", modifier: "bottom16px"}	)
+				div.elements__group
+					+createShowRating(4)
+					+createShowRating(5)
 
-					+createLikeButton(2, false, "./change-me")
-					+createLikeButton(12, true, "./change-me")
-
-
-					+createExtraInfo(	{text: "Rate button", statusText: "", modifier: "bottom16px"}	)
-					div.container__group
-						+createShowRating(4)
-						+createShowRating(5)
-
-			div.container__column.container__column_width320
-				div.container__group.container__group_flexcolumn
+			div.elements__column.elements__column_right
+				div.elements__group.elements__group_flexcolumn
 					+createExtraInfo(	{text: "Range Slider", statusText: "5 000₽ - 10 000₽", modifier: "bottom16px"}	)
 					+createRangeSlider()
 
 				+createExtraInfo(	{text: "Buttons", statusText: "", modifier: "bottom16px"}	)
-				div.container__group.container__group_right20
-					+createLinkButton("Click me", "theme_basic", "./change-me")
-				div.container__group.container__group_right20
-					+createLinkButton("Click me", "theme_basic opacity50", "./change-me")
-				div.container__group.container__group_right20
-					+createLinkButton("Click me", "theme_light", "./change-me")
-				div.container__group.container__group_right20
-					+createLinkButton("Click me", "theme_light opacity50", "./change-me")
-				div.container__group.container__group_right20
-					+createSimpleButton("Click me", "")
-				div.container__group
-					+createSimpleButton("Click me", "theme_no color_gray")
+				div.elements__group.elements__group_right20
+					+createLinkButton( {text: "Click me", modifiers: "theme_basic", href: "./change-me"} )
+				div.elements__group.elements__group_right20
+					+createLinkButton( {text: "Click me", modifiers: "theme_basic opacity50", href: "./change-me"} )
+				div.elements__group.elements__group_right20
+					+createLinkButton( {text: "Click me", modifiers: "theme_light", href: "./change-me"} )
+				div.elements__group.elements__group_right20
+					+createLinkButton( {text: "Click me", modifiers: "theme_light opacity50", href: "./change-me"} )
+				div.elements__group.elements__group_right20
+					+createSimpleButton( {text: "Click me"} )
+				div.elements__group
+					+createSimpleButton( {text: "Click me", modifiers: "theme_no color_gray"} )
 
-				+createFormButton("перейти к оплате", "submit")
+				+createFormButton( {text: "перейти к оплате", type:"submit"} )
 
 				- 
-					var arrPaginationItems = [
+					const arrPaginationItems = [
 					{href: "./change-me", pageNumber: "1", isActive: true}, 
 					{href: "./change-me", pageNumber: "2", }, 
 					{href: "./change-me", pageNumber: "3", }, 
@@ -196,33 +184,31 @@ block form-elements
 				+createPagination(	{text: "1 – 12 из 100+ вариантов аренды", items: arrPaginationItems}	)
 
 
-		section.container__section
-			div.container__column.container__column_width447
-				div.container__block.container__block_right181
-					+createExtraInfo(	{text: "dropdown", statusText: "Default"}	)
-					+createDropdown(	{items: dropdownsItems.rooms, type: "rooms"} )
+		div.dropdowns
+			div.dropdowns__column.dropdowns__column_left
+				
+				+createExtraInfo(	{text: "dropdown", statusText: "Default"}	)
+				+createDropdown(	{items: dropdownsItems.rooms, type: "rooms"} )
+
+				- 
+					let setDefaultQuantity = [];
+					let arrDataDefault = [2,2,0];
+					dropdownsItems.rooms.forEach( function(item, index) 
+						{
+							item["dataDefault"] = arrDataDefault[index];
+							setDefaultQuantity.push(item);
+						});	
 
 
-					- 
-						let setDefaultQuantity = [];
-						let arrDataDefault = [2,2,0];
-						dropdownsItems.rooms.forEach( function(item, index) 
-							{
-								item["dataDefault"] = arrDataDefault[index];
-								setDefaultQuantity.push(item);
-							});	
+				+createExtraInfo(	{text: "dropdown", statusText: "Expanded"}	)
+				+createDropdown(	{items: setDefaultQuantity, type: "rooms", isExpand: true, isSplitItemsSum: true, menuMarginBottom: true})
 
+			div.dropdowns__column.dropdowns__column_center
 
-					+createExtraInfo(	{text: "dropdown", statusText: "Expanded"}	)
-					+createDropdown(	{items: setDefaultQuantity, type: "rooms", isExpand: true, menuMarginBottom: true})
+				+createExtraInfo(	{text: "dropdown"}	)
+				+createDropdown(	{items: dropdownsItems.guests, type: "guests", isExpand: true, spaceForButtons: true, menuMarginBottom: true})
 
-			div.container__column.container__column_width392
-				div.container__block.container__block_right72
-
-					+createExtraInfo(	{text: "dropdown"}	)
-					+createDropdown(	{items: dropdownsItems.guests, type: "guests", isExpand: true, spaceForButtons: true, menuMarginBottom: true})
-
-			div.container__column
+			div.dropdowns__column
 				div.container__block
 
 					- 
@@ -241,7 +227,7 @@ block form-elements
 block cards
 	div.container
 		
-		div.container__column.container__column_width380
+		div.cards__column.cards__column_left
 		
 			div.site-card.site-card_fields_30
 				+createFormSearchRoom()
@@ -250,14 +236,12 @@ block cards
 			div.site-card.site-card_fields_30
 				+createFormRegistration()
 
-
 				+createMoveToAnotherForm(	{	text: "Уже есть аккаунт на Toxin",
 												buttonText: "Войти",
 												buttonTheme: "theme_light"	}	)
 
 
-
-		div.container__column.container__column_width380
+		div.cards__column.cards__column_center
 
 			div.site-card.site-card_fields_30
 				+createFormBooking()
@@ -271,7 +255,7 @@ block cards
 												buttonTheme: "theme_light"	}	)
 
 
-		div.container__column.container__column_width320
+		div.cards__column.cards__column_right
 
 			div.site-card.site-card_fields_20
 
@@ -331,12 +315,11 @@ block cards
 
 
 
-
 block headers-footers
 
 	div.header
 		div.header__container
-			+createLogotype("logotype", "./img/TOXIN_Logo.svg")
+			+createLogotype( {srcImg: "./img/TOXIN_Logo.svg"} )
 
 			- 
 				let arrMenuItems = [
@@ -355,15 +338,15 @@ block headers-footers
 			div.header__registration
 
 				div.header__button-wrapper
-					+createLinkButton("Login", "theme_light", "./change-me")
+					+createLinkButton( {text: "Login", modifiers: "theme_light", href: "./change-me"} )
 
-				+createLinkButton("Register", "", "./change-me")
+				+createLinkButton( {text: "Register", href: "./change-me"} )
 
 
 	div.header.header_logged
 		div.header__container
 
-			+createLogotype("logotype", "./img/TOXIN_Logo.svg")
+			+createLogotype( {srcImg: "./img/TOXIN_Logo.svg"} )
 
 			+createMenu(arrMenuItems)
 
@@ -378,7 +361,7 @@ block headers-footers
 			div.footer__container
 				div.footer__left-side
 
-					+createLogotype("logotype", "./img/TOXIN_Logo.svg")
+					+createLogotype( {srcImg: "./img/TOXIN_Logo.svg"} )
 
 					+createShortInfo('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
 
@@ -427,7 +410,7 @@ block headers-footers
 	footer.footer-light
 		div.footer-light__container
 
-			+createLogotype('logotype', './img/TOXIN_Logo.svg')
+			+createLogotype( {srcImg: './img/TOXIN_Logo.svg'} )
 
 			p.footer-light__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
 

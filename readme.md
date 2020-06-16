@@ -1,1 +1,1 @@
-https://eshechka.github.io/
+https://eshechka.github.io/FSD-Task-2-Hotel-/

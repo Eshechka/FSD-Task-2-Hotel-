@@ -52,7 +52,7 @@ section.colorAndType {
 }
 section.headers-footers >div,
 section.headers-footers >header,
-section.headers-footers >footer:not(:last-child), {
+section.headers-footers >footer:not(:last-child) {
 	margin-bottom: 40px;
 }
 
@@ -64,12 +64,6 @@ section.headers-footers >footer:not(:last-child), {
 	max-width: 1160px;
 	overflow-x: hidden;
 	justify-content: space-between;
-
-	&__section {
-		display: flex;
-		padding-top: 65px;
-		padding-bottom: 35px;
-	}
 
 	&__column {
 
@@ -93,34 +87,28 @@ section.headers-footers >footer:not(:last-child), {
 
 	}
 
-	&__block {
-		overflow: hidden;
+	// &__block {
+	// 	overflow: hidden;
 
-		&_right181 {
-			padding-right: 181px;
-		}
+	// 	&_right181 {
+	// 		padding-right: 181px;
+	// 	}
 
-		&_right126 {
-			padding-right: 126px;
-		}
 
-		&_right72 {
-			padding-right: 72px;
-		}
-	}
+	// }
 
-	&__group {
-		display: inline-flex;
-		margin-bottom: 30px;
+	// &__group {
+	// 	display: inline-flex;
+	// 	margin-bottom: 30px;
 
-		&_flexcolumn {
-			flex-direction: column;
-		}
+	// 	&_flexcolumn {
+	// 		flex-direction: column;
+	// 	}
 
-		&_right20 {
-			padding-right: 20px;
-		}
-	}
+	// 	&_right20 {
+	// 		padding-right: 20px;
+	// 	}
+	// }
 
 
 }
@@ -133,9 +121,6 @@ div.container__left {
 div.container__right {
 	width: 430px;
 }
-
-
-
 
 
 
@@ -194,6 +179,91 @@ input {
 
 	&.header_logged {
 
+	}
+}
+
+.elements {
+	display: flex;
+	padding-top: 65px;
+	padding-bottom: 35px;
+
+	&__column {
+
+		flex: 0 0 auto;
+
+		&_left {
+			overflow: hidden;
+			flex-basis: 447px;
+			padding-right: 126px;
+		}
+
+		&_center {
+			overflow: hidden;
+			flex-basis: 392px;
+			padding-right: 72px;
+		}
+
+		&_right {
+			overflow: hidden;
+			flex-basis: 320px;
+		}
+
+	}
+
+	&__group {
+		display: inline-flex;
+		margin-bottom: 30px;
+
+		&_flexcolumn {
+			flex-direction: column;
+		}
+
+		&_right20 {
+			padding-right: 20px;
+		}
+	}
+}
+
+.dropdowns {
+	display: flex;
+	padding-top: 65px;
+	padding-bottom: 35px;
+
+	&__column {
+
+		flex: 0 0 auto;
+
+		&_left {
+			overflow: hidden;
+			flex-basis: 447px;
+			padding-right: 181px;
+		}
+
+		&_center {
+			overflow: hidden;
+			flex-basis: 392px;
+			padding-right: 72px;
+		}
+
+	}
+}
+
+.cards {
+	&__column {
+
+		flex: 0 0 auto;
+
+		&_left {
+			flex-basis: 380px;
+		}
+
+		&_center {
+			flex-basis: 380px;
+		}
+
+		&_right {
+			flex-basis: 320px;
+		}
 	}
 }
 
